@@ -65,7 +65,15 @@ export default function Contact() {
       {
         id: "welcome-msg",
         sender: "bot",
-        text: "Halo! Saya adalah asisten AI Firdaus. Ada yang bisa saya bantu terkait portofolio, pengalaman, atau project Firdaus Dhuha Prabowo?",
+        text: `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma dengan IPK 3.88. Saya berfokus pada pengembangan solusi digital berbasis web menggunakan arsitektur modern.
+
+Silakan pilih informasi yang ingin Anda tinjau:
+- 🎓 **Latar Belakang Pendidikan dan Profil Diri**
+- 🚀 **Ringkasan Proyek Unggulan dan Implementasi Kode**
+- 💻 **Spesialisasi Tech Stack dan Alat Pengembangan**
+- 📜 **Sertifikasi Industri (Cisco, BNSP, Dicoding)**
+- 📄 **Akses Berkas Resume Resmi**
+- 📞 **Kontak Langsung dan Tautan Profesional**`,
         timestamp: new Date()
       }
     ])
@@ -84,12 +92,10 @@ export default function Contact() {
     }
   }, [chatMessages, isOpenChat])
 
+  const executeSendChat = async (textToSend: string) => {
+    if (!textToSend.trim() || isChatLoading) return
 
-  const handleSendChat = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!chatInput.trim()) return
-
-    const userText = chatInput.trim()
+    const userText = textToSend.trim()
     const userMsg: ChatMessage = {
       id: Date.now().toString(),
       sender: "user",
@@ -214,6 +220,14 @@ Aturan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan mengarang 
     } finally {
       setIsChatLoading(false)
     }
+  }
+
+  const handleSendChat = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!chatInput.trim()) return
+    const text = chatInput.trim()
+    setChatInput("")
+    executeSendChat(text)
   }
 
   const showAlert = useCallback((type: AlertType, message: string) => {
@@ -452,8 +466,27 @@ Aturan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan mengarang 
             </div>
           </div>
 
+          {/* Quick Choice Buttons */}
+          <div className="px-4 pt-3 pb-1 border-t border-text-secondary/10 bg-background flex justify-center">
+            <div className="w-full max-w-4xl flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1.5">
+              <span className="text-[11px] font-bold text-text-secondary whitespace-nowrap hidden sm:inline">Pilihan Info:</span>
+              {quickPromptOptions.map((opt, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  suppressHydrationWarning
+                  disabled={isChatLoading}
+                  onClick={() => executeSendChat(opt.query)}
+                  className="px-3 py-1.5 rounded-full bg-thirdary/40 hover:bg-text-primary hover:text-background text-text-primary border border-text-secondary/15 text-xs font-bold whitespace-nowrap transition-all duration-200 disabled:opacity-50 active:scale-95"
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Chat Input */}
-          <div className="p-4 border-t border-text-secondary/10 bg-background flex justify-center">
+          <div className="p-4 pt-2 border-t border-text-secondary/10 bg-background flex justify-center">
             <form onSubmit={handleSendChat} className="flex gap-2 w-full max-w-4xl">
               <input 
                 type="text" 
@@ -485,3 +518,12 @@ Aturan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan mengarang 
     </section>
   )
 }
+
+const quickPromptOptions = [
+  { label: "🎓 Pendidikan & Profil Diri", query: "Latar Belakang Pendidikan dan Profil Diri" },
+  { label: "🚀 Proyek Unggulan", query: "Ringkasan Proyek Unggulan dan Implementasi Kode" },
+  { label: "💻 Tech Stack & Alat", query: "Spesialisasi Tech Stack dan Alat Pengembangan" },
+  { label: "📜 Sertifikasi Industri", query: "Sertifikasi Industri (Cisco, BNSP, Dicoding)" },
+  { label: "📄 Resume Resmi", query: "Akses Berkas Resume Resmi" },
+  { label: "📞 Kontak Langsung", query: "Kontak Langsung dan Tautan Profesional" },
+]

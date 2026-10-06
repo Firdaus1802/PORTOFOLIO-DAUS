@@ -184,22 +184,30 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("sore") || 
     q.includes("malam") || 
     q.includes("assalam") || 
-    q.includes("permisi")
+    q.includes("permisi") ||
+    q.includes("selamat datang")
   ) {
-    return "Halo! Selamat datang di website portofolio Firdaus Dhuha Prabowo. Saya adalah asisten AI pribadi Firdaus. Anda bisa bertanya tentang **umur (18 Feb 2006 / 20 th)**, pendidikan (Gunadarma IPK 3.88), skill teknis Frontend & Backend, proyek **Finzie Joki Service**, atau sertifikasi resminya. Ada yang ingin Anda tanyakan?"
+    return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma dengan IPK 3.88. Saya berfokus pada pengembangan solusi digital berbasis web menggunakan arsitektur modern.
+
+Silakan pilih informasi yang ingin Anda tinjau:
+- 🎓 **Latar Belakang Pendidikan dan Profil Diri** (Umur 20 th, Gunadarma IPK 3.88)
+- 🚀 **Ringkasan Proyek Unggulan dan Implementasi Kode** (Finzie Joki Service)
+- 💻 **Spesialisasi Tech Stack dan Alat Pengembangan** (React, Next.js, Supabase, Node.js)
+- 📜 **Sertifikasi Industri (Cisco, BNSP, Dicoding)** (10 Lisensi Resmi)
+- 📄 **Akses Berkas Resume Resmi** (Halaman CV & Unduh PDF)
+- 📞 **Kontak Langsung dan Tautan Profesional** (WhatsApp, LinkedIn, Email)`
   }
 
   // 13. Default Friendly Overview
-  return `Halo! Firdaus Dhuha Prabowo adalah Junior Frontend Developer dan mahasiswa Universitas Gunadarma (IPK 3.88, kelahiran 18 Februari 2006).
+  return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma dengan IPK 3.88. Saya berfokus pada pengembangan solusi digital berbasis web menggunakan arsitektur modern.
 
-Anda dapat menanyakan hal-hal berikut kepada saya:
-- 🎂 **Umur & Biodata** (Kelahiran, domisili Tangerang, usia 20 tahun)
-- 🎓 **Pendidikan & IPK** (Universitas Gunadarma, IPK 3.88)
-- 🚀 **Proyek Unggulan** (*Finzie Joki Service* di Vercel)
-- 💻 **Tech Stack** (React, Next.js, Node.js, Tailwind, Python)
-- 📜 **Sertifikasi Resmi** (Cisco, BNSP, 7 Sertifikat Dicoding)
-- 📄 **Akses & Download CV** (Format PDF A4)
-- 📞 **Kontak & Media Sosial** (WhatsApp, Email, LinkedIn)`
+Silakan pilih informasi yang ingin Anda tinjau:
+- 🎓 **Latar Belakang Pendidikan dan Profil Diri**
+- 🚀 **Ringkasan Proyek Unggulan dan Implementasi Kode**
+- 💻 **Spesialisasi Tech Stack dan Alat Pengembangan**
+- 📜 **Sertifikasi Industri (Cisco, BNSP, Dicoding)**
+- 📄 **Akses Berkas Resume Resmi**
+- 📞 **Kontak Langsung dan Tautan Profesional**`
 }
 
 export async function POST(req: NextRequest) {
