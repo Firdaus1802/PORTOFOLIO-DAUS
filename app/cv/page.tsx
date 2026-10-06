@@ -63,7 +63,7 @@ export default function CVPage() {
             {/* Profile Photo Arch Dome Container */}
             <div className="flex justify-center">
               <div className="relative w-36 h-40 bg-[#282D36] rounded-t-[48px] rounded-b-2xl p-2.5 flex flex-col items-center justify-center border border-white/10 shadow-lg">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden border-3 border-white shadow-xl bg-zinc-800">
+                <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-xl bg-zinc-800">
                   <Image 
                     src="/images/profile-firdaus.png" 
                     alt="Firdaus Dhuha Prabowo" 
