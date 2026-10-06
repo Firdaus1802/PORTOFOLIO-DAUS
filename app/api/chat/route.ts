@@ -173,7 +173,30 @@ function getSmartFallbackResponse(query: string): string {
     return "Firdaus berfokus pada eksplorasi arsitektur web modern (Next.js & React), pengembangan backend BaaS (Supabase & Node.js), komputasi awan, serta perancangan antarmuka digital yang presisi."
   }
 
-  // 12. Sapaan / Greeting
+  // 12. Identitas / Siapa Kamu / Asisten
+  if (
+    q.includes("kamu siapa") ||
+    q.includes("siapa kamu") ||
+    q.includes("siapa anda") ||
+    q.includes("anda siapa") ||
+    q.includes("kamu apa") ||
+    q.includes("who are you") ||
+    q.includes("siapa bot") ||
+    q.includes("bot apa") ||
+    q.includes("asisten")
+  ) {
+    return `Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, IPK 3.88).
+
+Silakan pilih direktori informasi yang ingin Anda akses:
+• **Profil & Latar Belakang Akademik**
+• **Portofolio Proyek & Arsitektur Kode**
+• **Spesialisasi Tech Stack & Database**
+• **Lisensi & Sertifikasi Industri Resmi**
+• **Curriculum Vitae (CV) Resmi**
+• **Saluran Kontak & Jaringan Profesional**`
+  }
+
+  // 13. Sapaan / Greeting
   if (
     q.includes("halo") || 
     q.includes("hai") || 
@@ -187,7 +210,7 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("permisi") ||
     q.includes("selamat datang")
   ) {
-    return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma (IPK 3.88). Saya berfokus pada arsitektur web modern, performa tinggi, dan antarmuka digital yang presisi.
+    return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik** (Gunadarma IPK 3.88)
@@ -198,8 +221,8 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Saluran Kontak & Jaringan Profesional** (WhatsApp, LinkedIn, Email)`
   }
 
-  // 13. Default Friendly Overview
-  return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma (IPK 3.88). Saya berfokus pada arsitektur web modern, performa tinggi, dan antarmuka digital yang presisi.
+  // 14. Default Friendly Overview
+  return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik**
