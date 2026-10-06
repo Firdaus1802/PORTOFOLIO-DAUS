@@ -127,7 +127,7 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("dicoding") || 
     q.includes("kredensial")
   ) {
-    return "Firdaus memiliki **10 sertifikasi resmi terverifikasi**:\n- 🛡️ **Cisco**: Introduction to Cybersecurity (2026)\n- 🏢 **BNSP Indonesia**: Junior Office Operator (ID: 10458184)\n- 📊 **Universitas Raharja**: Uji Kompetensi Ms. Office (2024)\n- ⚡ **Dicoding**: Dasar Pemrograman JavaScript (ID: `07Z6JO4DJXQR`)\n- 🔌 **Dicoding**: Back-End Pemula JavaScript (ID: `53XEK21YVXRN`)\n- 🐍 **Dicoding**: Pemrograman dengan Python (ID: `MRZM621JKPYQ`)\n- ☁️ **Dicoding & Microsoft**: Gen AI di Azure (ID: `GRX5J7YRKX0M`)\n- ☁️ **Dicoding & AWS**: Dasar Cloud & Gen AI AWS (ID: `MRZM6R97RPYQ`)\n- 📈 **Dicoding & Microsoft**: Data Science Fabric (ID: `JLX15O22NZ72`)\n- 💼 **Dicoding & DBS**: Financial Literacy (ID: `JMZVVKDD3ZN9`)"
+    return "Firdaus memiliki **10 sertifikasi resmi terverifikasi**:\n• **Cisco**: Introduction to Cybersecurity (2026)\n• **BNSP Indonesia**: Junior Office Operator (ID: 10458184)\n• **Universitas Raharja**: Uji Kompetensi Ms. Office (2024)\n• **Dicoding**: Dasar Pemrograman JavaScript (ID: `07Z6JO4DJXQR`)\n• **Dicoding**: Back-End Pemula JavaScript (ID: `53XEK21YVXRN`)\n• **Dicoding**: Pemrograman dengan Python (ID: `MRZM621JKPYQ`)\n• **Dicoding & Microsoft**: Gen AI di Azure (ID: `GRX5J7YRKX0M`)\n• **Dicoding & AWS**: Dasar Cloud & Gen AI AWS (ID: `MRZM6R97RPYQ`)\n• **Dicoding & Microsoft**: Data Science Fabric (ID: `JLX15O22NZ72`)\n• **Dicoding & DBS**: Financial Literacy (ID: `JMZVVKDD3ZN9`)"
   }
 
   // 9. CV, Resume, Download CV, PDF, Lamaran Kerja
@@ -139,7 +139,7 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("pdf") || 
     q.includes("lamaran")
   ) {
-    return "Anda bisa melihat dan mengunduh CV resmi Firdaus langsung di halaman [**CV Formal Firdaus**](/cv). Halaman tersebut sudah dilengkapi tombol cetak / simpan otomatis dalam format PDF A4 standar."
+    return "Anda dapat melihat dan mengunduh berkas CV resmi Firdaus langsung pada halaman [**Curriculum Vitae**](/cv). Halaman tersebut telah dioptimasi untuk cetak / simpan dalam format standar A4."
   }
 
   // 10. Kontak, WhatsApp, Email, Instagram, LinkedIn, No HP
@@ -158,7 +158,7 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("github") || 
     q.includes("sosmed")
   ) {
-    return "Berikut kontak dan media sosial Firdaus:\n- 📱 **WhatsApp**: [+62 813-1535-4397](https://wa.me/6281315354397)\n- ✉️ **Email**: [Firdausdhuhaprabowo@gmail.com](mailto:Firdausdhuhaprabowo@gmail.com)\n- 💼 **LinkedIn**: [Firdaus Dhuha Prabowo](https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/)\n- 📸 **Instagram**: [@frdsdhuha_](https://www.instagram.com/frdsdhuha_)\n- 🐙 **GitHub**: [github.com/Firdaus1802](https://github.com/Firdaus1802)"
+    return "Berikut saluran komunikasi resmi Firdaus:\n• **WhatsApp**: [+62 813-1535-4397](https://wa.me/6281315354397)\n• **Email**: [Firdausdhuhaprabowo@gmail.com](mailto:Firdausdhuhaprabowo@gmail.com)\n• **LinkedIn**: [Firdaus Dhuha Prabowo](https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/)\n• **Instagram**: [@frdsdhuha_](https://www.instagram.com/frdsdhuha_)\n• **GitHub**: [github.com/Firdaus1802](https://github.com/Firdaus1802)"
   }
 
   // 11. Minat, Hobi, Tertarik, Passion
@@ -170,7 +170,7 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("kegiatan") || 
     q.includes("aktivitas")
   ) {
-    return "Firdaus sangat antusias mengeksplorasi teknologi digital baru, mendalami pengembangan web modern (Next.js & React), mengasah keterampilan coding, dan membuat aplikasi yang bermanfaat bagi banyak orang."
+    return "Firdaus berfokus pada eksplorasi arsitektur web modern (Next.js & React), pengembangan backend BaaS (Supabase & Node.js), komputasi awan, serta perancangan antarmuka digital yang presisi."
   }
 
   // 12. Sapaan / Greeting
@@ -187,27 +187,27 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("permisi") ||
     q.includes("selamat datang")
   ) {
-    return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma dengan IPK 3.88. Saya berfokus pada pengembangan solusi digital berbasis web menggunakan arsitektur modern.
+    return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma (IPK 3.88). Saya berfokus pada arsitektur web modern, performa tinggi, dan antarmuka digital yang presisi.
 
-Silakan pilih informasi yang ingin Anda tinjau:
-- 🎓 **Latar Belakang Pendidikan dan Profil Diri** (Umur 20 th, Gunadarma IPK 3.88)
-- 🚀 **Ringkasan Proyek Unggulan dan Implementasi Kode** (Finzie Joki Service)
-- 💻 **Spesialisasi Tech Stack dan Alat Pengembangan** (React, Next.js, Supabase, Node.js)
-- 📜 **Sertifikasi Industri (Cisco, BNSP, Dicoding)** (10 Lisensi Resmi)
-- 📄 **Akses Berkas Resume Resmi** (Halaman CV & Unduh PDF)
-- 📞 **Kontak Langsung dan Tautan Profesional** (WhatsApp, LinkedIn, Email)`
+Silakan pilih direktori informasi yang ingin Anda akses:
+• **Profil & Latar Belakang Akademik** (Gunadarma IPK 3.88)
+• **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Platform)
+• **Spesialisasi Tech Stack & Database** (React, Next.js, Supabase, Node.js)
+• **Lisensi & Sertifikasi Industri Resmi** (10 Lisensi Terverifikasi)
+• **Curriculum Vitae (CV) Resmi** (Tersedia Format Cetak A4)
+• **Saluran Kontak & Jaringan Profesional** (WhatsApp, LinkedIn, Email)`
   }
 
   // 13. Default Friendly Overview
-  return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma dengan IPK 3.88. Saya berfokus pada pengembangan solusi digital berbasis web menggunakan arsitektur modern.
+  return `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma (IPK 3.88). Saya berfokus pada arsitektur web modern, performa tinggi, dan antarmuka digital yang presisi.
 
-Silakan pilih informasi yang ingin Anda tinjau:
-- 🎓 **Latar Belakang Pendidikan dan Profil Diri**
-- 🚀 **Ringkasan Proyek Unggulan dan Implementasi Kode**
-- 💻 **Spesialisasi Tech Stack dan Alat Pengembangan**
-- 📜 **Sertifikasi Industri (Cisco, BNSP, Dicoding)**
-- 📄 **Akses Berkas Resume Resmi**
-- 📞 **Kontak Langsung dan Tautan Profesional**`
+Silakan pilih direktori informasi yang ingin Anda akses:
+• **Profil & Latar Belakang Akademik**
+• **Portofolio Proyek & Arsitektur Kode**
+• **Spesialisasi Tech Stack & Database**
+• **Lisensi & Sertifikasi Industri Resmi**
+• **Curriculum Vitae (CV) Resmi**
+• **Saluran Kontak & Jaringan Profesional**`
 }
 
 export async function POST(req: NextRequest) {

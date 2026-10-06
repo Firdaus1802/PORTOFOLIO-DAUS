@@ -65,15 +65,15 @@ export default function Contact() {
       {
         id: "welcome-msg",
         sender: "bot",
-        text: `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma dengan IPK 3.88. Saya berfokus pada pengembangan solusi digital berbasis web menggunakan arsitektur modern.
+        text: `Selamat datang. Saya Firdaus Dhuha Prabowo, Junior Frontend Developer berbasis di Tangerang dan mahasiswa aktif Universitas Gunadarma (IPK 3.88). Saya berfokus pada arsitektur web modern, performa tinggi, dan antarmuka digital yang presisi.
 
-Silakan pilih informasi yang ingin Anda tinjau:
-- 🎓 **Latar Belakang Pendidikan dan Profil Diri**
-- 🚀 **Ringkasan Proyek Unggulan dan Implementasi Kode**
-- 💻 **Spesialisasi Tech Stack dan Alat Pengembangan**
-- 📜 **Sertifikasi Industri (Cisco, BNSP, Dicoding)**
-- 📄 **Akses Berkas Resume Resmi**
-- 📞 **Kontak Langsung dan Tautan Profesional**`,
+Silakan pilih direktori informasi yang ingin Anda akses:
+• **Profil & Latar Belakang Akademik**
+• **Portofolio Proyek & Arsitektur Kode**
+• **Spesialisasi Tech Stack & Database**
+• **Lisensi & Sertifikasi Industri Resmi**
+• **Curriculum Vitae (CV) Resmi**
+• **Saluran Kontak & Jaringan Profesional**`,
         timestamp: new Date()
       }
     ])
@@ -520,10 +520,10 @@ Aturan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan mengarang 
 }
 
 const quickPromptOptions = [
-  { label: "🎓 Pendidikan & Profil Diri", query: "Latar Belakang Pendidikan dan Profil Diri" },
-  { label: "🚀 Proyek Unggulan", query: "Ringkasan Proyek Unggulan dan Implementasi Kode" },
-  { label: "💻 Tech Stack & Alat", query: "Spesialisasi Tech Stack dan Alat Pengembangan" },
-  { label: "📜 Sertifikasi Industri", query: "Sertifikasi Industri (Cisco, BNSP, Dicoding)" },
-  { label: "📄 Resume Resmi", query: "Akses Berkas Resume Resmi" },
-  { label: "📞 Kontak Langsung", query: "Kontak Langsung dan Tautan Profesional" },
+  { label: "Profil & Akademik", query: "Latar Belakang Pendidikan dan Profil Diri" },
+  { label: "Proyek Pilihan", query: "Ringkasan Proyek Unggulan dan Implementasi Kode" },
+  { label: "Tech Stack & Database", query: "Spesialisasi Tech Stack dan Alat Pengembangan" },
+  { label: "Sertifikasi Resmi", query: "Sertifikasi Industri (Cisco, BNSP, Dicoding)" },
+  { label: "Curriculum Vitae", query: "Akses Berkas Resume Resmi" },
+  { label: "Kontak & Jejaring", query: "Kontak Langsung dan Tautan Profesional" },
 ]
