@@ -1,0 +1,52 @@
+================================================================================
+PANDUAN PENJELASAN KODING CV (HTML & CSS)
+Nama: Firdaus Dhuha Prabowo
+Jurusan: S1 - Sistem Informasi (Universitas Gunadarma)
+================================================================================
+
+Jika dosen / asisten lab meminta kamu menjelaskan kodingan ini, berikut contekannya:
+
+1. STRUKTUR FILE:
+   - index.html  : File struktur halaman web menggunakan HTML5 Semantik.
+   - style.css   : File desain / tata letak menggunakan CSS3 murni (Flexbox & Grid).
+   - images/     : Folder untuk menyimpan aset gambar profil (profile-firdaus.png).
+
+--------------------------------------------------------------------------------
+2. CARA MENJELASKAN HTML (index.html):
+--------------------------------------------------------------------------------
+- <!DOCTYPE html> : Mendeklarasikan bahwa dokumen ini dibuat dengan standar HTML5.
+- <head>          : Berisi metadata, judul tab browser, link font Google (Inter), 
+                    dan Font Awesome (untuk ikon).
+- <aside class="sidebar"> : Tag semantik HTML5 untuk membuat sidebar kolom kiri 
+                    (berisi foto profil, info kontak, pendidikan, dan bahasa).
+- <main class="konten-kanan"> : Tag semantik HTML5 untuk konten utama sebelah kanan 
+                    (tentang saya, riwayat projek, sertifikasi, dan keterampilan).
+- <section>       : Membagi setiap topik/bagian agar rapi dan terstruktur secara semantik.
+
+--------------------------------------------------------------------------------
+3. CARA MENJELASKAN CSS (style.css):
+--------------------------------------------------------------------------------
+- :root { ... }   : Menyimpan Variabel CSS (Custom Properties) seperti warna utama 
+                    (--warna-utama: #181b22) agar mudah diatur dan konsisten.
+- * { box-sizing: border-box; } : Reset CSS agar ukuran padding dan border tidak 
+                    merusak lebar elemen.
+- CSS Grid (.cv-container) : 
+    "display: grid; grid-template-columns: 310px 1fr;"
+    Artinya: Membagi layout menjadi 2 kolom. Kolom kiri selebar 310px (Sidebar), 
+    dan kolom kanan mengambil sisa ruang yang ada (1fr).
+- CSS Flexbox (display: flex) : 
+    Digunakan untuk meratakan elemen secara horizontal atau vertikal, seperti pada 
+    daftar kontak, kartu sertifikat, dan header projek.
+- Media Query (@media (max-width: 768px)) : 
+    Membuat tampilan otomatis menjadi Responsif (1 kolom ke bawah) jika dibuka 
+    di layar HP / smartphone.
+- Print Stylesheet (@media print) : 
+    Mengatur agar saat dicetak / disimpan ke PDF, tombol cetak disembunyikan dan 
+    ukurannya pas dengan kertas A4 (297mm).
+
+--------------------------------------------------------------------------------
+CARA MEMBUKA / MENJALANKAN:
+- Cukup double-click file "index.html" di File Explorer laptop kamu, langsung 
+  terbuka di Google Chrome / Microsoft Edge tanpa perlu koneksi internet.
+================================================================================
+

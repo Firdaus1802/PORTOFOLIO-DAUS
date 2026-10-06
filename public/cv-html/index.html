@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curriculum Vitae - Firdaus Dhuha Prabowo</title>
   
-  <!-- Font Google: Inter & Poppins -->
+  <!-- Font Google: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,329 +13,187 @@
   <!-- Font Awesome untuk Ikon Standar -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Stylesheet CSS Murni -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Tombol Aksi Cetak PDF (Disembunyikan saat dicetak) -->
-  <div class="top-nav no-print">
-    <button onclick="window.print()" class="btn-cetak">
+  <!-- Tombol Aksi Cetak PDF -->
+  <div class="top-bar no-print">
+    <button onclick="window.print()" class="btn-print">
       <i class="fa-solid fa-print"></i> Cetak / Simpan PDF (A4)
     </button>
   </div>
 
-  <!-- Kontainer Lembar CV -->
-  <div class="cv-card">
+  <!-- Kontainer Lembar Resume Formal -->
+  <div class="resume-sheet">
     
-    <!-- ======================================================== -->
-    <!-- KOLOM KIRI: SIDEBAR CHARCOAL DENGAN AKSEN BIRU CYAN      -->
-    <!-- ======================================================== -->
-    <aside class="sidebar">
+    <!-- ================= 1. HEADER PROFIL ================= -->
+    <header class="header-section">
+      <div class="photo-box">
+        <img src="images/profile-firdaus.png" alt="Firdaus Dhuha Prabowo">
+      </div>
       
-      <!-- Aksen Segitiga Diagonal Biru Cyan di Pojok Kiri Atas -->
-      <div class="accent-diagonal"></div>
-
-      <!-- Foto Profil & Nama -->
-      <div class="profile-header">
-        <div class="avatar-ring">
-          <img src="images/profile-firdaus.png" alt="Firdaus Dhuha Prabowo">
+      <div class="header-details">
+        <h1 class="candidate-name">FIRDAUS DHUHA PRABOWO</h1>
+        <p class="candidate-title">Junior Frontend Developer</p>
+        
+        <div class="header-divider"></div>
+        
+        <div class="contact-row">
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="https://wa.me/6281315354397" target="_blank">+62 813-1535-4397</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:Firdausdhuhaprabowo@gmail.com">Firdausdhuhaprabowo@gmail.com</a>
+          </div>
         </div>
-        <h1 class="nama-depan">FIRDAUS</h1>
-        <h1 class="nama-belakang">DHUHA PRABOWO</h1>
-        <div class="profesi-box">
-          <span>JUNIOR FRONTEND DEVELOPER</span>
+        
+        <div class="personal-meta">
+          <span>18 Februari 2006</span>
+          <span class="bullet">•</span>
+          <span>20 Tahun</span>
+          <span class="bullet">•</span>
+          <span>Tangerang, Banten, Indonesia</span>
+          <span class="bullet">•</span>
+          <a href="https://github.com/Firdaus1802" target="_blank">github.com/Firdaus1802</a>
         </div>
       </div>
+    </header>
 
-      <!-- SECTION: INFO -->
-      <div class="side-block">
-        <h2 class="side-header">INFO</h2>
-        <ul class="info-list">
-          <li>
-            <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
-            <div class="info-text">
-              <strong>Address</strong>
-              <span>Tangerang, Banten, Indonesia</span>
-            </div>
-          </li>
-          <li>
-            <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
-            <div class="info-text">
-              <strong>Phone</strong>
-              <a href="https://wa.me/6281315354397" target="_blank">+62 813-1535-4397</a>
-            </div>
-          </li>
-          <li>
-            <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
-            <div class="info-text">
-              <strong>Email</strong>
-              <a href="mailto:Firdausdhuhaprabowo@gmail.com">Firdausdhuhaprabowo@gmail.com</a>
-            </div>
-          </li>
-          <li>
-            <div class="icon-circle"><i class="fa-solid fa-globe"></i></div>
-            <div class="info-text">
-              <strong>Portfolio</strong>
-              <a href="https://finziejokiservice.vercel.app/" target="_blank">finziejokiservice.vercel.app</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <!-- ================= 2. ABOUT ME ================= -->
+    <section class="section-block">
+      <h2 class="section-title">ABOUT ME</h2>
+      <p class="summary-text">
+        Mahasiswa aktif Universitas Gunadarma dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88</strong> yang berfokus mendalam pada ekosistem <strong>Frontend Web Development</strong> dan arsitektur web modern. Berpengalaman membangun antarmuka web yang bersih, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman database & backend BaaS (<strong>Supabase</strong>, Node.js RESTful API, Python), komputasi awan (AWS & Azure AI), serta memegang berbagai sertifikasi kompetensi resmi dari Cisco, BNSP, dan Dicoding Indonesia.
+      </p>
+    </section>
 
-      <!-- SECTION: SOCIAL MEDIA -->
-      <div class="side-block">
-        <h2 class="side-header">SOCIAL</h2>
-        <ul class="info-list">
-          <li>
-            <div class="icon-circle"><i class="fa-brands fa-linkedin-in"></i></div>
-            <div class="info-text">
-              <strong>LinkedIn</strong>
-              <a href="https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/" target="_blank">in/firdaus-dhuha-prabowo</a>
-            </div>
-          </li>
-          <li>
-            <div class="icon-circle"><i class="fa-brands fa-github"></i></div>
-            <div class="info-text">
-              <strong>GitHub</strong>
-              <a href="https://github.com/Firdaus1802" target="_blank">github.com/Firdaus1802</a>
-            </div>
-          </li>
-          <li>
-            <div class="icon-circle"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="info-text">
-              <strong>IPK Kuliah</strong>
-              <span>3.88 / 4.00 (Gunadarma)</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- SECTION: LANGUAGES -->
-      <div class="side-block">
-        <h2 class="side-header">LANGUAGE</h2>
-        <ul class="lang-list">
-          <li>
-            <span>Indonesian</span>
-            <span class="lang-tag">Native</span>
-          </li>
-          <li>
-            <span>English</span>
-            <span class="lang-tag">Working</span>
-          </li>
-        </ul>
-      </div>
-
-    </aside>
-
-    <!-- ======================================================== -->
-    <!-- KOLOM KANAN: KANVAS PUTIH DENGAN GARIS PEMBATAS ELEGAN   -->
-    <!-- ======================================================== -->
-    <main class="main-body">
+    <!-- ================= 3. EXPERIENCE & PROJECTS ================= -->
+    <section class="section-block">
+      <h2 class="section-title">EXPERIENCE & PROJECTS</h2>
       
-      <!-- 1. PROFILE / ABOUT ME -->
-      <section class="cv-section">
-        <div class="section-title-bar">
-          <div class="title-icon"><i class="fa-solid fa-user"></i></div>
-          <h2 class="title-text">PROFILE</h2>
-          <div class="title-line"></div>
+      <!-- Project 1 -->
+      <div class="timeline-row">
+        <div class="timeline-left">
+          <span class="time-period">2025</span>
+          <span class="time-org">Vercel Deployment</span>
         </div>
-        <p class="profile-paragraph">
-          Mahasiswa aktif Universitas Gunadarma dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88</strong> yang berfokus mendalam pada ekosistem <strong>Frontend Web Development</strong> dan arsitektur web modern. Berpengalaman membangun antarmuka web yang bersih, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman database & backend BaaS (<strong>Supabase</strong>, Node.js RESTful API, Python), komputasi awan (AWS & Azure AI), serta memegang berbagai sertifikasi kompetensi resmi dari Cisco, BNSP, dan Dicoding Indonesia.
-        </p>
-      </section>
-
-      <!-- 2. WORK EXPERIENCE & PROJECTS -->
-      <section class="cv-section">
-        <div class="section-title-bar">
-          <div class="title-icon"><i class="fa-solid fa-briefcase"></i></div>
-          <h2 class="title-text">WORK EXPERIENCE</h2>
-          <div class="title-line"></div>
+        <div class="timeline-right">
+          <h3 class="job-role">Frontend Developer & Creator</h3>
+          <p class="job-company">Finzie Joki Service (Roblox Service Platform)</p>
+          <ul class="job-bullets">
+            <li>Membangun platform layanan game service Roblox 100% manual dengan antarmuka modern dan responsif.</li>
+            <li>Merancang katalog layanan terstruktur, flow pemesanan 4 langkah interaktif, dan direct order WhatsApp admin.</li>
+            <li>Implementasi performa tinggi menggunakan Next.js, React, dan Tailwind CSS (Live: <a href="https://finziejokiservice.vercel.app/" target="_blank">finziejokiservice.vercel.app</a>).</li>
+          </ul>
         </div>
+      </div>
 
-        <div class="experience-list">
-          <!-- Item 1: Finzie Joki -->
-          <div class="exp-row">
-            <div class="exp-meta">
-              <span class="exp-year">2025</span>
-              <span class="exp-loc">Tangerang, ID</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-job">Finzie Joki Service (Roblox Service Platform)</h3>
-              <span class="exp-company">Next.js • React • Tailwind CSS • Vercel</span>
-              <p class="exp-desc">
-                Membangun platform layanan game service Roblox 100% manual dengan UI modern responsif, katalog layanan terstruktur, flow pemesanan 4 langkah interaktif, dan integrasi direct order WhatsApp admin.
-              </p>
-              <div class="exp-link">
-                <strong>Demo:</strong> <a href="https://finziejokiservice.vercel.app/" target="_blank">finziejokiservice.vercel.app</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 2: Interactive Portfolio -->
-          <div class="exp-row">
-            <div class="exp-meta">
-              <span class="exp-year">2026</span>
-              <span class="exp-loc">Indonesia</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-job">Interactive Portfolio Website & AI Assistant</h3>
-              <span class="exp-company">Next.js • TypeScript • Tailwind CSS • Framer Motion • Edge AI</span>
-              <p class="exp-desc">
-                Mengembangkan web portofolio interaktif dengan animasi modern, viewer sertifikat terverifikasi, dan integrasi Chatbot AI Assistant cerdas untuk merespons pertanyaan pengunjung secara real-time.
-              </p>
-              <div class="exp-link">
-                <strong>Source Code:</strong> <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>
-              </div>
-            </div>
-          </div>
+      <!-- Project 2 -->
+      <div class="timeline-row">
+        <div class="timeline-left">
+          <span class="time-period">2026</span>
+          <span class="time-org">Open Source / Repo</span>
         </div>
-      </section>
-
-      <!-- 3. EDUCATION & CERTIFICATIONS -->
-      <section class="cv-section">
-        <div class="section-title-bar">
-          <div class="title-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h2 class="title-text">EDUCATION & CERTIFICATIONS</h2>
-          <div class="title-line"></div>
+        <div class="timeline-right">
+          <h3 class="job-role">Frontend & AI Integrator</h3>
+          <p class="job-company">Interactive Portfolio Website & AI Assistant</p>
+          <ul class="job-bullets">
+            <li>Mengembangkan web portofolio interaktif dengan animasi halus, dark/light mode, dan credential viewer terverifikasi.</li>
+            <li>Mengintegrasikan Chatbot AI Assistant cerdas untuk merespons pertanyaan pengunjung secara real-time.</li>
+            <li>Source code tersedia publik: <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>.</li>
+          </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="experience-list">
-          <!-- Pendidikan -->
-          <div class="exp-row">
-            <div class="exp-meta">
-              <span class="exp-year">2024 - Now</span>
-              <span class="exp-loc">Depok / Karawaci</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-job">S1 - Sistem Informasi (Universitas Gunadarma)</h3>
-              <span class="exp-company">Indeks Prestasi Kumulatif (IPK): 3.88 / 4.00</span>
-              <p class="exp-desc">
-                Mempelajari pemrograman web modern, rekayasa perangkat lunak, sistem basis data, algoritma, serta keamanan sistem informasi.
-              </p>
-            </div>
-          </div>
-
-          <!-- Sertifikasi -->
-          <div class="exp-row">
-            <div class="exp-meta">
-              <span class="exp-year">2024 - 2026</span>
-              <span class="exp-loc">Official Issued</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-job">Cisco, BNSP, Raharja & Dicoding Certified</h3>
-              <span class="exp-company">4 Lisensi Kompetensi Terverifikasi</span>
-              <p class="exp-desc">
-                • <strong>Cisco:</strong> Cybersecurity Fundamentals (2026)<br>
-                • <strong>BNSP Indonesia:</strong> Junior Office Operator (ID: 10458184)<br>
-                • <strong>Univ. Raharja:</strong> Uji Kompetensi Ms. Office (2024)<br>
-                • <strong>Dicoding:</strong> 7x Certified (JS, Node.js API, Python, Cloud AI)
-              </p>
-            </div>
-          </div>
+    <!-- ================= 4. EDUCATION & CERTIFICATIONS ================= -->
+    <section class="section-block">
+      <h2 class="section-title">EDUCATION & CERTIFICATIONS</h2>
+      
+      <!-- Education -->
+      <div class="timeline-row">
+        <div class="timeline-left">
+          <span class="time-period">2024 - Sekarang</span>
+          <span class="time-org">Universitas Gunadarma</span>
         </div>
-      </section>
-
-      <!-- 4. SKILL AND EXPERTIZE -->
-      <section class="cv-section">
-        <div class="section-title-bar">
-          <div class="title-icon"><i class="fa-solid fa-code"></i></div>
-          <h2 class="title-text">SKILL AND EXPERTIZE</h2>
-          <div class="title-line"></div>
+        <div class="timeline-right">
+          <h3 class="job-role">S1 - Sistem Informasi</h3>
+          <p class="job-company">Indeks Prestasi Kumulatif (IPK): 3.88 / 4.00</p>
+          <ul class="job-bullets">
+            <li>Fokus studi pada rekayasa perangkat lunak, sistem basis data, pemrograman web modern, dan algoritma.</li>
+          </ul>
         </div>
+      </div>
 
-        <div class="skills-grid-2col">
-          <!-- Kolom 1 -->
-          <div class="skill-box">
-            <div class="skill-header">
-              <span>React.js & Next.js</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-blue-fill" style="width: 95%;"></div>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-header">
-              <span>JavaScript (ES6+) & TypeScript</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-blue-fill" style="width: 90%;"></div>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-header">
-              <span>HTML5, CSS3 & Tailwind UI</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-blue-fill" style="width: 95%;"></div>
-            </div>
-          </div>
-
-          <!-- Kolom 2 -->
-          <div class="skill-box">
-            <div class="skill-header">
-              <span>Supabase & Node.js REST API</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-blue-fill" style="width: 85%;"></div>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-header">
-              <span>Python & Cloud AI (Azure/AWS)</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-blue-fill" style="width: 85%;"></div>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-header">
-              <span>Git, GitHub & Office (BNSP)</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-blue-fill" style="width: 90%;"></div>
-            </div>
-          </div>
+      <!-- Certifications -->
+      <div class="timeline-row">
+        <div class="timeline-left">
+          <span class="time-period">2024 - 2026</span>
+          <span class="time-org">Sertifikasi Resmi</span>
         </div>
-      </section>
-
-      <!-- 5. HOBBY & INTERNET -->
-      <section class="cv-section">
-        <div class="section-title-bar">
-          <div class="title-icon"><i class="fa-solid fa-icons"></i></div>
-          <h2 class="title-text">HOBBY & INTEREST</h2>
-          <div class="title-line"></div>
+        <div class="timeline-right">
+          <h3 class="job-role">Cisco, BNSP, Raharja & Dicoding Indonesia</h3>
+          <p class="job-company">4 Lisensi & Sertifikasi Kompetensi Terverifikasi</p>
+          <ul class="job-bullets">
+            <li><strong>Cisco Networking Academy:</strong> Cybersecurity Fundamentals (2026)</li>
+            <li><strong>BNSP Indonesia:</strong> Junior Office Operator (No. Reg: 10458184)</li>
+            <li><strong>Universitas Raharja:</strong> Uji Kompetensi Ms. Office (2024)</li>
+            <li><strong>Dicoding Indonesia:</strong> 7x Sertifikasi (JavaScript, Node.js REST API, Python, Cloud AI)</li>
+          </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="hobby-icons-row">
-          <div class="hobby-card">
-            <i class="fa-solid fa-person-biking"></i>
-            <span>Cycling / Sports</span>
-          </div>
-          <div class="hobby-card">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>Gaming Service</span>
-          </div>
-          <div class="hobby-card">
-            <i class="fa-solid fa-book-open"></i>
-            <span>Tech Learning</span>
-          </div>
-          <div class="hobby-card">
-            <i class="fa-solid fa-laptop-code"></i>
-            <span>Web Coding</span>
-          </div>
-          <div class="hobby-card">
-            <i class="fa-solid fa-chess-knight"></i>
-            <span>Problem Solving</span>
-          </div>
+    <!-- ================= 5. SKILLS ================= -->
+    <section class="section-block">
+      <h2 class="section-title">SKILLS</h2>
+      <div class="skills-columns">
+        <div class="skill-col">
+          <ul>
+            <li>React.js & Next.js</li>
+            <li>JavaScript (ES6+)</li>
+            <li>TypeScript</li>
+          </ul>
         </div>
-      </section>
+        <div class="skill-col">
+          <ul>
+            <li>Tailwind CSS</li>
+            <li>HTML5 & CSS3</li>
+            <li>Responsive UI Design</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <ul>
+            <li>Supabase BaaS</li>
+            <li>Node.js REST API</li>
+            <li>Python Programming</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <ul>
+            <li>Cloud AI (Azure/AWS)</li>
+            <li>Git & GitHub</li>
+            <li>Ms. Office (BNSP)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    </main>
+    <!-- ================= 6. LANGUAGES & KEY FOCUS ================= -->
+    <section class="section-block">
+      <h2 class="section-title">LANGUAGES & INTERESTS</h2>
+      <div class="meta-columns">
+        <div class="meta-col">
+          <p><strong>Languages:</strong> Bahasa Indonesia (Native), English (Working Proficiency)</p>
+        </div>
+        <div class="meta-col">
+          <p><strong>Interests:</strong> Modern Web Architecture, Cloud Computing & AI, E-Sports Platform</p>
+        </div>
+      </div>
+    </section>
 
   </div>
 
