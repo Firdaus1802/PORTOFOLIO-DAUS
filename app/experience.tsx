@@ -222,13 +222,14 @@ export default function Experience() {
                 </div>
 
                 {/* Modal Footer */}
-                <div className="p-5 md:p-6 border-t border-text-secondary/10 flex gap-4 bg-background">
+                <div className="p-5 md:p-6 border-t border-text-secondary/10 flex gap-4 bg-background relative z-30">
                   {activeCert.credentialUrl ? (
                     <a 
                       href={activeCert.credentialUrl} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300"
+                      style={{ cursor: "pointer" }}
+                      className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300 cursor-pointer pointer-events-auto"
                     >
                       Verify Live Credential
                     </a>

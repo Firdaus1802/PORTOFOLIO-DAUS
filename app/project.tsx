@@ -222,12 +222,13 @@ export default function Project() {
                 </div>
 
                 {/* Modal Footer */}
-                <div className="p-5 md:p-6 border-t border-text-secondary/10 flex flex-col sm:flex-row gap-4 bg-background">
+                <div className="p-5 md:p-6 border-t border-text-secondary/10 flex flex-col sm:flex-row gap-4 bg-background relative z-30">
                   <a 
                     href={project.liveDemoUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300 cursor-pointer pointer-events-auto select-none relative z-30"
+                    style={{ cursor: "pointer" }}
+                    className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300 cursor-pointer pointer-events-auto"
                   >
                     Open Live Demo
                   </a>
@@ -235,7 +236,14 @@ export default function Project() {
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border-2 border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-primary hover:text-background hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-pointer pointer-events-auto select-none relative z-30"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      if (typeof window !== "undefined") {
+                        window.open(project.githubUrl, "_blank", "noopener,noreferrer")
+                      }
+                    }}
+                    style={{ cursor: "pointer" }}
+                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border-2 border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-primary hover:text-background hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-pointer pointer-events-auto"
                   >
                     Source Code
                   </a>
