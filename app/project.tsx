@@ -227,7 +227,7 @@ export default function Project() {
                     href={project.liveDemoUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300"
+                    className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300 cursor-pointer pointer-events-auto select-none relative z-30"
                   >
                     Open Live Demo
                   </a>
@@ -235,9 +235,9 @@ export default function Project() {
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border-2 border-text-secondary/20 text-text-primary hover:border-text-primary hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl"
+                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border-2 border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-primary hover:text-background hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-pointer pointer-events-auto select-none relative z-30"
                   >
-                    GitHub Repo
+                    Source Code
                   </a>
                 </div>
               </motion.div>
@@ -263,6 +263,6 @@ const featuredProject = {
     "Vercel Cloud Deployment",
   ],
   tech: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Vercel"],
-  githubUrl: "https://github.com/Firdaus1802",
+  githubUrl: "https://github.com/Firdaus1802/PORTOFOLIO-DAUS",
   liveDemoUrl: "https://finziejokiservice.vercel.app/",
 }
