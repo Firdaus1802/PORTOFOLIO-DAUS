@@ -1,24 +1,23 @@
 /* ========================================================
-   STYLESHEET CURRICULUM VITAE
-   Dibuat untuk Tugas / Portofolio Mahasiswa
-   Penulis: Firdaus Dhuha Prabowo (Universitas Gunadarma)
+   FILE: style.css
+   DESKRIPSI: Stylesheet CV Template Minimalist Cyan-Dark
+   PENULIS: Firdaus Dhuha Prabowo (S1 Sistem Informasi - Univ Gunadarma)
    ======================================================== */
 
-/* Variabel Warna & Font */
+/* 1. VARIABEL WARNA & TEMA */
 :root {
-  --primary-color: #181b22;
-  --primary-light: #282d36;
-  --text-dark: #1a202c;
-  --text-muted: #718096;
-  --bg-body: #f4f6f9;
-  --bg-card: #ffffff;
-  --border-color: #e2e8f0;
-  --accent-green: #10b981;
-  --accent-blue: #2563eb;
-  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --warna-sidebar: #2f3542;       /* Charcoal Slate gelap */
+  --warna-cyan: #00a8ff;          /* Aksen Biru Cyan / Langit */
+  --warna-teks-gelap: #2f3542;    /* Teks judul utama */
+  --warna-teks-body: #57606f;     /* Teks paragraf / deskripsi */
+  --warna-teks-abu: #a4b0be;      /* Teks keterangan / placeholder */
+  --warna-putih: #ffffff;         /* Putih */
+  --warna-garis: #ced6e0;         /* Garis pembatas */
+  --warna-bg: #f1f2f6;            /* Background layar luar */
+  --font-utama: 'Inter', system-ui, sans-serif;
 }
 
-/* Reset Dasar */
+/* 2. RESET DASAR */
 * {
   margin: 0;
   padding: 0;
@@ -26,472 +25,404 @@
 }
 
 body {
-  font-family: var(--font-main);
-  background-color: var(--bg-body);
-  color: var(--text-dark);
+  font-family: var(--font-utama);
+  background-color: var(--warna-bg);
+  color: var(--warna-teks-gelap);
   padding: 30px 15px;
   line-height: 1.5;
 }
 
-/* Tombol Navigasi Layar (Atas) */
+/* 3. TOMBOL CETAK DI ATAS */
 .top-nav {
   max-width: 860px;
   margin: 0 auto 20px auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--bg-card);
-  padding: 12px 20px;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.top-nav a,
-.top-nav button {
-  font-family: var(--font-main);
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  cursor: pointer;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn-kembali {
-  color: var(--text-muted);
-  padding: 8px 12px;
-}
-
-.btn-kembali:hover {
-  color: #000000;
+  justify-content: flex-end;
 }
 
 .btn-cetak {
-  background-color: var(--primary-color);
-  color: #ffffff;
+  font-family: var(--font-utama);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--warna-sidebar);
+  color: var(--warna-putih);
   border: none;
   padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
 }
 
 .btn-cetak:hover {
   background-color: #000000;
-  transform: translateY(-1px);
 }
 
-/* Kontainer Lembar CV (Standar Layout 2 Kolom) */
-.cv-wrapper {
+/* 4. KONTAINER UTAMA CV (A4 PROPORTION) */
+.cv-card {
   max-width: 860px;
   margin: 0 auto;
-  background-color: var(--bg-card);
-  border-radius: 16px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  background-color: var(--warna-putih);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: grid;
-  grid-template-columns: 310px 1fr;
+  grid-template-columns: 290px 1fr;
+  overflow: hidden;
 }
 
 /* ========================================================
-   SIDEBAR KIRI (SLATE DARK)
+   5. KOLOM KIRI (SIDEBAR CHARCOAL & AKSEN DIAGONAL CYAN)
    ======================================================== */
 .sidebar {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 30px 24px;
+  background-color: var(--warna-sidebar);
+  color: var(--warna-putih);
+  position: relative;
+  padding: 35px 22px 30px 22px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 24px;
 }
 
-/* Profil Foto & Nama */
-.profile-box {
+/* Segitiga Diagonal Biru Cyan di Pojok Kiri Atas */
+.accent-diagonal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background-color: var(--warna-cyan);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 1;
+}
+
+/* Header Profil, Foto & Nama */
+.profile-header {
+  position: relative;
+  z-index: 2;
   text-align: center;
 }
 
-.photo-frame {
-  width: 125px;
-  height: 125px;
+.avatar-ring {
+  width: 130px;
+  height: 130px;
   margin: 0 auto 16px auto;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 4px solid var(--warna-putih);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
   overflow: hidden;
-  background-color: var(--primary-light);
+  background-color: #1e272e;
 }
 
-.photo-frame img {
+.avatar-ring img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.profile-box .name {
-  font-size: 16px;
+.nama-depan {
+  font-size: 20px;
   font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  color: var(--warna-putih);
+  line-height: 1.1;
+}
+
+.nama-belakang {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--warna-cyan);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.profesi-box {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 0;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #dfe4ea;
+}
+
+/* Judul Kategori Sidebar (INFO, SOCIAL, LANGUAGE) */
+.side-header {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--warna-putih);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+/* List Informasi Kontak & Sosial */
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--warna-putih);
+  color: var(--warna-sidebar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
   line-height: 1.3;
 }
 
-.profile-box .job-title {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 4px 12px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #cbd5e0;
+.info-text strong {
+  font-size: 10.5px;
+  color: var(--warna-putih);
 }
 
-/* Judul Section di Sidebar */
-.side-title {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 6px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.side-title i {
-  font-size: 10px;
-  color: #ffffff;
-}
-
-/* Daftar Kontak */
-.contact-info {
-  list-style: none;
-  font-size: 10px;
-  color: #cbd5e0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.contact-info li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contact-info li i {
-  width: 14px;
-  color: #a0aec0;
-  text-align: center;
-}
-
-.contact-info a {
-  color: #cbd5e0;
+.info-text span,
+.info-text a {
+  color: #ced6e0;
   text-decoration: none;
-  transition: color 0.2s;
+  word-break: break-all;
 }
 
-.contact-info a:hover {
-  color: #ffffff;
+.info-text a:hover {
+  color: var(--warna-cyan);
 }
 
-/* Card Pendidikan */
-.edu-item {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 10px 12px;
-}
-
-.edu-item h3 {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.edu-item .major {
-  font-size: 10px;
-  color: #a0aec0;
-  margin-top: 2px;
-}
-
-.edu-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
-  font-size: 9px;
-}
-
-.badge-gpa {
-  background-color: rgba(16, 185, 129, 0.2);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-}
-
-.edu-meta .year {
-  color: #a0aec0;
-  font-family: monospace;
-}
-
-/* Bahasa */
+/* List Bahasa */
 .lang-list {
   list-style: none;
-  font-size: 10px;
-  color: #cbd5e0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  font-size: 10.5px;
+  color: #dfe4ea;
 }
 
 .lang-list li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.lang-level {
-  color: #a0aec0;
+.lang-tag {
   font-size: 9px;
-}
-
-/* Tag Keahlian */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.tag {
   background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 9px;
-  color: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--warna-cyan);
+  font-weight: 700;
 }
 
 /* ========================================================
-   KONTEN UTAMA KANAN (WHITE CANVAS)
+   6. KOLOM KANAN (MAIN BODY PUTIH & HEADER GARIS ELEGAN)
    ======================================================== */
-.main-content {
-  padding: 30px 32px;
+.main-body {
+  padding: 35px 35px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  background-color: #ffffff;
+  gap: 20px;
+  background-color: var(--warna-putih);
 }
 
-/* Judul Section Utama */
-.section-title {
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 5px;
-  margin-bottom: 12px;
+/* Section Title Bar (Icon Bulat + Teks + Garis Panjang) */
+.section-title-bar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
-.section-title i {
-  font-size: 11px;
-}
-
-/* Tentang Saya */
-.about-desc {
-  font-size: 11px;
-  color: #4a5568;
-  text-align: justify;
-  line-height: 1.65;
-}
-
-/* Timeline Projek */
-.timeline-item {
-  border-left: 2px solid var(--primary-color);
-  padding-left: 14px;
-  position: relative;
-  margin-bottom: 14px;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -5px;
-  top: 4px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary-color);
+.title-icon {
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-}
-
-.timeline-header {
+  background-color: var(--warna-sidebar);
+  color: var(--warna-putih);
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
 }
 
-.item-title {
-  font-size: 11px;
+.title-text {
+  font-size: 12.5px;
   font-weight: 900;
-  text-transform: uppercase;
-  color: var(--primary-color);
+  letter-spacing: 1.8px;
+  color: var(--warna-sidebar);
+  white-space: nowrap;
 }
 
-.item-year {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text-muted);
-  font-family: monospace;
+.title-line {
+  flex-grow: 1;
+  height: 1.5px;
+  background-color: var(--warna-garis);
 }
 
-.item-subtitle {
-  font-size: 9px;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin: 2px 0 4px 0;
+/* 1. Profile / Deskripsi Diri */
+.profile-paragraph {
+  font-size: 10.5px;
+  color: var(--warna-teks-body);
+  text-align: justify;
+  line-height: 1.6;
 }
 
-.item-points {
-  font-size: 10px;
-  color: #4a5568;
-  padding-left: 14px;
-  line-height: 1.5;
-}
-
-.item-link {
-  font-size: 9.5px;
-  margin-top: 4px;
-  color: var(--text-muted);
-}
-
-.item-link a {
-  color: var(--accent-blue);
-  font-weight: 700;
-  text-decoration: none;
-  font-family: monospace;
-}
-
-.item-link a:hover {
-  text-decoration: underline;
-}
-
-/* Grid Sertifikasi (2x2) */
-.cert-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.cert-box {
-  border: 1px solid var(--border-color);
-  background-color: #f8fafc;
-  padding: 8px 10px;
-  border-radius: 10px;
+/* 2 & 3. Timeline Pengalaman & Pendidikan (2 Kolom) */
+.experience-list {
   display: flex;
-  gap: 8px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.cert-icon i {
-  color: var(--primary-color);
-  font-size: 12px;
-  margin-top: 2px;
+.exp-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 15px;
 }
 
-.cert-details h4 {
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.exp-year {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--warna-sidebar);
+}
+
+.exp-loc {
   font-size: 9.5px;
-  font-weight: 700;
-  color: var(--text-dark);
+  color: var(--warna-teks-abu);
+}
+
+.exp-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-job {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--warna-sidebar);
   line-height: 1.2;
 }
 
-.cert-details p {
-  font-size: 8.5px;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
-/* Skills & Progress Bar */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.skill-item {
-  margin-bottom: 7px;
-}
-
-.skill-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
+.exp-company {
+  font-size: 9.5px;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--warna-cyan);
   margin-bottom: 3px;
 }
 
-.skill-percent {
-  font-size: 9px;
-  color: var(--text-muted);
-  font-family: monospace;
+.exp-desc {
+  font-size: 10px;
+  color: var(--warna-teks-body);
+  line-height: 1.45;
 }
 
-.bar-track {
+.exp-link {
+  font-size: 9.5px;
+  margin-top: 3px;
+  color: var(--warna-teks-abu);
+}
+
+.exp-link a {
+  color: var(--warna-cyan);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.exp-link a:hover {
+  text-decoration: underline;
+}
+
+/* 4. Skills (Grid 2 Kolom dengan Bar Biru Cyan & Track Gelap) */
+.skills-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 10px;
+}
+
+.skill-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.skill-header {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--warna-sidebar);
+}
+
+.skill-track {
   width: 100%;
-  height: 6px;
-  background-color: #edf2f7;
-  border-radius: 10px;
+  height: 5px;
+  background-color: var(--warna-sidebar);
+  border-radius: 3px;
   overflow: hidden;
 }
 
-.bar-fill {
+.skill-blue-fill {
   height: 100%;
-  background-color: var(--primary-color);
-  border-radius: 10px;
+  background-color: var(--warna-cyan);
+  border-radius: 3px;
+}
+
+/* 5. Hobby & Internet (Baris Ikon Minimalis) */
+.hobby-icons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.hobby-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--warna-sidebar);
+}
+
+.hobby-card i {
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.hobby-card span {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--warna-teks-body);
 }
 
 /* ========================================================
-   RESPONSIVE (HP / MOBILE)
-   ======================================================== */
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-
-  .cv-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .cert-grid,
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar,
-  .main-content {
-    padding: 20px;
-  }
-}
-
-/* ========================================================
-   PRINT PDF (A4 SINGLE PAGE)
+   7. PENGATURAN CETAK / PRINT KE PDF (A4 1 HALAMAN)
    ======================================================== */
 @media print {
   body {
@@ -503,13 +434,10 @@ body {
     display: none !important;
   }
 
-  .cv-wrapper {
+  .cv-card {
     box-shadow: none;
-    border: none;
-    border-radius: 0;
     max-width: 100%;
     width: 100%;
     min-height: 297mm;
   }
 }
-
