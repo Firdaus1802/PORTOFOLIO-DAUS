@@ -272,7 +272,7 @@ export default function CVPage() {
             <div className="space-y-3">
               {/* Project 1: Finzie Joki Service */}
               <div className="border-l-2 border-zinc-900 pl-3 relative">
-                <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-zinc-900"></div>
+                <div className="absolute -left-1.25 top-1 w-2 h-2 rounded-full bg-zinc-900"></div>
                 <div className="flex justify-between items-baseline mb-0.5">
                   <h3 className="text-[11px] font-black text-zinc-900 uppercase">
                     Finzie Joki Service (Roblox Service Platform)
@@ -296,7 +296,7 @@ export default function CVPage() {
 
               {/* Project 2: Interactive Portfolio & AI */}
               <div className="border-l-2 border-zinc-900 pl-3 relative">
-                <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-zinc-900"></div>
+                <div className="absolute -left-1.25 top-1 w-2 h-2 rounded-full bg-zinc-900"></div>
                 <div className="flex justify-between items-baseline mb-0.5">
                   <h3 className="text-[11px] font-black text-zinc-900 uppercase">
                     Interactive Portfolio Website & AI Assistant
