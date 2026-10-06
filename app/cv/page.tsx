@@ -10,10 +10,10 @@ export default function CVPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f0f2f5] py-6 sm:py-10 px-2 sm:px-4 print:p-0 print:bg-white text-[#222222] font-sans antialiased">
+    <div className="min-h-screen bg-[#eaedf2] py-6 sm:py-9 px-2 sm:px-4 print:p-0 print:bg-white text-[#1a1a1a] font-sans antialiased">
       
       {/* Top Floating Action Bar (Hidden when Printing) */}
-      <div className="max-w-[820px] mx-auto mb-5 flex items-center justify-between gap-4 print:hidden bg-white/95 backdrop-blur-md px-5 py-3 rounded-xl shadow-sm border border-zinc-200">
+      <div className="max-w-[820px] mx-auto mb-4 flex items-center justify-between gap-4 print:hidden bg-white/95 backdrop-blur-md px-5 py-3 rounded-xl shadow-sm border border-zinc-200">
         <Link 
           href="/"
           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-700 hover:text-black transition-colors group cursor-pointer"
@@ -40,16 +40,16 @@ export default function CVPage() {
         </div>
       </div>
 
-      {/* Kontainer Lembar Resume Formal Klasik (A4 Single/Clean Sheet) */}
+      {/* Kontainer Lembar Resume Formal Klasik (A4) */}
       <main 
-        className="max-w-[820px] mx-auto bg-white shadow-xl print:shadow-none border border-[#e0e0e0] print:border-0 p-8 sm:p-11 print:p-8 text-[#222222] leading-[1.45]"
+        className="max-w-[820px] mx-auto bg-white shadow-xl print:shadow-none border border-[#d5dbe3] print:border-0 p-8 sm:p-11 print:p-6 text-[#1a1a1a] leading-[1.45]"
         style={{ WebkitPrintColorAdjust: "exact", printColorAdjust: "exact" }}
       >
         
         {/* ================= 1. HEADER PROFIL ================= */}
-        <header className="flex flex-row items-center gap-6 pb-4 border-b border-[#333333]">
+        <header className="flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-6 pb-4 border-b border-[#333333]">
           {/* Photo Box */}
-          <div className="w-[105px] h-[125px] border border-[#cccccc] bg-[#e2e8f0] shrink-0 overflow-hidden relative shadow-sm">
+          <div className="w-[108px] h-[130px] border-[1.5px] border-[#333333] bg-[#f1f5f9] shrink-0 overflow-hidden relative shadow-sm">
             <Image 
               src="/images/profile-firdaus.png" 
               alt="Firdaus Dhuha Prabowo"
@@ -60,200 +60,215 @@ export default function CVPage() {
           </div>
           
           {/* Header Details */}
-          <div className="grow">
-            <h1 className="text-[22px] sm:text-[24px] font-black tracking-[1px] text-[#111111] uppercase leading-tight">
+          <div className="grow text-center sm:text-left w-full">
+            <h1 className="text-[22px] sm:text-[23px] font-black tracking-[1.2px] text-[#0f172a] uppercase leading-tight">
               FIRDAUS DHUHA PRABOWO
             </h1>
-            <p className="text-[12px] font-medium text-[#555555] mt-0.5">
-              Junior Frontend Developer
+            <p className="text-[11.5px] font-semibold text-[#555555] mt-0.5 tracking-[0.3px]">
+              Junior Frontend Developer & Undergraduate Student
             </p>
             
-            <div className="w-full h-[1px] bg-[#333333] my-2.5"></div>
+            <div className="w-full h-[1px] bg-[#333333] my-2"></div>
             
-            <div className="flex flex-wrap gap-x-5 gap-y-1 text-[11px] font-semibold text-[#111111] mb-1">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#555555]">Phone:</span>
-                <a href="https://wa.me/6281315354397" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  +62 813-1535-4397
-                </a>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-[10.5px] font-medium text-[#1a1a1a] mb-1.5 text-left">
+              <div className="flex items-center gap-2">
+                <span className="text-[#64748b] w-3 text-center">📞</span>
+                <span>+62 813-1535-4397</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#555555]">Email:</span>
-                <a href="mailto:Firdausdhuhaprabowo@gmail.com" className="hover:underline">
+              <div className="flex items-center gap-2">
+                <span className="text-[#64748b] w-3 text-center">✉</span>
+                <a href="mailto:Firdausdhuhaprabowo@gmail.com" className="hover:underline text-[#1a1a1a]">
                   Firdausdhuhaprabowo@gmail.com
                 </a>
               </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[#64748b] w-3 text-center">📍</span>
+                <span>Tangerang, Banten, Indonesia</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[#64748b] w-3 text-center">🔗</span>
+                <a href="https://github.com/Firdaus1802" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">
+                  github.com/Firdaus1802
+                </a>
+              </div>
             </div>
-            
-            <div className="text-[10.5px] text-[#666666] flex flex-wrap items-center gap-1.5 pt-0.5">
+
+            <div className="text-[10px] text-[#64748b] flex flex-wrap items-center justify-center sm:justify-start gap-1.5 pt-0.5">
               <span>18 Februari 2006</span>
-              <span className="text-[#aaaaaa]">•</span>
+              <span className="text-[#94a3b8]">•</span>
               <span>20 Tahun</span>
-              <span className="text-[#aaaaaa]">•</span>
-              <span>Tangerang, Banten, Indonesia</span>
-              <span className="text-[#aaaaaa]">•</span>
-              <a href="https://github.com/Firdaus1802" target="_blank" rel="noopener noreferrer" className="text-[#2563eb] hover:underline">
-                github.com/Firdaus1802
-              </a>
+              <span className="text-[#94a3b8]">•</span>
+              <span>Warga Negara Indonesia</span>
             </div>
           </div>
         </header>
 
         {/* ================= 2. ABOUT ME ================= */}
-        <section className="mt-5">
-          <h2 className="text-[12px] font-black tracking-[1px] text-[#111111] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
+        <section className="mt-4">
+          <h2 className="text-[11.5px] font-black tracking-[1px] text-[#0f172a] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
             ABOUT ME
           </h2>
-          <p className="text-[11px] text-[#333333] leading-[1.6] text-justify">
-            Mahasiswa aktif Universitas Gunadarma dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88</strong> yang berfokus mendalam pada ekosistem <strong>Frontend Web Development</strong> dan arsitektur web modern. Berpengalaman membangun antarmuka web yang bersih, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman database & backend BaaS (<strong>Supabase</strong>, Node.js RESTful API, Python), komputasi awan (AWS & Azure AI), serta memegang berbagai sertifikasi kompetensi resmi dari Cisco, BNSP, dan Dicoding Indonesia.
+          <p className="text-[10.5px] text-[#262626] leading-[1.6] text-justify">
+            Mahasiswa aktif program studi <strong>S1 Sistem Informasi</strong> di Universitas Gunadarma dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88 / 4.00</strong>. Berfokus mendalam pada <strong>Frontend Web Development</strong> dan arsitektur aplikasi berbasis web modern. Terampil membangun antarmuka web yang rapi, cepat, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman yang solid dalam integrasi backend BaaS (<strong>Supabase</strong>, RESTful API Node.js, Python), komputasi awan, serta memegang sertifikasi kompetensi resmi dari Cisco Networking Academy, BNSP, dan Dicoding Indonesia.
           </p>
         </section>
 
         {/* ================= 3. EXPERIENCE & PROJECTS ================= */}
-        <section className="mt-5">
-          <h2 className="text-[12px] font-black tracking-[1px] text-[#111111] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2.5">
+        <section className="mt-4">
+          <h2 className="text-[11.5px] font-black tracking-[1px] text-[#0f172a] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2.5">
             EXPERIENCE & PROJECTS
           </h2>
           
           {/* Project 1 */}
-          <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] print:grid-cols-[160px_1fr] gap-2 sm:gap-4 mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4 mb-3">
             <div>
-              <span className="block text-[11px] font-bold text-[#111111]">2025</span>
-              <span className="block text-[10px] text-[#666666]">Vercel Deployment</span>
+              <span className="block text-[10.5px] font-extrabold text-[#0f172a]">2025</span>
+              <span className="block text-[9.5px] text-[#64748b]">Vercel Deployment</span>
             </div>
             <div>
-              <h3 className="text-[11.5px] font-bold text-[#111111]">
-                Frontend Developer & Creator
-              </h3>
-              <p className="text-[10.5px] text-[#555555] font-medium mb-1">
-                Finzie Joki Service (Roblox Service Platform)
-              </p>
-              <ul className="list-disc pl-4 text-[10.5px] text-[#333333] space-y-0.5">
-                <li>Membangun platform layanan game service Roblox 100% manual dengan antarmuka modern dan responsif.</li>
-                <li>Merancang katalog layanan terstruktur, flow pemesanan 4 langkah interaktif, dan direct order WhatsApp admin.</li>
-                <li>Implementasi performa tinggi menggunakan Next.js, React, dan Tailwind CSS (Live: <a href="https://finziejokiservice.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#2563eb] hover:underline">finziejokiservice.vercel.app</a>).</li>
+              <div className="mb-0.5">
+                <h3 className="text-[11px] font-extrabold text-[#0f172a] inline">
+                  Frontend Developer & Creator
+                </h3>
+                <span className="text-[10.5px] font-semibold text-[#555555] inline ml-1.5 before:content-['—_'] before:text-[#94a3b8]">
+                  Finzie Joki Service (Roblox Service Platform)
+                </span>
+              </div>
+              <ul className="list-disc pl-4 text-[10px] text-[#333333] space-y-0.5 leading-[1.5]">
+                <li>Membangun platform layanan game service Roblox 100% manual dengan antarmuka modern, interaktif, dan fully-responsive.</li>
+                <li>Merancang katalog produk dinamis, flow pemesanan 4 langkah terstruktur, serta direct-order WhatsApp ke admin.</li>
+                <li>Mengoptimalkan performa web dengan Next.js, React, dan Tailwind CSS (Live: <a href="https://finziejokiservice.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">finziejokiservice.vercel.app</a>).</li>
               </ul>
             </div>
           </div>
 
           {/* Project 2 */}
-          <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] print:grid-cols-[160px_1fr] gap-2 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
             <div>
-              <span className="block text-[11px] font-bold text-[#111111]">2026</span>
-              <span className="block text-[10px] text-[#666666]">Open Source / Repo</span>
+              <span className="block text-[10.5px] font-extrabold text-[#0f172a]">2026</span>
+              <span className="block text-[9.5px] text-[#64748b]">Open Source Project</span>
             </div>
             <div>
-              <h3 className="text-[11.5px] font-bold text-[#111111]">
-                Frontend & AI Integrator
-              </h3>
-              <p className="text-[10.5px] text-[#555555] font-medium mb-1">
-                Interactive Portfolio Website & AI Assistant
-              </p>
-              <ul className="list-disc pl-4 text-[10.5px] text-[#333333] space-y-0.5">
-                <li>Mengembangkan web portofolio interaktif dengan animasi halus, dark/light mode, dan credential viewer terverifikasi.</li>
+              <div className="mb-0.5">
+                <h3 className="text-[11px] font-extrabold text-[#0f172a] inline">
+                  Frontend & AI Integrator
+                </h3>
+                <span className="text-[10.5px] font-semibold text-[#555555] inline ml-1.5 before:content-['—_'] before:text-[#94a3b8]">
+                  Interactive Portfolio Website & AI Assistant
+                </span>
+              </div>
+              <ul className="list-disc pl-4 text-[10px] text-[#333333] space-y-0.5 leading-[1.5]">
+                <li>Mengembangkan website portofolio interaktif dengan animasi halus, sistem dark/light mode, dan credential viewer terverifikasi.</li>
                 <li>Mengintegrasikan Chatbot AI Assistant cerdas untuk merespons pertanyaan pengunjung secara real-time.</li>
-                <li>Source code tersedia publik: <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank" rel="noopener noreferrer" className="text-[#2563eb] hover:underline">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>.</li>
+                <li>Repositori kode terbuka: <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>.</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* ================= 4. EDUCATION & CERTIFICATIONS ================= */}
-        <section className="mt-5">
-          <h2 className="text-[12px] font-black tracking-[1px] text-[#111111] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2.5">
-            EDUCATION & CERTIFICATIONS
+        {/* ================= 4. EDUCATION ================= */}
+        <section className="mt-4">
+          <h2 className="text-[11.5px] font-black tracking-[1px] text-[#0f172a] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
+            EDUCATION
           </h2>
           
-          {/* Education */}
-          <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] print:grid-cols-[160px_1fr] gap-2 sm:gap-4 mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
             <div>
-              <span className="block text-[11px] font-bold text-[#111111]">2024 - Sekarang</span>
-              <span className="block text-[10px] text-[#666666]">Universitas Gunadarma</span>
+              <span className="block text-[10.5px] font-extrabold text-[#0f172a]">2024 - Sekarang</span>
+              <span className="block text-[9.5px] text-[#64748b]">Depok / Karawaci</span>
             </div>
             <div>
-              <h3 className="text-[11.5px] font-bold text-[#111111]">
-                S1 - Sistem Informasi
-              </h3>
-              <p className="text-[10.5px] text-[#555555] font-medium mb-1">
-                Indeks Prestasi Kumulatif (IPK): 3.88 / 4.00
+              <div className="mb-0.5">
+                <h3 className="text-[11px] font-extrabold text-[#0f172a] inline">
+                  Universitas Gunadarma
+                </h3>
+                <span className="text-[10.5px] font-semibold text-[#555555] inline ml-1.5 before:content-['—_'] before:text-[#94a3b8]">
+                  S1 - Sistem Informasi (IPK: 3.88 / 4.00)
+                </span>
+              </div>
+              <p className="text-[10px] text-[#333333] leading-[1.5] mt-1">
+                Fokus pembelajaran mencakup Rekayasa Perangkat Lunak, Sistem Basis Data Relasional, Pemrograman Web Modern, Algoritma & Struktur Data, serta Manajemen Sistem Informasi.
               </p>
-              <ul className="list-disc pl-4 text-[10.5px] text-[#333333]">
-                <li>Fokus studi pada rekayasa perangkat lunak, sistem basis data, pemrograman web modern, dan algoritma.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Certifications */}
-          <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] print:grid-cols-[160px_1fr] gap-2 sm:gap-4">
-            <div>
-              <span className="block text-[11px] font-bold text-[#111111]">2024 - 2026</span>
-              <span className="block text-[10px] text-[#666666]">Sertifikasi Resmi</span>
-            </div>
-            <div>
-              <h3 className="text-[11.5px] font-bold text-[#111111]">
-                Cisco, BNSP, Raharja & Dicoding Indonesia
-              </h3>
-              <p className="text-[10.5px] text-[#555555] font-medium mb-1">
-                4 Lisensi & Sertifikasi Kompetensi Terverifikasi
-              </p>
-              <ul className="list-disc pl-4 text-[10.5px] text-[#333333] space-y-0.5">
-                <li><strong>Cisco Networking Academy:</strong> Cybersecurity Fundamentals (2026)</li>
-                <li><strong>BNSP Indonesia:</strong> Junior Office Operator (No. Reg: 10458184)</li>
-                <li><strong>Universitas Raharja:</strong> Uji Kompetensi Ms. Office (2024)</li>
-                <li><strong>Dicoding Indonesia:</strong> 7x Sertifikasi (JavaScript, Node.js REST API, Python, Cloud AI)</li>
-              </ul>
             </div>
           </div>
         </section>
 
-        {/* ================= 5. SKILLS ================= */}
-        <section className="mt-5">
-          <h2 className="text-[12px] font-black tracking-[1px] text-[#111111] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
-            SKILLS
+        {/* ================= 5. LICENSES & CERTIFICATIONS ================= */}
+        <section className="mt-4">
+          <h2 className="text-[11.5px] font-black tracking-[1px] text-[#0f172a] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
+            LICENSES & CERTIFICATIONS
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 print:grid-cols-4 gap-3 text-[10.5px] text-[#333333]">
-            <div>
-              <ul className="list-disc pl-4 space-y-0.5">
-                <li>React.js & Next.js</li>
-                <li>JavaScript (ES6+)</li>
-                <li>TypeScript</li>
-              </ul>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2 gap-x-4 gap-y-2 text-[10px]">
+            <div className="flex items-baseline gap-2">
+              <span className="text-[9.5px] font-extrabold text-[#0f172a] w-12 shrink-0">2026</span>
+              <div className="flex flex-col">
+                <strong className="font-bold text-[#0f172a]">Cisco Networking Academy</strong>
+                <span className="text-[#555555] text-[9.5px]">Cybersecurity Fundamentals</span>
+              </div>
             </div>
-            <div>
-              <ul className="list-disc pl-4 space-y-0.5">
-                <li>Tailwind CSS</li>
-                <li>HTML5 & CSS3</li>
-                <li>Responsive UI Design</li>
-              </ul>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[9.5px] font-extrabold text-[#0f172a] w-12 shrink-0">2025</span>
+              <div className="flex flex-col">
+                <strong className="font-bold text-[#0f172a]">Badan Nasional Sertifikasi Profesi (BNSP)</strong>
+                <span className="text-[#555555] text-[9.5px]">Junior Office Operator (No. Reg: 10458184)</span>
+              </div>
             </div>
-            <div>
-              <ul className="list-disc pl-4 space-y-0.5">
-                <li>Supabase BaaS</li>
-                <li>Node.js REST API</li>
-                <li>Python Programming</li>
-              </ul>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[9.5px] font-extrabold text-[#0f172a] w-12 shrink-0">2024</span>
+              <div className="flex flex-col">
+                <strong className="font-bold text-[#0f172a]">Universitas Raharja</strong>
+                <span className="text-[#555555] text-[9.5px]">Uji Kompetensi Keahlian Microsoft Office</span>
+              </div>
             </div>
-            <div>
-              <ul className="list-disc pl-4 space-y-0.5">
-                <li>Cloud AI (Azure/AWS)</li>
-                <li>Git & GitHub</li>
-                <li>Ms. Office (BNSP)</li>
-              </ul>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[9.5px] font-extrabold text-[#0f172a] w-12 shrink-0">2024-2026</span>
+              <div className="flex flex-col">
+                <strong className="font-bold text-[#0f172a]">Dicoding Indonesia</strong>
+                <span className="text-[#555555] text-[9.5px]">7x Sertifikasi (JavaScript, Node.js REST API, Python, Cloud AI)</span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ================= 6. LANGUAGES & KEY FOCUS ================= */}
-        <section className="mt-5">
-          <h2 className="text-[12px] font-black tracking-[1px] text-[#111111] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
+        {/* ================= 6. TECHNICAL SKILLS ================= */}
+        <section className="mt-4">
+          <h2 className="text-[11.5px] font-black tracking-[1px] text-[#0f172a] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
+            TECHNICAL SKILLS
+          </h2>
+          
+          <div className="flex flex-col gap-1 text-[10px] leading-[1.5]">
+            <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
+              <span className="font-extrabold text-[#0f172a]">Frontend Web:</span>
+              <span className="text-[#262626]">React.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, HTML5, CSS3, Responsive UI</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
+              <span className="font-extrabold text-[#0f172a]">Backend & Database:</span>
+              <span className="text-[#262626]">Supabase BaaS, Node.js, Express.js REST API, Python, PostgreSQL Basics</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
+              <span className="font-extrabold text-[#0f172a]">Cloud & AI Tools:</span>
+              <span className="text-[#262626]">Microsoft Azure AI, AWS Cloud Computing Essentials, LLM API Integration, Vercel</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
+              <span className="font-extrabold text-[#0f172a]">Tools & Office:</span>
+              <span className="text-[#262626]">Git, GitHub, Visual Studio Code, Postman, Microsoft Office Suite (BNSP Certified)</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= 7. LANGUAGES & INTERESTS ================= */}
+        <section className="mt-4">
+          <h2 className="text-[11.5px] font-black tracking-[1px] text-[#0f172a] uppercase border-b-[1.5px] border-[#222222] pb-0.5 mb-2">
             LANGUAGES & INTERESTS
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2 gap-3 text-[10.5px] text-[#333333]">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2 gap-3 text-[10px] text-[#262626]">
             <div>
-              <p><strong>Languages:</strong> Bahasa Indonesia (Native), English (Working Proficiency)</p>
+              <strong>Languages:</strong> Bahasa Indonesia (Native), English (Working Proficiency)
             </div>
             <div>
-              <p><strong>Interests:</strong> Modern Web Architecture, Cloud Computing & AI, E-Sports Platform</p>
+              <strong>Interests:</strong> Modern Web Architecture, Cloud Computing & AI Ecosystem, E-Sports & Gaming Services
             </div>
           </div>
         </section>

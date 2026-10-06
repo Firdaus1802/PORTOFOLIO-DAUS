@@ -5,27 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curriculum Vitae - Firdaus Dhuha Prabowo</title>
   
-  <!-- Font Google: Inter -->
+  <!-- Font Google: Inter (Formal & Bersih) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome untuk Ikon Standar -->
+  <!-- Font Awesome untuk Ikon Kontak -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Tombol Aksi Cetak PDF -->
+  <!-- Tombol Aksi Cetak PDF (Disembunyikan saat dicetak) -->
   <div class="top-bar no-print">
     <button onclick="window.print()" class="btn-print">
       <i class="fa-solid fa-print"></i> Cetak / Simpan PDF (A4)
     </button>
   </div>
 
-  <!-- Kontainer Lembar Resume Formal -->
-  <div class="resume-sheet">
+  <!-- Kontainer Lembar Resume Formal Klasik (A4) -->
+  <main class="resume-sheet">
     
     <!-- ================= 1. HEADER PROFIL ================= -->
     <header class="header-section">
@@ -35,29 +35,35 @@
       
       <div class="header-details">
         <h1 class="candidate-name">FIRDAUS DHUHA PRABOWO</h1>
-        <p class="candidate-title">Junior Frontend Developer</p>
+        <p class="candidate-title">Junior Frontend Developer & Undergraduate Student</p>
         
         <div class="header-divider"></div>
         
-        <div class="contact-row">
+        <div class="contact-grid">
           <div class="contact-item">
             <i class="fa-solid fa-phone"></i>
-            <a href="https://wa.me/6281315354397" target="_blank">+62 813-1535-4397</a>
+            <span>+62 813-1535-4397</span>
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-envelope"></i>
             <a href="mailto:Firdausdhuhaprabowo@gmail.com">Firdausdhuhaprabowo@gmail.com</a>
           </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Tangerang, Banten, Indonesia</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/Firdaus1802" target="_blank">github.com/Firdaus1802</a>
+          </div>
         </div>
-        
-        <div class="personal-meta">
+
+        <div class="personal-tags">
           <span>18 Februari 2006</span>
-          <span class="bullet">•</span>
+          <span class="dot">•</span>
           <span>20 Tahun</span>
-          <span class="bullet">•</span>
-          <span>Tangerang, Banten, Indonesia</span>
-          <span class="bullet">•</span>
-          <a href="https://github.com/Firdaus1802" target="_blank">github.com/Firdaus1802</a>
+          <span class="dot">•</span>
+          <span>Warga Negara Indonesia</span>
         </div>
       </div>
     </header>
@@ -66,7 +72,7 @@
     <section class="section-block">
       <h2 class="section-title">ABOUT ME</h2>
       <p class="summary-text">
-        Mahasiswa aktif Universitas Gunadarma dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88</strong> yang berfokus mendalam pada ekosistem <strong>Frontend Web Development</strong> dan arsitektur web modern. Berpengalaman membangun antarmuka web yang bersih, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman database & backend BaaS (<strong>Supabase</strong>, Node.js RESTful API, Python), komputasi awan (AWS & Azure AI), serta memegang berbagai sertifikasi kompetensi resmi dari Cisco, BNSP, dan Dicoding Indonesia.
+        Mahasiswa aktif program studi <strong>S1 Sistem Informasi</strong> di Universitas Gunadarma dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88 / 4.00</strong>. Berfokus mendalam pada <strong>Frontend Web Development</strong> dan arsitektur aplikasi berbasis web modern. Terampil membangun antarmuka web yang rapi, cepat, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman yang solid dalam integrasi backend BaaS (<strong>Supabase</strong>, RESTful API Node.js, Python), komputasi awan, serta memegang sertifikasi kompetensi resmi dari Cisco Networking Academy, BNSP, dan Dicoding Indonesia.
       </p>
     </section>
 
@@ -75,127 +81,140 @@
       <h2 class="section-title">EXPERIENCE & PROJECTS</h2>
       
       <!-- Project 1 -->
-      <div class="timeline-row">
-        <div class="timeline-left">
-          <span class="time-period">2025</span>
-          <span class="time-org">Vercel Deployment</span>
+      <div class="entry-row">
+        <div class="entry-left">
+          <span class="entry-period">2025</span>
+          <span class="entry-meta">Vercel Deployment</span>
         </div>
-        <div class="timeline-right">
-          <h3 class="job-role">Frontend Developer & Creator</h3>
-          <p class="job-company">Finzie Joki Service (Roblox Service Platform)</p>
-          <ul class="job-bullets">
-            <li>Membangun platform layanan game service Roblox 100% manual dengan antarmuka modern dan responsif.</li>
-            <li>Merancang katalog layanan terstruktur, flow pemesanan 4 langkah interaktif, dan direct order WhatsApp admin.</li>
-            <li>Implementasi performa tinggi menggunakan Next.js, React, dan Tailwind CSS (Live: <a href="https://finziejokiservice.vercel.app/" target="_blank">finziejokiservice.vercel.app</a>).</li>
+        <div class="entry-right">
+          <div class="entry-header">
+            <h3 class="entry-title">Frontend Developer & Creator</h3>
+            <span class="entry-subtitle">Finzie Joki Service (Roblox Service Platform)</span>
+          </div>
+          <ul class="entry-bullets">
+            <li>Membangun platform layanan game service Roblox 100% manual dengan antarmuka modern, interaktif, dan fully-responsive.</li>
+            <li>Merancang katalog produk dinamis, flow pemesanan 4 langkah terstruktur, serta direct-order WhatsApp ke admin.</li>
+            <li>Mengoptimalkan performa web dengan Next.js, React, dan Tailwind CSS (Live: <a href="https://finziejokiservice.vercel.app/" target="_blank">finziejokiservice.vercel.app</a>).</li>
           </ul>
         </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="timeline-row">
-        <div class="timeline-left">
-          <span class="time-period">2026</span>
-          <span class="time-org">Open Source / Repo</span>
+      <div class="entry-row">
+        <div class="entry-left">
+          <span class="entry-period">2026</span>
+          <span class="entry-meta">Open Source Project</span>
         </div>
-        <div class="timeline-right">
-          <h3 class="job-role">Frontend & AI Integrator</h3>
-          <p class="job-company">Interactive Portfolio Website & AI Assistant</p>
-          <ul class="job-bullets">
-            <li>Mengembangkan web portofolio interaktif dengan animasi halus, dark/light mode, dan credential viewer terverifikasi.</li>
+        <div class="entry-right">
+          <div class="entry-header">
+            <h3 class="entry-title">Frontend & AI Integrator</h3>
+            <span class="entry-subtitle">Interactive Portfolio Website & AI Assistant</span>
+          </div>
+          <ul class="entry-bullets">
+            <li>Mengembangkan website portofolio interaktif dengan animasi halus, sistem dark/light mode, dan credential viewer terverifikasi.</li>
             <li>Mengintegrasikan Chatbot AI Assistant cerdas untuk merespons pertanyaan pengunjung secara real-time.</li>
-            <li>Source code tersedia publik: <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>.</li>
+            <li>Repositori kode terbuka: <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ================= 4. EDUCATION & CERTIFICATIONS ================= -->
+    <!-- ================= 4. EDUCATION ================= -->
     <section class="section-block">
-      <h2 class="section-title">EDUCATION & CERTIFICATIONS</h2>
+      <h2 class="section-title">EDUCATION</h2>
       
-      <!-- Education -->
-      <div class="timeline-row">
-        <div class="timeline-left">
-          <span class="time-period">2024 - Sekarang</span>
-          <span class="time-org">Universitas Gunadarma</span>
+      <div class="entry-row">
+        <div class="entry-left">
+          <span class="entry-period">2024 - Sekarang</span>
+          <span class="entry-meta">Depok / Karawaci</span>
         </div>
-        <div class="timeline-right">
-          <h3 class="job-role">S1 - Sistem Informasi</h3>
-          <p class="job-company">Indeks Prestasi Kumulatif (IPK): 3.88 / 4.00</p>
-          <ul class="job-bullets">
-            <li>Fokus studi pada rekayasa perangkat lunak, sistem basis data, pemrograman web modern, dan algoritma.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Certifications -->
-      <div class="timeline-row">
-        <div class="timeline-left">
-          <span class="time-period">2024 - 2026</span>
-          <span class="time-org">Sertifikasi Resmi</span>
-        </div>
-        <div class="timeline-right">
-          <h3 class="job-role">Cisco, BNSP, Raharja & Dicoding Indonesia</h3>
-          <p class="job-company">4 Lisensi & Sertifikasi Kompetensi Terverifikasi</p>
-          <ul class="job-bullets">
-            <li><strong>Cisco Networking Academy:</strong> Cybersecurity Fundamentals (2026)</li>
-            <li><strong>BNSP Indonesia:</strong> Junior Office Operator (No. Reg: 10458184)</li>
-            <li><strong>Universitas Raharja:</strong> Uji Kompetensi Ms. Office (2024)</li>
-            <li><strong>Dicoding Indonesia:</strong> 7x Sertifikasi (JavaScript, Node.js REST API, Python, Cloud AI)</li>
-          </ul>
+        <div class="entry-right">
+          <div class="entry-header">
+            <h3 class="entry-title">Universitas Gunadarma</h3>
+            <span class="entry-subtitle">S1 - Sistem Informasi (IPK: 3.88 / 4.00)</span>
+          </div>
+          <p class="entry-desc">
+            Fokus pembelajaran mencakup Rekayasa Perangkat Lunak, Sistem Basis Data Relasional, Pemrograman Web Modern, Algoritma & Struktur Data, serta Manajemen Sistem Informasi.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ================= 5. SKILLS ================= -->
+    <!-- ================= 5. LICENSES & CERTIFICATIONS ================= -->
     <section class="section-block">
-      <h2 class="section-title">SKILLS</h2>
-      <div class="skills-columns">
-        <div class="skill-col">
-          <ul>
-            <li>React.js & Next.js</li>
-            <li>JavaScript (ES6+)</li>
-            <li>TypeScript</li>
-          </ul>
+      <h2 class="section-title">LICENSES & CERTIFICATIONS</h2>
+      
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-year">2026</div>
+          <div class="cert-info">
+            <strong>Cisco Networking Academy</strong>
+            <span>Cybersecurity Fundamentals</span>
+          </div>
         </div>
-        <div class="skill-col">
-          <ul>
-            <li>Tailwind CSS</li>
-            <li>HTML5 & CSS3</li>
-            <li>Responsive UI Design</li>
-          </ul>
+        <div class="cert-card">
+          <div class="cert-year">2025</div>
+          <div class="cert-info">
+            <strong>Badan Nasional Sertifikasi Profesi (BNSP)</strong>
+            <span>Junior Office Operator (No. Reg: 10458184)</span>
+          </div>
         </div>
-        <div class="skill-col">
-          <ul>
-            <li>Supabase BaaS</li>
-            <li>Node.js REST API</li>
-            <li>Python Programming</li>
-          </ul>
+        <div class="cert-card">
+          <div class="cert-year">2024</div>
+          <div class="cert-info">
+            <strong>Universitas Raharja</strong>
+            <span>Uji Kompetensi Keahlian Microsoft Office</span>
+          </div>
         </div>
-        <div class="skill-col">
-          <ul>
-            <li>Cloud AI (Azure/AWS)</li>
-            <li>Git & GitHub</li>
-            <li>Ms. Office (BNSP)</li>
-          </ul>
+        <div class="cert-card">
+          <div class="cert-year">2024 - 2026</div>
+          <div class="cert-info">
+            <strong>Dicoding Indonesia</strong>
+            <span>7x Sertifikasi (JavaScript, Node.js REST API, Python, Cloud AI)</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= 6. LANGUAGES & KEY FOCUS ================= -->
+    <!-- ================= 6. TECHNICAL SKILLS ================= -->
     <section class="section-block">
+      <h2 class="section-title">TECHNICAL SKILLS</h2>
+      
+      <div class="skills-wrapper">
+        <div class="skill-group">
+          <span class="skill-label">Frontend Web:</span>
+          <span class="skill-values">React.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, HTML5, CSS3, Responsive UI</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-label">Backend & Database:</span>
+          <span class="skill-values">Supabase BaaS, Node.js, Express.js REST API, Python, PostgreSQL Basics</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-label">Cloud & AI Tools:</span>
+          <span class="skill-values">Microsoft Azure AI, AWS Cloud Computing Essentials, LLM API Integration, Vercel</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-label">Tools & Office:</span>
+          <span class="skill-values">Git, GitHub, Visual Studio Code, Postman, Microsoft Office Suite (BNSP Certified)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. LANGUAGES & INTERESTS ================= -->
+    <section class="section-block mb-0">
       <h2 class="section-title">LANGUAGES & INTERESTS</h2>
-      <div class="meta-columns">
-        <div class="meta-col">
-          <p><strong>Languages:</strong> Bahasa Indonesia (Native), English (Working Proficiency)</p>
+      
+      <div class="meta-row">
+        <div class="meta-item">
+          <strong>Languages:</strong> Bahasa Indonesia (Native), English (Working Proficiency)
         </div>
-        <div class="meta-col">
-          <p><strong>Interests:</strong> Modern Web Architecture, Cloud Computing & AI, E-Sports Platform</p>
+        <div class="meta-item">
+          <strong>Interests:</strong> Modern Web Architecture, Cloud Computing & AI Ecosystem, E-Sports & Gaming Services
         </div>
       </div>
     </section>
 
-  </div>
+  </main>
 
 </body>
 </html>
