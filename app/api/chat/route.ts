@@ -10,8 +10,40 @@ interface HistoryEntry {
 function getSmartFallbackResponse(query: string): string {
   const q = query.toLowerCase()
 
-  // 1. Umur, Tanggal Lahir, Usia
+  // 1. Proyek Pilihan / Proyek Unggulan / Finzie / Roblox / Joki / Portfolio
   if (
+    q.includes("proyek") || 
+    q.includes("projek") || 
+    q.includes("project") || 
+    q.includes("karya") || 
+    q.includes("finzie") || 
+    q.includes("joki") || 
+    q.includes("roblox") || 
+    q.includes("portofolio proyek") || 
+    q.includes("arsitektur kode") || 
+    q.includes("unggulan") || 
+    q.includes("pilihan") || 
+    q.includes("web yang dibuat") || 
+    q.includes("aplikasi")
+  ) {
+    return `Berikut proyek unggulan yang dibangun dan dikembangkan oleh Firdaus Dhuha Prabowo:
+
+1. **Finzie Joki Service (Roblox Service Platform)**
+• **Tautan Demo:** [finziejokiservice.vercel.app](https://finziejokiservice.vercel.app/)
+• **Arsitektur & Tech Stack:** Next.js, React.js, Tailwind CSS, Vercel Cloud Deployment.
+• **Fitur & Solusi:** Platform layanan game service Roblox 100% manual dengan UI modern responsif, katalog layanan terstruktur, flow pemesanan interaktif 4 langkah, dan integrasi WhatsApp admin.
+
+2. **Interactive Portfolio Website & AI Assistant**
+• **Tautan Kode:** [github.com/Firdaus1802/PORTOFOLIO-DAUS](https://github.com/Firdaus1802/PORTOFOLIO-DAUS)
+• **Arsitektur & Tech Stack:** Next.js, TypeScript, Tailwind CSS, Framer Motion, Edge AI.
+• **Fitur & Solusi:** Web portofolio interaktif dengan animasi halus, credential viewer terverifikasi, dan Chatbot AI Assistant cerdas.`
+  }
+
+  // 2. Profil & Latar Belakang Akademik / Umur / Lahir / Pendidikan
+  if (
+    q.includes("profil") || 
+    q.includes("akademik") || 
+    q.includes("latar belakang") || 
     q.includes("umur") || 
     q.includes("usia") || 
     q.includes("lahir") || 
@@ -20,13 +52,132 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("kapan lahir") || 
     q.includes("ulang tahun") || 
     q.includes("birthday") || 
-    q.includes("berapakah umur") || 
-    q.includes("berapa umur")
+    q.includes("gunadarma") || 
+    q.includes("kuliah") || 
+    q.includes("kampus") || 
+    q.includes("pendidikan") || 
+    q.includes("ipk") || 
+    q.includes("gpa") || 
+    q.includes("jurusan") || 
+    q.includes("sekolah") || 
+    q.includes("mahasiswa")
   ) {
-    return "Firdaus Dhuha Prabowo lahir pada tanggal **18 Februari 2006** di Tangerang, dan saat ini berusia **20 tahun** (per tahun 2026)."
+    return `**Profil & Latar Belakang Akademik Firdaus Dhuha Prabowo:**
+• **Pendidikan:** Mahasiswa aktif S1 Sistem Informasi di Universitas Gunadarma dengan IPK **3.88 / 4.00**.
+• **Kelahiran & Usia:** Lahir pada **18 Februari 2006** di Tangerang (berusia 20 tahun).
+• **Domisili:** Tangerang, Banten, Indonesia.
+• **Fokus Keahlian:** Frontend Web Development, arsitektur Next.js & React, integrasi backend Supabase & Node.js, serta komputasi awan.`
   }
 
-  // 2. Asal, Domisili, Lokasi, Tempat Tinggal
+  // 3. Tech Stack & Database
+  if (
+    q.includes("tech stack") || 
+    q.includes("stack") || 
+    q.includes("database") || 
+    q.includes("backend") || 
+    q.includes("back-end") || 
+    q.includes("back end") || 
+    q.includes("frontend") || 
+    q.includes("front-end") || 
+    q.includes("front end") || 
+    q.includes("supabase") || 
+    q.includes("node") || 
+    q.includes("api") || 
+    q.includes("rest") || 
+    q.includes("postman") || 
+    q.includes("python") || 
+    q.includes("react") || 
+    q.includes("next") || 
+    q.includes("javascript") || 
+    q.includes("typescript") || 
+    q.includes("tailwind") || 
+    q.includes("css") || 
+    q.includes("html") || 
+    q.includes("keahlian") || 
+    q.includes("kemampuan") || 
+    q.includes("alat") || 
+    q.includes("spesialisasi") || 
+    q.includes("bisa apa") || 
+    q.includes("skill")
+  ) {
+    return `**Spesialisasi Tech Stack & Database Firdaus:**
+• **Frontend Engineering:** React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5, CSS3, Framer Motion.
+• **Backend & Database:** Supabase (PostgreSQL BaaS, Auth, Storage), Node.js RESTful API, Postman API Testing, Python.
+• **Cloud & Artificial Intelligence:** Microsoft Azure AI, AWS Cloud Infrastructure, Generative AI Integration.
+• **Development Tools:** Git, GitHub, VS Code, Vercel, Microsoft Office (Sertifikasi BNSP).`
+  }
+
+  // 4. Sertifikasi & Lisensi Resmi
+  if (
+    q.includes("sertifikat") || 
+    q.includes("sertifikasi") || 
+    q.includes("certificate") || 
+    q.includes("lisensi") || 
+    q.includes("cisco") || 
+    q.includes("bnsp") || 
+    q.includes("raharja") || 
+    q.includes("dicoding") || 
+    q.includes("kredensial") || 
+    q.includes("industri")
+  ) {
+    return `Firdaus memiliki **10 lisensi dan sertifikasi kompetensi resmi terverifikasi**:
+• **Cisco Networking Academy:** Introduction to Cybersecurity (2026)
+• **BNSP Indonesia:** Junior Office Operator (ID: 10458184)
+• **Universitas Raharja:** Uji Kompetensi Ms. Office (ID: 450/UKOM/RHJ/II/2024)
+• **Dicoding Indonesia:** Dasar Pemrograman JavaScript (ID: \`07Z6JO4DJXQR\`)
+• **Dicoding Indonesia:** Back-End Pemula dengan JavaScript (ID: \`53XEK21YVXRN\`)
+• **Dicoding Indonesia:** Memulai Pemrograman dengan Python (ID: \`MRZM621JKPYQ\`)
+• **Dicoding & Microsoft:** Membangun Aplikasi Gen AI dengan Azure (ID: \`GRX5J7YRKX0M\`)
+• **Dicoding & AWS:** Dasar Cloud dan Gen AI di AWS (ID: \`MRZM6R97RPYQ\`)
+• **Dicoding & Microsoft:** Penerapan Data Science Microsoft Fabric (ID: \`JLX15O22NZ72\`)
+• **Dicoding & DBS Foundation:** Introduction to Financial Literacy (ID: \`JMZVVKDD3ZN9\`)`
+  }
+
+  // 5. CV / Resume Resmi
+  if (
+    q.includes("cv") || 
+    q.includes("resume") || 
+    q.includes("curriculum vitae") || 
+    q.includes("download cv") || 
+    q.includes("cetak cv") || 
+    q.includes("pdf") || 
+    q.includes("berkas") || 
+    q.includes("dossier") || 
+    q.includes("lamaran")
+  ) {
+    return `Berkas resmi **Curriculum Vitae (CV)** Firdaus Dhuha Prabowo dapat diakses langsung pada halaman [**Curriculum Vitae**](/cv).
+
+Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap dicetak / disimpan dalam format standar A4.`
+  }
+
+  // 6. Kontak & Saluran Komunikasi
+  if (
+    q.includes("kontak") || 
+    q.includes("contact") || 
+    q.includes("jejaring") || 
+    q.includes("saluran") || 
+    q.includes("email") || 
+    q.includes("wa") || 
+    q.includes("whatsapp") || 
+    q.includes("telepon") || 
+    q.includes("no hp") || 
+    q.includes("nomor") || 
+    q.includes("hubungi") || 
+    q.includes("linkedin") || 
+    q.includes("github") || 
+    q.includes("instagram") || 
+    q.includes("sosmed") || 
+    q.includes("social")
+  ) {
+    return `Berikut saluran komunikasi dan jaringan profesional resmi Firdaus Dhuha Prabowo:
+• **WhatsApp:** [+62 813-1535-4397](https://wa.me/6281315354397)
+• **Email:** [Firdausdhuhaprabowo@gmail.com](mailto:Firdausdhuhaprabowo@gmail.com)
+• **LinkedIn:** [linkedin.com/in/firdaus-dhuha-prabowo-091949386/](https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/)
+• **GitHub:** [github.com/Firdaus1802](https://github.com/Firdaus1802)
+• **Instagram:** [@frdsdhuha_](https://www.instagram.com/frdsdhuha_)`
+  }
+
+  // 7. Domisili / Lokasi
   if (
     q.includes("asal") || 
     q.includes("tinggal") || 
@@ -40,128 +191,7 @@ function getSmartFallbackResponse(query: string): string {
     return "Firdaus berasal dan saat ini berdomisili di **Tangerang, Banten, Indonesia**."
   }
 
-  // 3. Pendidikan, Kuliah, Kampus, IPK, Semester
-  if (
-    q.includes("kuliah") || 
-    q.includes("kampus") || 
-    q.includes("pendidikan") || 
-    q.includes("ipk") || 
-    q.includes("gpa") || 
-    q.includes("gunadarma") || 
-    q.includes("jurusan") || 
-    q.includes("sekolah") || 
-    q.includes("mahasiswa")
-  ) {
-    return "Firdaus adalah mahasiswa aktif di **Universitas Gunadarma** dengan IPK yang sangat baik yaitu **3.88 / 4.00**, fokus pada pengembangan sistem informasi dan pemrograman antarmuka web modern."
-  }
-
-  // 4. Proyek, Karya, Finzie, Roblox, Joki
-  if (
-    q.includes("projek") || 
-    q.includes("project") || 
-    q.includes("karya") || 
-    q.includes("finzie") || 
-    q.includes("joki") || 
-    q.includes("roblox") || 
-    q.includes("web yang dibuat") || 
-    q.includes("aplikasi")
-  ) {
-    return "Proyek utama yang dibangun Firdaus adalah **Finzie Joki Service** ([finziejokiservice.vercel.app](https://finziejokiservice.vercel.app/)):\n- **Deskripsi**: Platform web penyedia layanan jasa joki game Roblox (CDID, DDS, Eagle Nation) 100% pengerjaan manual.\n- **Teknologi**: Next.js, React.js, Tailwind CSS, dan Vercel Cloud Deployment.\n- **Fitur**: Antarmuka modern responsif, katalog layanan game, alur pemesanan 4 langkah, dan integrasi WhatsApp."
-  }
-
-  // 5. Back-End, Node.js, Supabase, Database, API, Postman, Python
-  if (
-    q.includes("backend") || 
-    q.includes("back-end") || 
-    q.includes("back end") || 
-    q.includes("supabase") || 
-    q.includes("database") || 
-    q.includes("db") || 
-    q.includes("node") || 
-    q.includes("api") || 
-    q.includes("rest") || 
-    q.includes("postman") || 
-    q.includes("server")
-  ) {
-    return "Untuk bidang **Back-End & Database**, Firdaus menguasai:\n- **Supabase**: Backend-as-a-Service, database PostgreSQL, auth & storage.\n- **Node.js**: Membangun web service dan RESTful API dari dasar.\n- **RESTful API Architecture**: Penanganan routing, HTTP request, dan respons JSON.\n- **Postman**: Pengujian dan automation testing API.\n- **Python**: Struktur data, logika pemrograman, dan pengolahan data.\nSemua keahlian ini telah divalidasi melalui sertifikasi resmi Dicoding Indonesia."
-  }
-
-  // 6. Frontend, React, Next.js, JavaScript, Tailwind, CSS, HTML
-  if (
-    q.includes("frontend") || 
-    q.includes("front-end") || 
-    q.includes("front end") || 
-    q.includes("react") || 
-    q.includes("next") || 
-    q.includes("javascript") || 
-    q.includes("tailwind") || 
-    q.includes("css") || 
-    q.includes("html") || 
-    q.includes("framer")
-  ) {
-    return "Keahlian utama **Frontend Web Development** Firdaus meliputi:\n- **Framework & Libs**: React.js, Next.js, Framer Motion.\n- **Bahasa & Styling**: JavaScript (ES6+), Tailwind CSS, HTML5, CSS3 modern.\n- **Fokus**: Pembuatan tampilan web yang bersih, cepat, ramah pengguna (UI/UX), dan responsif di smartphone maupun desktop."
-  }
-
-  // 7. Tech Stack umum, Keterampilan, Skill, Bahasa Pemrograman
-  if (
-    q.includes("skill") || 
-    q.includes("tech") || 
-    q.includes("stack") || 
-    q.includes("keahlian") || 
-    q.includes("bahasa") || 
-    q.includes("bisa apa") || 
-    q.includes("kemampuan")
-  ) {
-    return "Daftar Tech Stack & Keahlian Firdaus:\n1. **Frontend**: React.js, Next.js, JavaScript, Tailwind CSS, HTML5, CSS3, Framer Motion.\n2. **Back-End & Database**: Node.js, Supabase, RESTful API, Postman, Python.\n3. **Cloud & AI**: Microsoft Azure AI, AWS Cloud Infrastructure.\n4. **Tools**: Git, GitHub, VS Code, Vercel, Microsoft Office (BNSP Certified)."
-  }
-
-  // 8. Sertifikat, Sertifikasi, Lisensi, Cisco, BNSP, Dicoding, Raharja
-  if (
-    q.includes("sertifikat") || 
-    q.includes("sertifikasi") || 
-    q.includes("certificate") || 
-    q.includes("lisensi") || 
-    q.includes("cisco") || 
-    q.includes("bnsp") || 
-    q.includes("raharja") || 
-    q.includes("dicoding") || 
-    q.includes("kredensial")
-  ) {
-    return "Firdaus memiliki **10 sertifikasi resmi terverifikasi**:\n• **Cisco**: Introduction to Cybersecurity (2026)\n• **BNSP Indonesia**: Junior Office Operator (ID: 10458184)\n• **Universitas Raharja**: Uji Kompetensi Ms. Office (2024)\n• **Dicoding**: Dasar Pemrograman JavaScript (ID: `07Z6JO4DJXQR`)\n• **Dicoding**: Back-End Pemula JavaScript (ID: `53XEK21YVXRN`)\n• **Dicoding**: Pemrograman dengan Python (ID: `MRZM621JKPYQ`)\n• **Dicoding & Microsoft**: Gen AI di Azure (ID: `GRX5J7YRKX0M`)\n• **Dicoding & AWS**: Dasar Cloud & Gen AI AWS (ID: `MRZM6R97RPYQ`)\n• **Dicoding & Microsoft**: Data Science Fabric (ID: `JLX15O22NZ72`)\n• **Dicoding & DBS**: Financial Literacy (ID: `JMZVVKDD3ZN9`)"
-  }
-
-  // 9. CV, Resume, Download CV, PDF, Lamaran Kerja
-  if (
-    q.includes("cv") || 
-    q.includes("resume") || 
-    q.includes("download cv") || 
-    q.includes("cetak cv") || 
-    q.includes("pdf") || 
-    q.includes("lamaran")
-  ) {
-    return "Anda dapat melihat dan mengunduh berkas CV resmi Firdaus langsung pada halaman [**Curriculum Vitae**](/cv). Halaman tersebut telah dioptimasi untuk cetak / simpan dalam format standar A4."
-  }
-
-  // 10. Kontak, WhatsApp, Email, Instagram, LinkedIn, No HP
-  if (
-    q.includes("kontak") || 
-    q.includes("contact") || 
-    q.includes("email") || 
-    q.includes("wa") || 
-    q.includes("whatsapp") || 
-    q.includes("hubungi") || 
-    q.includes("telepon") || 
-    q.includes("no hp") || 
-    q.includes("nomor") || 
-    q.includes("instagram") || 
-    q.includes("linkedin") || 
-    q.includes("github") || 
-    q.includes("sosmed")
-  ) {
-    return "Berikut saluran komunikasi resmi Firdaus:\n• **WhatsApp**: [+62 813-1535-4397](https://wa.me/6281315354397)\n• **Email**: [Firdausdhuhaprabowo@gmail.com](mailto:Firdausdhuhaprabowo@gmail.com)\n• **LinkedIn**: [Firdaus Dhuha Prabowo](https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/)\n• **Instagram**: [@frdsdhuha_](https://www.instagram.com/frdsdhuha_)\n• **GitHub**: [github.com/Firdaus1802](https://github.com/Firdaus1802)"
-  }
-
-  // 11. Minat, Hobi, Tertarik, Passion
+  // 8. Minat / Hobi
   if (
     q.includes("hobi") || 
     q.includes("minat") || 
@@ -173,7 +203,7 @@ function getSmartFallbackResponse(query: string): string {
     return "Firdaus berfokus pada eksplorasi arsitektur web modern (Next.js & React), pengembangan backend BaaS (Supabase & Node.js), komputasi awan, serta perancangan antarmuka digital yang presisi."
   }
 
-  // 12. Identitas / Siapa Kamu / Asisten
+  // 9. Identitas / Siapa Kamu / Asisten
   if (
     q.includes("kamu siapa") ||
     q.includes("siapa kamu") ||
@@ -196,7 +226,7 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Saluran Kontak & Jaringan Profesional**`
   }
 
-  // 13. Sapaan / Greeting
+  // 10. Sapaan / Greeting
   if (
     q.includes("halo") || 
     q.includes("hai") || 
@@ -221,7 +251,7 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Saluran Kontak & Jaringan Profesional** (WhatsApp, LinkedIn, Email)`
   }
 
-  // 14. Default Friendly Overview
+  // 11. Default Overview
   return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
