@@ -23,7 +23,7 @@ export default function CVPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
             </svg>
           </div>
-          <span>Kembali ke Portofolio</span>
+          <span>Kembali ke Archive</span>
         </Link>
 
         <div className="flex items-center gap-3">

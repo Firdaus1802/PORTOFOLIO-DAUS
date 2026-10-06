@@ -28,7 +28,7 @@ export default function Project() {
       <section id="projects" className="w-full max-w-7xl mx-auto py-24 md:py-32 cursor-default bg-background relative border-t border-text-secondary/10">
         <FadeDown>
           <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-16 w-full text-left">
-            <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Portfolio</h2>
+            <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Archive & Works</h2>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Selected Projects</h3>
             </div>

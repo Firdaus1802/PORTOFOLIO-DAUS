@@ -74,7 +74,7 @@ export default function Header() {
             <div className="flex flex-row items-center">
               {/* Typographic Logo */}
               <Link href="/" className="text-xl md:text-2xl font-black text-text-primary tracking-tighter hover:opacity-80 transition-opacity">
-                PORTFOLIO.
+                ARCHIVE.
               </Link>
             </div>
 
