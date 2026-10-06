@@ -94,7 +94,7 @@ export default function Project() {
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-text-secondary/10">
                   <button 
                     suppressHydrationWarning 
-                    className="text-xs font-bold tracking-[0.15em] uppercase text-text-primary flex items-center gap-2 group/btn" 
+                    className="text-xs font-bold tracking-[0.15em] uppercase text-text-primary flex items-center gap-2 group/btn cursor-pointer" 
                     onClick={() => setIsOpen(true)}
                   >
                     View Details
@@ -105,7 +105,7 @@ export default function Project() {
                     href={project.liveDemoUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="p-2 border border-text-secondary/20 rounded-full text-text-secondary hover:text-background hover:bg-text-primary hover:border-text-primary transition-all duration-300"
+                    className="p-2 border border-text-secondary/20 rounded-full text-text-secondary hover:text-background hover:bg-text-primary hover:border-text-primary transition-all duration-300 cursor-pointer"
                     title="Open Live Website"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,10 +122,10 @@ export default function Project() {
         <FadeUp>
           <div className="mt-16 flex justify-center w-full px-6">
             <a 
-              href="https://github.com/Firdaus1802" 
+              href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-3 px-8 py-4 bg-background border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-primary hover:text-background rounded-xl font-bold tracking-widest text-sm uppercase transition-all duration-300 ease-out group hover:-translate-y-1.5 hover:scale-[1.02] shadow-sm hover:shadow-xl"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-background border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-primary hover:text-background rounded-xl font-bold tracking-widest text-sm uppercase transition-all duration-300 ease-out group hover:-translate-y-1.5 hover:scale-[1.02] shadow-sm hover:shadow-xl cursor-pointer"
             >
               <span>Visit My GitHub</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
