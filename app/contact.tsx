@@ -290,7 +290,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                   </div>
                   <div className="hidden sm:block">
                     <h4 className="text-lg font-bold text-text-primary">Email</h4>
-                    <p className="text-sm font-medium text-text-secondary">firdaus********@gmail.com</p>
+                    <p className="text-sm font-medium text-text-secondary">fird*********@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -304,7 +304,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                   </div>
                   <div className="hidden sm:block">
                     <h4 className="text-lg font-bold text-text-primary">WhatsApp</h4>
-                    <p className="text-sm font-medium text-text-secondary">+62 813-1535-****</p>
+                    <p className="text-sm font-medium text-text-secondary">+62 813-****-****</p>
                   </div>
                 </div>
               </div>

@@ -78,7 +78,7 @@ export default function About() {
                 <FadeLeft delay={0.3}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Phone</span>
-                    <span className="text-base font-semibold text-text-primary">+62 813-1535-****</span>
+                    <span className="text-base font-semibold text-text-primary">+62 813-****-****</span>
                   </div>
                 </FadeLeft>
 
@@ -93,7 +93,7 @@ export default function About() {
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Email</span>
                     <span className="text-base font-semibold text-text-primary">
-                      firdaus********@gmail.com
+                      fird*********@gmail.com
                     </span>
                   </div>
                 </FadeLeft>

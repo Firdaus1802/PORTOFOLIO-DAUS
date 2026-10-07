@@ -67,13 +67,13 @@ export default function CVPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs font-medium text-[#1a1a1a] mb-1.5 text-left">
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📞</span>
-                <span>+62 813-1535-****</span>
+                <span>+62 813-****-****</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">✉</span>
-                <a href="mailto:firdaus********@gmail.com" className="hover:underline text-[#1a1a1a]">
-                  firdaus********@gmail.com
-                </a>
+                <span className="text-[#1a1a1a]">
+                  fird*********@gmail.com
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📍</span>

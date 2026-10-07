@@ -164,8 +164,8 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
     q.includes("social")
   ) {
     return `Berikut saluran komunikasi dan jaringan profesional resmi Firdaus Dhuha Prabowo:
-• **WhatsApp:** +62 813-1535-****
-• **Email:** firdaus********@gmail.com
+• **WhatsApp:** +62 813-****-****
+• **Email:** fird*********@gmail.com
 • **LinkedIn:** [linkedin.com/in/firdaus-dhuha-prabowo-091949386/](https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/)
 • **GitHub:** [github.com/Firdaus1802](https://github.com/Firdaus1802)
 • **Instagram:** [@frdsdhuha_](https://www.instagram.com/frdsdhuha_)`
