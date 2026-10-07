@@ -12,7 +12,6 @@ export default function CVPage() {
   return (
     <div className="min-h-screen bg-[#eaedf2] py-6 sm:py-9 px-2 sm:px-4 print:p-0 print:bg-white text-[#1a1a1a] font-sans antialiased">
       
-      {/* Top Floating Action Bar (Hidden when Printing) */}
       <div className="max-w-205 mx-auto mb-4 flex items-center justify-between gap-4 print:hidden bg-white/95 backdrop-blur-md px-5 py-3 rounded-xl shadow-sm border border-zinc-200">
         <Link 
           href="/"
@@ -40,15 +39,11 @@ export default function CVPage() {
         </div>
       </div>
 
-      {/* Kontainer Lembar Resume Formal Klasik (A4) */}
       <main 
         className="max-w-205 mx-auto bg-white shadow-xl print:shadow-none border border-[#d5dbe3] print:border-0 p-8 sm:p-11 print:p-6 text-[#1a1a1a] leading-normal"
         style={{ WebkitPrintColorAdjust: "exact", printColorAdjust: "exact" }}
       >
-        
-        {/* ================= 1. HEADER PROFIL ================= */}
         <header className="flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-6 pb-4 border-b border-[#333333]">
-          {/* Photo Box */}
           <div className="w-27 h-32.5 border-[1.5px] border-[#333333] bg-[#f1f5f9] shrink-0 overflow-hidden relative shadow-sm">
             <Image 
               src="/images/profile-firdaus.png" 
@@ -59,7 +54,6 @@ export default function CVPage() {
             />
           </div>
           
-          {/* Header Details */}
           <div className="grow text-center sm:text-left w-full">
             <h1 className="text-xl sm:text-2xl font-black tracking-wider text-[#0f172a] uppercase leading-tight">
               FIRDAUS DHUHA PRABOWO
@@ -73,17 +67,17 @@ export default function CVPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs font-medium text-[#1a1a1a] mb-1.5 text-left">
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📞</span>
-                <span>+62 813-1535-4397</span>
+                <span>+62 813-1535-****</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">✉</span>
-                <a href="mailto:Firdausdhuhaprabowo@gmail.com" className="hover:underline text-[#1a1a1a]">
-                  Firdausdhuhaprabowo@gmail.com
+                <a href="mailto:firdaus********@gmail.com" className="hover:underline text-[#1a1a1a]">
+                  firdaus********@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📍</span>
-                <span>Tangerang, Banten, Indonesia</span>
+                <span>Tangerang, Indonesia</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">🔗</span>
@@ -98,12 +92,11 @@ export default function CVPage() {
               <span className="text-[#94a3b8]">•</span>
               <span>20 Tahun</span>
               <span className="text-[#94a3b8]">•</span>
-              <span>Warga Negara Indonesia</span>
+              <span>Tangerang, Indonesia</span>
             </div>
           </div>
         </header>
 
-        {/* ================= 2. ABOUT ME ================= */}
         <section className="mt-4">
           <h2 className="text-xs font-black tracking-wider text-[#0f172a] uppercase border-b-2 border-[#222222] pb-0.5 mb-2">
             ABOUT ME
@@ -113,13 +106,11 @@ export default function CVPage() {
           </p>
         </section>
 
-        {/* ================= 3. EXPERIENCE & PROJECTS ================= */}
         <section className="mt-4">
           <h2 className="text-xs font-black tracking-wider text-[#0f172a] uppercase border-b-2 border-[#222222] pb-0.5 mb-2.5">
             EXPERIENCE & PROJECTS
           </h2>
           
-          {/* Project 1 */}
           <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4 mb-3">
             <div>
               <span className="block text-xs font-extrabold text-[#0f172a]">2025</span>
@@ -142,7 +133,6 @@ export default function CVPage() {
             </div>
           </div>
 
-          {/* Project 2 */}
           <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
             <div>
               <span className="block text-xs font-extrabold text-[#0f172a]">2026</span>
@@ -166,7 +156,6 @@ export default function CVPage() {
           </div>
         </section>
 
-        {/* ================= 4. EDUCATION ================= */}
         <section className="mt-4">
           <h2 className="text-xs font-black tracking-wider text-[#0f172a] uppercase border-b-2 border-[#222222] pb-0.5 mb-2">
             EDUCATION
@@ -175,7 +164,7 @@ export default function CVPage() {
           <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
             <div>
               <span className="block text-xs font-extrabold text-[#0f172a]">2024 - Sekarang</span>
-              <span className="block text-[10px] text-[#64748b]">Depok / Karawaci</span>
+              <span className="block text-[10px] text-[#64748b]">Universitas Gunadarma</span>
             </div>
             <div>
               <div className="mb-0.5">
@@ -193,7 +182,6 @@ export default function CVPage() {
           </div>
         </section>
 
-        {/* ================= 5. LICENSES & CERTIFICATIONS ================= */}
         <section className="mt-4">
           <h2 className="text-xs font-black tracking-wider text-[#0f172a] uppercase border-b-2 border-[#222222] pb-0.5 mb-2">
             LICENSES & CERTIFICATIONS
@@ -231,7 +219,6 @@ export default function CVPage() {
           </div>
         </section>
 
-        {/* ================= 6. TECHNICAL SKILLS ================= */}
         <section className="mt-4">
           <h2 className="text-xs font-black tracking-wider text-[#0f172a] uppercase border-b-2 border-[#222222] pb-0.5 mb-2">
             TECHNICAL SKILLS
@@ -257,7 +244,6 @@ export default function CVPage() {
           </div>
         </section>
 
-        {/* ================= 7. LANGUAGES & INTERESTS ================= */}
         <section className="mt-4">
           <h2 className="text-xs font-black tracking-wider text-[#0f172a] uppercase border-b-2 border-[#222222] pb-0.5 mb-2">
             LANGUAGES & INTERESTS

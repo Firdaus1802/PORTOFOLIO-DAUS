@@ -65,7 +65,7 @@ function getSmartFallbackResponse(query: string): string {
     return `**Profil & Latar Belakang Akademik Firdaus Dhuha Prabowo:**
 • **Pendidikan:** Mahasiswa aktif S1 Sistem Informasi di Universitas Gunadarma dengan IPK **3.88 / 4.00**.
 • **Kelahiran & Usia:** Lahir pada **18 Februari 2006** di Tangerang (berusia 20 tahun).
-• **Domisili:** Tangerang, Banten, Indonesia.
+• **Domisili:** Tangerang, Indonesia.
 • **Fokus Keahlian:** Frontend Web Development, arsitektur Next.js & React, integrasi backend Supabase & Node.js, serta komputasi awan.`
   }
 
@@ -170,8 +170,8 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
     q.includes("social")
   ) {
     return `Berikut saluran komunikasi dan jaringan profesional resmi Firdaus Dhuha Prabowo:
-• **WhatsApp:** [+62 813-1535-4397](https://wa.me/6281315354397)
-• **Email:** [Firdausdhuhaprabowo@gmail.com](mailto:Firdausdhuhaprabowo@gmail.com)
+• **WhatsApp:** +62 813-1535-****
+• **Email:** firdaus********@gmail.com
 • **LinkedIn:** [linkedin.com/in/firdaus-dhuha-prabowo-091949386/](https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/)
 • **GitHub:** [github.com/Firdaus1802](https://github.com/Firdaus1802)
 • **Instagram:** [@frdsdhuha_](https://www.instagram.com/frdsdhuha_)`
@@ -188,7 +188,7 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
     q.includes("kota") || 
     q.includes("tangerang")
   ) {
-    return "Firdaus berasal dan saat ini berdomisili di **Tangerang, Banten, Indonesia**."
+    return "Firdaus berasal dan saat ini berdomisili di **Tangerang, Indonesia**."
   }
 
   // 8. Minat / Hobi
