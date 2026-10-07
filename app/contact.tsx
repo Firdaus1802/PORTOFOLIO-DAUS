@@ -251,7 +251,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
         <FadeDown delay={0.2}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Google Maps Embed */}
             <div className="bg-background border border-text-secondary/20 rounded-3xl overflow-hidden h-100 lg:h-auto min-h-100 shadow-xl hover:border-text-primary transition-colors duration-500 relative group">
               <div className="absolute top-4 left-4 z-10 bg-background/90 backdrop-blur-md px-4 py-2 rounded-xl border border-text-secondary/20 shadow-lg pointer-events-none">
                 <p className="text-sm font-bold text-text-primary">📍 Tangerang</p>
@@ -266,9 +265,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
               ></iframe>
             </div>
 
-            {/* Social Links Cards */}
             <div className="grid grid-cols-3 sm:flex sm:flex-col gap-4">
-              {/* GitHub */}
               <a href="https://github.com/Firdaus1802" target="_blank" rel="noopener noreferrer" className="group bg-background border border-text-secondary/20 rounded-2xl p-4 sm:p-6 flex items-center justify-center sm:justify-between hover:border-text-primary hover:bg-text-secondary/5 transition-all duration-300 shadow-sm hover:shadow-md aspect-square sm:aspect-auto">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-text-secondary/10 flex items-center justify-center text-text-primary group-hover:text-text-primary group-hover:scale-110 transition-all duration-300">
@@ -284,7 +281,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                 <svg className="hidden sm:block w-5 h-5 text-text-secondary group-hover:text-text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </a>
 
-              {/* Email */}
               <div className="group bg-background border border-text-secondary/20 rounded-2xl p-4 sm:p-6 flex items-center justify-center sm:justify-between hover:border-text-primary hover:bg-text-secondary/5 transition-all duration-300 shadow-sm hover:shadow-md aspect-square sm:aspect-auto">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-text-secondary/10 flex items-center justify-center text-text-primary group-hover:text-text-primary group-hover:scale-110 transition-transform duration-300">
@@ -299,7 +295,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                 </div>
               </div>
 
-              {/* WhatsApp */}
               <div className="group bg-background border border-text-secondary/20 rounded-2xl p-4 sm:p-6 flex items-center justify-center sm:justify-between hover:border-[#25D366] hover:bg-[#25D366]/5 transition-all duration-300 shadow-sm hover:shadow-md aspect-square sm:aspect-auto">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-text-secondary/10 flex items-center justify-center text-text-primary group-hover:text-[#25D366] group-hover:scale-110 transition-all duration-300">
@@ -314,7 +309,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                 </div>
               </div>
 
-              {/* LinkedIn */}
               <a href="https://www.linkedin.com/in/firdaus-dhuha-prabowo-091949386/" target="_blank" rel="noopener noreferrer" className="group bg-background border border-text-secondary/20 rounded-2xl p-4 sm:p-6 flex items-center justify-center sm:justify-between hover:border-[#0077b5] hover:bg-[#0077b5]/5 transition-all duration-300 shadow-sm hover:shadow-md aspect-square sm:aspect-auto">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-text-secondary/10 flex items-center justify-center text-text-primary group-hover:text-[#0077b5] group-hover:scale-110 transition-all duration-300">
@@ -330,7 +324,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                 <svg className="hidden sm:block w-5 h-5 text-text-secondary group-hover:text-[#0077b5] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </a>
 
-              {/* Instagram */}
               <a href="https://www.instagram.com/frdsdhuha_" target="_blank" rel="noopener noreferrer" className="group bg-background border border-text-secondary/20 rounded-2xl p-4 sm:p-6 flex items-center justify-center sm:justify-between hover:border-[#E1306C] hover:bg-[#E1306C]/5 transition-all duration-300 shadow-sm hover:shadow-md aspect-square sm:aspect-auto">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-text-secondary/10 flex items-center justify-center text-text-primary group-hover:text-[#E1306C] group-hover:scale-110 transition-all duration-300">

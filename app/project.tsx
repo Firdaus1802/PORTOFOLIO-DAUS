@@ -9,7 +9,6 @@ import GlareHover from "@/components/GlareHover"
 export default function Project() {
   const [isOpen, setIsOpen] = useState(false)
 
-  // Prevent scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
@@ -35,12 +34,10 @@ export default function Project() {
           </div>
         </FadeDown>
 
-        {/* Project Card Container */}
         <div className="max-w-xl mx-auto px-6">
           <FadeUp>
             <GlareHover className="group flex flex-col h-full bg-background border border-text-secondary/20 hover:border-text-primary/50 rounded-2xl overflow-hidden transition-all duration-500 shadow-sm hover:shadow-2xl">
               
-              {/* Image Frame Preview */}
               <div className="relative aspect-16/10 bg-text-secondary/5 border-b border-text-secondary/10 p-3 flex items-center justify-center overflow-hidden">
                 <div className="relative w-full h-full rounded-lg overflow-hidden shadow-sm border border-text-secondary/15 bg-background">
                   <Image 
@@ -52,15 +49,12 @@ export default function Project() {
                   />
                 </div>
                 
-                {/* Numbering Badge */}
                 <div className="absolute top-5 right-5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest text-text-secondary shadow-sm">
                   01
                 </div>
               </div>
 
-              {/* Card Body */}
               <div className="p-6 md:p-7 flex flex-col grow relative">
-                {/* Issuer / Category & Date */}
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[11px] font-bold tracking-wider uppercase text-text-secondary flex items-center gap-1.5">
                     <svg className="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
@@ -71,17 +65,14 @@ export default function Project() {
                   <span className="text-[11px] font-bold text-text-secondary/80">{project.createdAt}</span>
                 </div>
 
-                {/* Title */}
                 <h4 className="text-xl md:text-2xl font-bold text-text-primary tracking-tight leading-snug mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-text-primary group-hover:to-text-secondary transition-all duration-300">
                   {project.title}
                 </h4>
 
-                {/* Description */}
                 <p className="text-sm text-text-secondary font-medium leading-relaxed mb-5 line-clamp-3">
                   {project.shortDescription}
                 </p>
 
-                {/* Tech Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-6">
                   {project.tech.map((skill, i) => (
                     <span key={i} className="text-[10px] font-bold bg-thirdary text-text-primary px-2.5 py-1 rounded-md border border-text-secondary/10 uppercase tracking-wider">
@@ -90,7 +81,6 @@ export default function Project() {
                   ))}
                 </div>
 
-                {/* Footer Actions */}
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-text-secondary/10">
                   <button 
                     suppressHydrationWarning 
@@ -118,7 +108,6 @@ export default function Project() {
           </FadeUp>
         </div>
 
-        {/* GitHub Repositories Link */}
         <FadeUp>
           <div className="mt-16 flex justify-center w-full px-6">
             <a 
@@ -135,11 +124,9 @@ export default function Project() {
           </div>
         </FadeUp>
 
-        {/* Modal View */}
         <AnimatePresence>
           {isOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
-              {/* Backdrop */}
               <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
@@ -149,7 +136,6 @@ export default function Project() {
                 onClick={() => setIsOpen(false)} 
               />
 
-              {/* Modal Container */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95, y: 20 }} 
                 animate={{ opacity: 1, scale: 1, y: 0 }} 
@@ -157,7 +143,6 @@ export default function Project() {
                 transition={{ type: "spring", damping: 25, stiffness: 300 }} 
                 className="bg-background border border-text-secondary/20 rounded-3xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative z-10"
               >
-                {/* Modal Header */}
                 <div className="flex justify-between items-center p-5 md:p-6 border-b border-text-secondary/10">
                   <div>
                     <h4 className="text-xl md:text-2xl font-black text-text-primary tracking-tight">{project.title}</h4>
@@ -174,9 +159,7 @@ export default function Project() {
                   </button>
                 </div>
 
-                {/* Modal Content */}
                 <div className="p-5 md:p-8 overflow-y-auto grow custom-scrollbar">
-                  {/* Screenshot Banner */}
                   <div className="relative aspect-16/10 w-full rounded-2xl overflow-hidden border border-text-secondary/15 mb-6 bg-text-secondary/5 shadow-lg">
                     <Image src={project.imagePath} alt={project.title} fill className="object-cover object-top" />
                   </div>
@@ -221,7 +204,6 @@ export default function Project() {
                   </div>
                 </div>
 
-                {/* Modal Footer */}
                 <div className="p-5 md:p-6 border-t border-text-secondary/10 flex flex-col sm:flex-row gap-4 bg-background relative z-30">
                   <a 
                     href={project.liveDemoUrl} 

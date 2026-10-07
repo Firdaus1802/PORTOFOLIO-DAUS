@@ -6,14 +6,12 @@ export default function PageLoader() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Prevent scrolling while loading
     document.body.style.overflow = "hidden"
     
-    // Simulating initial load time for smooth entrance
     const timer = setTimeout(() => {
       setIsLoading(false)
       document.body.style.overflow = "unset"
-    }, 2000) // Adjust the loading time as necessary (2 seconds for demo)
+    }, 2000)
 
     return () => {
       clearTimeout(timer)
@@ -31,10 +29,8 @@ export default function PageLoader() {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center overflow-hidden"
         >
-          {/* Aesthetic Background Elements */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-text-primary/10 rounded-full blur-[100px]" />
 
-          {/* Staggered Text Animation */}
           <div className="relative overflow-hidden h-16 flex items-center justify-center">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
@@ -58,7 +54,6 @@ export default function PageLoader() {
             </motion.div>
           </div>
 
-          {/* Progress Bar Animation */}
           <div className="mt-8 w-48 md:w-64 h-0.5 bg-text-secondary/20 rounded-full overflow-hidden relative">
             <motion.div
               initial={{ x: "-100%" }}

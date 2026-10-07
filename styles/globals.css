@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* 🎨 Default (Light Theme) */
 :root {
   --background: #fdfdfd;
   --foreground: #ffffff;
@@ -8,7 +7,7 @@
   --text-primary: #111827;
   --text-secondary: #6b7280;
   --button-hover: #e5e7eb;
-  --neon-color: #111827; /* Replaced neon with strong primary contrast */
+  --neon-color: #111827;
   --button-hero: #111827;
   --button-hero-hover: #374151;
   --quick-stats-bg: #ffffff;
@@ -16,7 +15,6 @@
   --text-project-card: #fdfdfd;
 }
 
-/* 🌙 Dark Theme (aktif saat class .dark ada di <html>) */
 .dark {
   --background: #0a0a0a;
   --foreground: #121212;
@@ -24,7 +22,7 @@
   --text-primary: #ececec;
   --text-secondary: #a1a1aa;
   --button-hover: #262626;
-  --neon-color: #ececec; /* Replaced neon with strong primary contrast */
+  --neon-color: #ececec;
   --button-hero: #ffffff;
   --button-hero-hover: #e5e5e5;
   --quick-stats-bg: #171717;
@@ -49,7 +47,6 @@
   --color-text-project-card: var(--text-project-card);
 }
 
-/* 🌈 Gunakan variable di seluruh body */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -59,7 +56,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ✨ Animasi cursor blink */
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
@@ -69,7 +65,6 @@ body {
   animation: blink 1.5s infinite;
 }
 
-/* 🎈 Animasi floating (Subtle) */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
@@ -79,7 +74,6 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
-/* 💡 Efek Neon Glow - Removed for typography theme, replaced with a very subtle soft shadow */
 .neon {
   box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
 }
@@ -124,7 +118,6 @@ html {
   background: #52525b;
 }
 
-/* 📦 Custom scrollbar for inner scroll containers */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -151,12 +144,10 @@ html {
   background: #52525b;
 }
 
-/* Tech stack SVG icon filter: always original color */
 .tech-icon-img {
   transition: transform 0.3s ease;
 }
 
-/* 🔄 Animasi Infinite Scroll */
 @keyframes infinite-scroll {
   from {
     transform: translateX(0);

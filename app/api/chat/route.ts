@@ -10,7 +10,6 @@ interface HistoryEntry {
 function getSmartFallbackResponse(query: string): string {
   const q = query.toLowerCase()
 
-  // 1. Proyek Pilihan / Proyek Unggulan / Finzie / Roblox / Joki / Portfolio
   if (
     q.includes("proyek") || 
     q.includes("projek") || 
@@ -39,7 +38,6 @@ function getSmartFallbackResponse(query: string): string {
 • **Fitur & Solusi:** Web portofolio interaktif dengan animasi halus, credential viewer terverifikasi, dan Chatbot AI Assistant cerdas.`
   }
 
-  // 2. Profil & Latar Belakang Akademik / Umur / Lahir / Pendidikan
   if (
     q.includes("profil") || 
     q.includes("akademik") || 
@@ -69,7 +67,6 @@ function getSmartFallbackResponse(query: string): string {
 • **Fokus Keahlian:** Frontend Web Development, arsitektur Next.js & React, integrasi backend Supabase & Node.js, serta komputasi awan.`
   }
 
-  // 3. Tech Stack & Database
   if (
     q.includes("tech stack") || 
     q.includes("stack") || 
@@ -107,7 +104,6 @@ function getSmartFallbackResponse(query: string): string {
 • **Development Tools:** Git, GitHub, VS Code, Vercel, Microsoft Office (Sertifikasi BNSP).`
   }
 
-  // 4. Sertifikasi & Lisensi Resmi
   if (
     q.includes("sertifikat") || 
     q.includes("sertifikasi") || 
@@ -133,7 +129,6 @@ function getSmartFallbackResponse(query: string): string {
 • **Dicoding & DBS Foundation:** Introduction to Financial Literacy (ID: \`JMZVVKDD3ZN9\`)`
   }
 
-  // 5. CV / Resume Resmi
   if (
     q.includes("cv") || 
     q.includes("resume") || 
@@ -150,7 +145,6 @@ function getSmartFallbackResponse(query: string): string {
 Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap dicetak / disimpan dalam format standar A4.`
   }
 
-  // 6. Kontak & Saluran Komunikasi
   if (
     q.includes("kontak") || 
     q.includes("contact") || 
@@ -177,7 +171,6 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
 • **Instagram:** [@frdsdhuha_](https://www.instagram.com/frdsdhuha_)`
   }
 
-  // 7. Domisili / Lokasi
   if (
     q.includes("asal") || 
     q.includes("tinggal") || 
@@ -191,7 +184,6 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
     return "Firdaus berasal dan saat ini berdomisili di **Tangerang, Indonesia**."
   }
 
-  // 8. Minat / Hobi
   if (
     q.includes("hobi") || 
     q.includes("minat") || 
@@ -203,7 +195,6 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
     return "Firdaus berfokus pada eksplorasi arsitektur web modern (Next.js & React), pengembangan backend BaaS (Supabase & Node.js), komputasi awan, serta perancangan antarmuka digital yang presisi."
   }
 
-  // 9. Identitas / Siapa Kamu / Asisten
   if (
     q.includes("kamu siapa") ||
     q.includes("siapa kamu") ||
@@ -226,7 +217,6 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Saluran Kontak & Jaringan Profesional**`
   }
 
-  // 10. Sapaan / Greeting
   if (
     q.includes("halo") || 
     q.includes("hai") || 
@@ -251,7 +241,6 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Saluran Kontak & Jaringan Profesional** (WhatsApp, LinkedIn, Email)`
   }
 
-  // 11. Default Overview
   return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:

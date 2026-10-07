@@ -20,7 +20,6 @@ export default function Header() {
   }
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
 
     const savedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") : null
@@ -72,7 +71,6 @@ export default function Header() {
         <FadeDown>
           <div className="relative flex items-center justify-between py-3 md:py-4 px-6 md:px-8 bg-background/80 backdrop-blur-md border border-text-secondary/20 rounded-full shadow-lg transition-colors duration-300">
             <div className="flex flex-row items-center">
-              {/* Typographic Logo */}
               <Link href="/" className="text-xl md:text-2xl font-black text-text-primary tracking-tighter hover:opacity-80 transition-opacity">
                 ARCHIVE.
               </Link>
@@ -131,7 +129,6 @@ export default function Header() {
             </div>
 
             <div className={`${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"} md:hidden transform absolute top-16 right-4 z-50 origin-top-right transition-all duration-300 ease-in-out`}>
-              {/* Mobile Menu Placeholder */}
               <div className="flex flex-col gap-6 bg-background/95 backdrop-blur-md border border-text-secondary/10 p-6 rounded-2xl shadow-xl w-48">
                 {shortCut.map((item, index) => (
                   <button 
