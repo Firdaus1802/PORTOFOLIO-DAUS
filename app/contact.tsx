@@ -60,7 +60,7 @@ export default function Contact() {
       {
         id: "welcome-msg",
         sender: "bot",
-        text: `Selamat datang. Saya adalah Firdaus Assistant, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, IPK 3.88).
+        text: `Selamat datang. Saya adalah Firdaus Assistant, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif S1 Sistem Informasi, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik**
@@ -111,7 +111,7 @@ Gunakan panduan informasi berikut tentang Firdaus untuk menjawab pertanyaan:
    - Nama: Firdaus Dhuha Prabowo
    - Tanggal Lahir: 18 Februari 2006 (Usia 20 tahun per tahun 2026)
    - Peran: Junior Frontend Developer / Web Developer
-   - Pendidikan: Universitas Gunadarma (IPK: 3.88 / 4.00)
+   - Pendidikan: S1 Sistem Informasi (IPK: 3.88 / 4.00)
    - Lokasi / Domisili: Canada
    - Email: firdausdhuhaprabowo@gmail.com
    - WhatsApp/Telepon: +62 813-1535-4397
@@ -140,7 +140,7 @@ Gunakan panduan informasi berikut tentang Firdaus untuk menjawab pertanyaan:
    - Dicoding & DBS Foundation: Introduction to Financial Literacy
 
 4. **Pendidikan**:
-   - Universitas Gunadarma (IPK: 3.88) - Mahasiswa aktif yang fokus pada pemrograman web, sistem informasi, dan pengembangan antarmuka pengguna.
+   - S1 Sistem Informasi (IPK: 3.88) - Mahasiswa aktif yang fokus pada pemrograman web, sistem informasi, dan pengembangan antarmuka pengguna.
 
 5. **Proyek Utama**:
    - Finzie Joki Service: Platform website layanan joki dan servis game Roblox (CDID, DDS, Eagle Nation) yang dibangun menggunakan Next.js, React, dan Tailwind CSS, serta di-deploy secara publik di Vercel (https://finziejokiservice.vercel.app/).

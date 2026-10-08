@@ -43,7 +43,7 @@ export default function About() {
               <div className="flex flex-col">
                 <Fade>
                   <h4 className="text-lg md:text-xl font-bold text-text-primary mb-4 flex items-center border-b border-text-secondary/20 pb-4">Who Am I</h4>
-                  <p className="text-base text-text-secondary leading-relaxed font-medium">Saya seorang Junior Frontend Developer dan mahasiswa Universitas Gunadarma yang bersemangat mendalami dunia web development. Saya fokus mempelajari pembuatan antarmuka web yang bersih, responsif, dan interaktif menggunakan HTML, CSS, JavaScript, React, dan Next.js.</p>
+                  <p className="text-base text-text-secondary leading-relaxed font-medium">Saya seorang Junior Frontend Developer dan mahasiswa S1 Sistem Informasi yang bersemangat mendalami dunia web development. Saya fokus mempelajari pembuatan antarmuka web yang bersih, responsif, dan interaktif menggunakan HTML, CSS, JavaScript, React, dan Next.js.</p>
                 </Fade>
               </div>
               
@@ -101,7 +101,7 @@ export default function About() {
                 <FadeLeft delay={0.6}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Education</span>
-                    <span className="text-base font-semibold text-text-primary">Universitas Gunadarma</span>
+                    <span className="text-base font-semibold text-text-primary filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text" title="Arahkan kursor untuk memperjelas">Universitas Gunadarma</span>
                   </div>
                 </FadeLeft>
               </div>
