@@ -120,8 +120,8 @@ Gunakan panduan informasi berikut tentang Firdaus untuk menjawab pertanyaan:
    - Peran: Junior Frontend Developer / Web Developer
    - Pendidikan: Universitas Gunadarma (IPK: 3.88 / 4.00)
    - Lokasi / Domisili: Yogyakarta, Indonesia
-   - Email: daus52694@gmail.com
-   - WhatsApp/Telepon: +62 813-8822-5269
+   - Email: firdausdhuhaprabowo@gmail.com
+   - WhatsApp/Telepon: +62 813-1535-4397
    - LinkedIn: linkedin.com/in/firdaus-dhuha-prabowo-091949386/
    - Instagram: @frdsdhuha_ (instagram.com/frdsdhuha_)
    - GitHub: github.com/Firdaus1802
@@ -290,7 +290,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                   </div>
                   <div className="hidden sm:block">
                     <h4 className="text-lg font-bold text-text-primary">Email</h4>
-                    <p className="text-sm font-medium text-text-secondary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">daus52694@gmail.com</p>
+                    <p className="text-sm font-medium text-text-secondary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">firdausdhuhaprabowo@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -304,7 +304,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                   </div>
                   <div className="hidden sm:block">
                     <h4 className="text-lg font-bold text-text-primary">WhatsApp</h4>
-                    <p className="text-sm font-medium text-text-secondary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-8822-5269</p>
+                    <p className="text-sm font-medium text-text-secondary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</p>
                   </div>
                 </div>
               </div>
