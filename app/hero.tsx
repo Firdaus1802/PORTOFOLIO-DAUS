@@ -97,7 +97,7 @@ export default function Hero() {
         </FadeLeft>
 
         <FadeRight>
-          <div className="flex flex-col items-center justify-center relative mt-12 md:mt-0 w-full">
+          <div className="flex flex-col items-center justify-center relative mt-12 md:mt-0 w-full pb-16 sm:pb-12 md:pb-6">
             <div className="relative w-70 h-70 sm:w-85 sm:h-85 md:w-95 md:h-95 flex items-center justify-center mx-auto">
               <div className="absolute inset-0 bg-linear-to-tr from-thirdary to-background rounded-full scale-110 opacity-50 blur-2xl"></div>
 
@@ -114,25 +114,24 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Floating badges in front of profile photo */}
-              <div className="absolute -top-2 sm:top-2 -left-4 sm:-left-8 z-30 floating">
-                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300">
+              {/* Badges positioned under Frontend Enthusiast */}
+              <div className="absolute top-[68%] sm:top-[72%] -left-2 sm:-left-6 z-30 flex flex-col gap-2.5">
+                {/* 1. Frontend Enthusiast */}
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 floating">
+                  <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[2].icon}</div>
+                  <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[2].message}</span>
+                </div>
+
+                {/* 2. Active Web Learner */}
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 floating" style={{ animationDelay: "1s" }}>
                   <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[0].icon}</div>
                   <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[0].message}</span>
                 </div>
-              </div>
 
-              <div className="absolute top-1/2 -right-4 sm:-right-8 -translate-y-1/2 z-30 floating" style={{ animationDelay: "1s" }}>
-                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                {/* 3. Javascript & React Focus */}
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 floating" style={{ animationDelay: "2s" }}>
                   <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[1].icon}</div>
                   <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[1].message}</span>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-2 sm:bottom-2 -left-2 sm:-left-6 z-30 floating" style={{ animationDelay: "2s" }}>
-                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300">
-                  <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[2].icon}</div>
-                  <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[2].message}</span>
                 </div>
               </div>
             </div>
