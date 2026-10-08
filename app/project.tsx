@@ -218,14 +218,13 @@ export default function Project() {
                   </a>
                   <button 
                     type="button"
-                    disabled
                     aria-disabled="true"
-                    title="Source Code Private / Proprietary"
-                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-secondary/60 bg-text-secondary/5 py-3.5 rounded-xl cursor-not-allowed select-none opacity-60 transition-all duration-300"
+                    onClick={(e) => e.preventDefault()}
+                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-not-allowed select-none"
                   >
-                    <span>Source Code (Private)</span>
-                    <svg className="w-4 h-4 text-text-secondary/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    <span>Source Code</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                   </button>
                 </div>
