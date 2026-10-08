@@ -67,13 +67,13 @@ export default function CVPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs font-medium text-[#1a1a1a] mb-1.5 text-left">
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📞</span>
-                <span className="filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</span>
+                <a href="https://wa.me/6281315354397" target="_blank" rel="noopener noreferrer" className="filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer hover:underline text-[#1a1a1a]" title="Arahkan kursor untuk memperjelas / Hubungi via WhatsApp">+62 813-1535-4397</a>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">✉</span>
-                <span className="text-[#1a1a1a] filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer" title="Arahkan kursor untuk memperjelas">
+                <a href="mailto:firdausdhuhaprabowo@gmail.com" className="text-[#1a1a1a] filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer hover:underline" title="Arahkan kursor untuk memperjelas / Kirim Email">
                   firdausdhuhaprabowo@gmail.com
-                </span>
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📍</span>
