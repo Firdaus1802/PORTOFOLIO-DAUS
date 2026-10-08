@@ -48,7 +48,7 @@ export default function Hero() {
 
   return (
     <>
-      <section id="home" className="w-full max-w-7xl mx-auto cursor-default grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 py-24 md:py-32 overflow-hidden">
+      <section id="home" className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 py-24 md:py-32 overflow-hidden">
         <FadeLeft>
           <div className="flex flex-col gap-2">
             <div>

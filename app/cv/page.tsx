@@ -67,11 +67,11 @@ export default function CVPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs font-medium text-[#1a1a1a] mb-1.5 text-left">
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📞</span>
-                <span className="filter blur-[3.5px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</span>
+                <span className="filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">✉</span>
-                <span className="text-[#1a1a1a] filter blur-[3.5px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">
+                <span className="text-[#1a1a1a] filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer" title="Arahkan kursor untuk memperjelas">
                   firdausdhuhaprabowo@gmail.com
                 </span>
               </div>

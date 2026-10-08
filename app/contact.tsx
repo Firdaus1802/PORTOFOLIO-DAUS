@@ -240,7 +240,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
   }, [])
 
   return (
-    <section id="contacts" className="w-full max-w-7xl mx-auto py-24 md:py-32 cursor-default bg-background relative overflow-hidden border-t border-text-secondary/10">
+    <section id="contacts" className="w-full max-w-7xl mx-auto py-24 md:py-32 bg-background relative overflow-hidden border-t border-text-secondary/10">
       <FadeDown>
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24 w-full text-left">
           <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Get In Touch</h2>
@@ -290,7 +290,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                   </div>
                   <div className="hidden sm:block">
                     <h4 className="text-lg font-bold text-text-primary">Email</h4>
-                    <p className="text-sm font-medium text-text-secondary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">firdausdhuhaprabowo@gmail.com</p>
+                    <p className="text-sm font-medium text-text-secondary filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer" title="Arahkan kursor untuk memperjelas">firdausdhuhaprabowo@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -304,7 +304,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
                   </div>
                   <div className="hidden sm:block">
                     <h4 className="text-lg font-bold text-text-primary">WhatsApp</h4>
-                    <p className="text-sm font-medium text-text-secondary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</p>
+                    <p className="text-sm font-medium text-text-secondary filter blur-xs hover:blur-none transition-all duration-300 select-text cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</p>
                   </div>
                 </div>
               </div>

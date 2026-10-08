@@ -105,8 +105,12 @@ export default function Header() {
                 CV
               </Link>
               <button
-                className="cursor-pointer text-text-secondary hover:text-text-primary transition-colors"
-                onClick={() => {
+                type="button"
+                aria-label="Toggle Dark/Light Theme"
+                className="cursor-pointer text-text-secondary hover:text-text-primary p-2 rounded-full hover:bg-text-secondary/10 transition-all flex items-center justify-center"
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
                   toggleTheme()
                 }}
               >

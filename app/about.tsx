@@ -9,7 +9,7 @@ export default function About() {
 
   return (
     <>
-      <section id="about" className="w-full max-w-7xl mx-auto py-24 md:py-32 cursor-default bg-background overflow-hidden border-t border-text-secondary/10">
+      <section id="about" className="w-full max-w-7xl mx-auto py-24 md:py-32 bg-background overflow-hidden border-t border-text-secondary/10">
         <FadeDown>
           <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24 w-full text-left">
             <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Discover</h2>
@@ -20,7 +20,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 px-6 md:px-12">
           
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative mb-8 lg:mb-0">
-            <div className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] relative mx-auto">
+            <div className="w-full max-w-80 sm:max-w-90 lg:max-w-105 relative mx-auto">
               <Fade>
                 <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-3xl shadow-2xl overflow-hidden aspect-4/5 w-full group transition-all duration-500 hover:shadow-[0_20px_40px_-5px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_20px_40px_-5px_rgba(255,255,255,0.05)] hover:-translate-y-1">
                   <Image 
@@ -78,7 +78,7 @@ export default function About() {
                 <FadeLeft delay={0.3}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Phone</span>
-                    <span className="text-base font-semibold text-text-primary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</span>
+                    <span className="text-base font-semibold text-text-primary filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</span>
                   </div>
                 </FadeLeft>
 
@@ -92,7 +92,7 @@ export default function About() {
                 <FadeLeft delay={0.5}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Email</span>
-                    <span className="text-base font-semibold text-text-primary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">
+                    <span className="text-base font-semibold text-text-primary filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text" title="Arahkan kursor untuk memperjelas">
                       firdausdhuhaprabowo@gmail.com
                     </span>
                   </div>
