@@ -49,7 +49,7 @@ export default function CVPage() {
               src="/images/profile-firdaus.png" 
               alt="Firdaus Dhuha Prabowo"
               fill
-              className="object-cover"
+              className="object-cover object-[50%_12%]"
               priority
             />
           </div>

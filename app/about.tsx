@@ -19,15 +19,15 @@ export default function About() {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 px-6 md:px-12">
           
-          <div className="lg:col-span-5 hidden lg:flex flex-col items-center lg:items-center justify-center relative">
-            <div className="w-full max-w-[350px] lg:max-w-[450px] relative">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative mb-8 lg:mb-0">
+            <div className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] relative mx-auto">
               <Fade>
                 <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-3xl shadow-2xl overflow-hidden aspect-4/5 w-full group transition-all duration-500 hover:shadow-[0_20px_40px_-5px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_20px_40px_-5px_rgba(255,255,255,0.05)] hover:-translate-y-1">
                   <Image 
                     src="/images/profile-firdaus.png" 
                     alt="Firdaus Dhuha Prabowo" 
                     fill 
-                    className="object-contain p-2 transition-all duration-700 scale-100 group-hover:scale-105" 
+                    className="object-cover object-[50%_15%] p-1 transition-all duration-700 scale-100 group-hover:scale-105 rounded-2xl" 
                     sizes="(max-width: 1024px) 100vw, 500px"
                     unoptimized
                   />
