@@ -63,7 +63,7 @@ function getSmartFallbackResponse(query: string): string {
     return `**Profil & Latar Belakang Akademik Firdaus Dhuha Prabowo:**
 • **Pendidikan:** Mahasiswa aktif S1 Sistem Informasi dengan IPK **3.88 / 4.00**.
 • **Kelahiran & Usia:** Lahir pada **18 Februari 2006** (berusia 20 tahun).
-• **Domisili:** Canada.
+• **Domisili:** Indonesia.
 • **Fokus Keahlian:** Frontend Web Development, arsitektur Next.js & React, integrasi backend Supabase & Node.js, serta komputasi awan.`
   }
 
@@ -178,14 +178,13 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
     q.includes("lokasi") || 
     q.includes("rumah") || 
     q.includes("tempat tinggal") || 
-    q.includes("canada") ||
-    q.includes("kanada") ||
+    q.includes("indonesia") ||
     q.includes("wonosari") ||
     q.includes("yogyakarta") ||
     q.includes("jogja") ||
     q.includes("tangerang")
   ) {
-    return "Firdaus saat ini berdomisili di **Canada**."
+    return "Firdaus saat ini berdomisili di **Indonesia**."
   }
 
   if (
