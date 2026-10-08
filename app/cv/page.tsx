@@ -77,7 +77,7 @@ export default function CVPage() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📍</span>
-                <span>Yogyakarta, Indonesia</span>
+                <span>Wonosari, Yogyakarta, Indonesia</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">🔗</span>
@@ -92,7 +92,7 @@ export default function CVPage() {
               <span className="text-[#94a3b8]">•</span>
               <span>20 Tahun</span>
               <span className="text-[#94a3b8]">•</span>
-              <span>Yogyakarta, Indonesia</span>
+              <span>Wonosari, Yogyakarta, Indonesia</span>
             </div>
           </div>
         </header>

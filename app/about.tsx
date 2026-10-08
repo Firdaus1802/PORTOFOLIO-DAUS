@@ -71,7 +71,7 @@ export default function About() {
                 <FadeLeft delay={0.2}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Place of Birth</span>
-                    <span className="text-base font-semibold text-text-primary">Yogyakarta, Indonesia</span>
+                    <span className="text-base font-semibold text-text-primary">Wonosari, Yogyakarta, Indonesia</span>
                   </div>
                 </FadeLeft>
 
