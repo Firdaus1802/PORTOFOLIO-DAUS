@@ -114,7 +114,7 @@ export default function Project() {
               href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-3 px-8 py-4 bg-background border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-primary hover:text-background rounded-xl font-bold tracking-widest text-sm uppercase transition-all duration-300 ease-out group hover:-translate-y-1.5 hover:scale-[1.02] shadow-sm hover:shadow-xl cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-background border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 rounded-xl font-bold tracking-widest text-sm uppercase transition-all duration-300 ease-out group hover:-translate-y-1 shadow-sm hover:shadow-md cursor-pointer"
             >
               <span>Visit My GitHub</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -209,25 +209,23 @@ export default function Project() {
                     href={project.liveDemoUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    style={{ cursor: "pointer" }}
-                    className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300 cursor-pointer pointer-events-auto"
+                    className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
                   >
-                    Open Live Demo
+                    <span>Open Live Demo</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
                   </a>
                   <a 
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      if (typeof window !== "undefined") {
-                        window.open(project.githubUrl, "_blank", "noopener,noreferrer")
-                      }
-                    }}
-                    style={{ cursor: "pointer" }}
-                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border-2 border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-primary hover:text-background hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-pointer pointer-events-auto"
+                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-pointer"
                   >
-                    Source Code
+                    <span>Source Code</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
                   </a>
                 </div>
               </motion.div>
