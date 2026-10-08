@@ -102,7 +102,7 @@ export default function CVPage() {
             ABOUT ME
           </h2>
           <p className="text-xs text-[#262626] leading-relaxed text-justify">
-            Mahasiswa aktif program studi <strong>S1 Sistem Informasi</strong> dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88 / 4.00</strong>. Berfokus mendalam pada <strong>Frontend Web Development</strong> dan arsitektur aplikasi berbasis web modern. Terampil membangun antarmuka web yang rapi, cepat, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman yang solid dalam integrasi backend BaaS (<strong>Supabase</strong>, RESTful API Node.js, Python), komputasi awan, serta memegang sertifikasi kompetensi resmi dari Cisco Networking Academy, BNSP, dan Dicoding Indonesia.
+            Mahasiswa aktif program studi <strong>S1 Sistem Informasi</strong> di Universitas Gunadarma dengan Indeks Prestasi Kumulatif (IPK) <strong>3.88 / 4.00</strong>. Berfokus mendalam pada <strong>Frontend Web Development</strong> dan arsitektur aplikasi berbasis web modern. Terampil membangun antarmuka web yang rapi, cepat, responsif, dan interaktif menggunakan <strong>JavaScript (ES6+)</strong>, <strong>React.js</strong>, <strong>Next.js</strong>, dan <strong>Tailwind CSS</strong>. Memiliki pemahaman yang solid dalam integrasi backend BaaS (<strong>Supabase</strong>, RESTful API Node.js, Python), komputasi awan, serta memegang sertifikasi kompetensi resmi dari Cisco Networking Academy, BNSP, dan Dicoding Indonesia.
           </p>
         </section>
 
@@ -164,11 +164,11 @@ export default function CVPage() {
           <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
             <div>
               <span className="block text-xs font-extrabold text-[#0f172a]">2024 - Sekarang</span>
-              <span className="block text-[10px] text-[#64748b] filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text" title="Arahkan kursor untuk memperjelas">Universitas Gunadarma</span>
+              <span className="block text-[10px] text-[#64748b]">Universitas Gunadarma</span>
             </div>
             <div>
               <div className="mb-0.5">
-                <h3 className="text-xs font-extrabold text-[#0f172a] inline filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text" title="Arahkan kursor untuk memperjelas">
+                <h3 className="text-xs font-extrabold text-[#0f172a] inline">
                   Universitas Gunadarma
                 </h3>
                 <span className="text-xs font-semibold text-[#555555] inline ml-1.5 before:content-['—_'] before:text-[#94a3b8]">

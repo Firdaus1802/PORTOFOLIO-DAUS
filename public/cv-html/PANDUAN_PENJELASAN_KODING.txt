@@ -1,7 +1,7 @@
 ================================================================================
 PANDUAN PENJELASAN KODING CV (HTML & CSS)
 Nama: Firdaus Dhuha Prabowo
-Jurusan: S1 - Sistem Informasi
+Jurusan: S1 - Sistem Informasi (Universitas Gunadarma)
 ================================================================================
 
 Jika dosen / asisten lab meminta kamu menjelaskan kodingan ini, berikut contekannya:

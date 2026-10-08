@@ -61,7 +61,7 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("mahasiswa")
   ) {
     return `**Profil & Latar Belakang Akademik Firdaus Dhuha Prabowo:**
-• **Pendidikan:** Mahasiswa aktif S1 Sistem Informasi dengan IPK **3.88 / 4.00**.
+• **Pendidikan:** Mahasiswa aktif S1 Sistem Informasi di **Universitas Gunadarma** dengan IPK **3.88 / 4.00**.
 • **Kelahiran & Usia:** Lahir pada **18 Februari 2006** (berusia 20 tahun).
 • **Domisili:** Indonesia.
 • **Fokus Keahlian:** Frontend Web Development, arsitektur Next.js & React, integrasi backend Supabase & Node.js, serta komputasi awan.`
@@ -209,7 +209,7 @@ Halaman tersebut telah dioptimasi dalam format executive 2-kolom dan siap diceta
     q.includes("bot apa") ||
     q.includes("asisten")
   ) {
-    return `Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif S1 Sistem Informasi, IPK 3.88).
+    return `Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, S1 Sistem Informasi, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik**
@@ -233,10 +233,10 @@ Silakan pilih direktori informasi yang ingin Anda akses:
     q.includes("permisi") ||
     q.includes("selamat datang")
   ) {
-    return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif S1 Sistem Informasi, IPK 3.88).
+    return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, S1 Sistem Informasi, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
-• **Profil & Latar Belakang Akademik** (S1 Sistem Informasi IPK 3.88)
+• **Profil & Latar Belakang Akademik** (S1 Sistem Informasi di Gunadarma IPK 3.88)
 • **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Platform)
 • **Spesialisasi Tech Stack & Database** (React, Next.js, Supabase, Node.js)
 • **Lisensi & Sertifikasi Industri Resmi** (10 Lisensi Terverifikasi)
@@ -244,7 +244,7 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Saluran Kontak & Jaringan Profesional** (WhatsApp, LinkedIn, Email)`
   }
 
-  return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif S1 Sistem Informasi, IPK 3.88).
+  return `Selamat datang. Saya adalah **Firdaus Assistant**, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif Universitas Gunadarma, S1 Sistem Informasi, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik**
