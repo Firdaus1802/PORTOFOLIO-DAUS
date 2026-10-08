@@ -78,7 +78,7 @@ export default function About() {
                 <FadeLeft delay={0.3}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Phone</span>
-                    <a href="https://wa.me/6281315354397" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-text-primary filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text hover:underline" title="Arahkan kursor untuk memperjelas / Klik untuk chat WhatsApp">+62 813-1535-4397</a>
+                    <span className="text-base font-semibold text-text-primary filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text" title="Arahkan kursor untuk memperjelas">+62 813-1535-4397</span>
                   </div>
                 </FadeLeft>
 
@@ -92,9 +92,9 @@ export default function About() {
                 <FadeLeft delay={0.5}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Email</span>
-                    <a href="mailto:firdausdhuhaprabowo@gmail.com" className="text-base font-semibold text-text-primary filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text hover:underline" title="Arahkan kursor untuk memperjelas / Klik untuk kirim Email">
+                    <span className="text-base font-semibold text-text-primary filter blur-xs hover:blur-none transition-all duration-300 cursor-pointer select-text" title="Arahkan kursor untuk memperjelas">
                       firdausdhuhaprabowo@gmail.com
-                    </a>
+                    </span>
                   </div>
                 </FadeLeft>
 
