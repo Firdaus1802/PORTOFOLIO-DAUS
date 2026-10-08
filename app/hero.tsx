@@ -114,21 +114,17 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Badges positioned under Frontend Enthusiast */}
               <div className="absolute top-[68%] sm:top-[72%] -left-2 sm:-left-6 z-30 flex flex-col gap-2.5">
-                {/* 1. Frontend Enthusiast */}
                 <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 floating">
                   <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[2].icon}</div>
                   <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[2].message}</span>
                 </div>
 
-                {/* 2. Active Web Learner */}
                 <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 floating" style={{ animationDelay: "1s" }}>
                   <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[0].icon}</div>
                   <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[0].message}</span>
                 </div>
 
-                {/* 3. Javascript & React Focus */}
                 <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 floating" style={{ animationDelay: "2s" }}>
                   <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[1].icon}</div>
                   <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[1].message}</span>

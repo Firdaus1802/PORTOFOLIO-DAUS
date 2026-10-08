@@ -20,7 +20,6 @@ export default function Contact() {
     message: "",
     show: false,
   })
-  // Chatbot State
   const [isOpenChat, setIsOpenChat] = useState(false)
   const [chatInput, setChatInput] = useState("")
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
@@ -31,21 +30,17 @@ export default function Contact() {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  // Initialize Chat from LocalStorage
   useEffect(() => {
-    // Check for saved name
     const savedName = localStorage.getItem("firdaus_chat_name")
     if (!savedName) {
       const newName = `Guest-${Math.floor(Math.random() * 10000)}`
       localStorage.setItem("firdaus_chat_name", newName)
     }
 
-    // Check for saved messages
     const savedMessages = localStorage.getItem("firdaus_chat_messages")
     if (savedMessages) {
       try {
         const parsed = JSON.parse(savedMessages)
-        // Convert timestamp strings back to Date objects
         const formattedMessages = parsed.map((msg: ChatMessage) => ({
           ...msg,
           timestamp: new Date(msg.timestamp)
@@ -79,7 +74,6 @@ Silakan pilih direktori informasi yang ingin Anda akses:
     ])
   }
 
-  // Save Messages to LocalStorage whenever they change
   useEffect(() => {
     if (chatMessages.length > 0) {
       localStorage.setItem("firdaus_chat_messages", JSON.stringify(chatMessages))
@@ -103,7 +97,6 @@ Silakan pilih direktori informasi yang ingin Anda akses:
       timestamp: new Date()
     }
 
-    // Build history from existing messages (exclude welcome bot message if it's the only one)
     const historyMessages = chatMessages.filter(msg => msg.id !== "welcome-msg")
     const history = [
       {
@@ -175,7 +168,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
         throw new Error("Network response was not ok")
       }
 
-      // If response is JSON, it means an error occurred on the backend
       const contentType = response.headers.get("Content-Type") || ""
       if (contentType.includes("application/json")) {
         const data = await response.json()
@@ -343,7 +335,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
         </FadeDown>
       </div>
 
-      {/* Floating Chatbot Button */}
       <div className="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-40">
         <button suppressHydrationWarning onClick={() => setIsOpenChat(true)} className="group bg-text-primary text-background p-4 md:p-5 rounded-full shadow-2xl hover:-translate-y-2 transition-all duration-300 flex items-center justify-center relative border-4 border-background hover:shadow-text-primary/20">
           <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -356,14 +347,10 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
         </button>
       </div>
 
-      {/* Chatbot Modal Overlay */}
       <div className={`fixed inset-0 z-50 flex items-center justify-center p-0 transition-all duration-500 ${isOpenChat ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-        {/* Backdrop */}
         <div className={`absolute inset-0 bg-background/90 backdrop-blur-xl transition-opacity duration-500 ${isOpenChat ? "opacity-100" : "opacity-0"}`} onClick={() => setIsOpenChat(false)}></div>
 
-        {/* Modal content */}
         <div className={`bg-background w-full h-dvh shadow-2xl z-10 flex flex-col transition-all duration-500 transform ${isOpenChat ? "translate-y-0 scale-100 opacity-100" : "translate-y-12 scale-95 opacity-0"}`}>
-          {/* Header */}
           <div className="flex justify-between items-center p-4 md:p-6 border-b border-text-secondary/10 bg-background relative z-20">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-thirdary flex items-center justify-center text-text-primary font-black border border-text-secondary/10">AI</div>
@@ -393,7 +380,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
             </div>
           </div>
 
-          {/* Chat Messages */}
           <div className="flex-1 overflow-y-auto p-4 md:p-6 scroll-smooth custom-scrollbar bg-thirdary/10 flex flex-col items-center">
             <div className="w-full max-w-4xl flex flex-col gap-4 pb-4">
             {chatMessages.map((msg) => (
@@ -459,7 +445,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
             </div>
           </div>
 
-          {/* Quick Choice Buttons */}
           <div className="px-4 pt-3 pb-1 border-t border-text-secondary/10 bg-background flex justify-center">
             <div className="w-full max-w-4xl flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1.5">
               <span className="text-[11px] font-bold text-text-secondary whitespace-nowrap hidden sm:inline">Pilihan Info:</span>
@@ -478,7 +463,6 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
             </div>
           </div>
 
-          {/* Chat Input */}
           <div className="p-4 pt-2 border-t border-text-secondary/10 bg-background flex justify-center">
             <form onSubmit={handleSendChat} className="flex gap-2 w-full max-w-4xl">
               <input 

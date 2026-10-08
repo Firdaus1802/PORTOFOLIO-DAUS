@@ -10,7 +10,6 @@ export default function Experience() {
   const [isOpen, setIsOpen] = useState<number | null>(null)
   const [filter, setFilter] = useState<string>("All")
 
-  // Prevent scrolling when modal is open
   useEffect(() => {
     if (isOpen !== null) {
       document.body.style.overflow = "hidden"
@@ -40,7 +39,6 @@ export default function Experience() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Certifications & Licenses</h3>
               
-              {/* Category Filter Pills */}
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
                   <button
@@ -61,12 +59,10 @@ export default function Experience() {
           </div>
         </FadeDown>
 
-        {/* Responsive Grid View */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCerts.map((cert) => (
             <FadeUp key={`cert-${cert.index}`}>
               <GlareHover className="group flex flex-col h-full bg-background border border-text-secondary/20 hover:border-text-primary/50 rounded-2xl overflow-hidden transition-all duration-500 shadow-sm hover:shadow-2xl">
-                {/* Certificate Clean Frame Preview */}
                 <div className="relative aspect-16/11 bg-text-secondary/5 border-b border-text-secondary/10 p-3 flex items-center justify-center overflow-hidden">
                   <div className="relative w-full h-full rounded-lg overflow-hidden shadow-sm border border-text-secondary/15 bg-white dark:bg-zinc-950">
                     <Image 
@@ -77,14 +73,12 @@ export default function Experience() {
                     />
                   </div>
                   
-                  {/* Numbering Badge */}
                   <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest text-text-secondary shadow-sm">
                     {String(cert.index + 1).padStart(2, "0")}
                   </div>
                 </div>
 
                 <div className="p-6 md:p-7 flex flex-col grow relative">
-                  {/* Issuer & Date */}
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-[11px] font-bold tracking-wider uppercase text-text-secondary flex items-center gap-1.5">
                       <svg className="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
@@ -95,12 +89,10 @@ export default function Experience() {
                     <span className="text-[11px] font-bold text-text-secondary/80">{cert.date}</span>
                   </div>
 
-                  {/* Title */}
                   <h4 className="text-lg md:text-xl font-bold text-text-primary tracking-tight leading-snug mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-text-primary group-hover:to-text-secondary transition-all duration-300">
                     {cert.title}
                   </h4>
 
-                  {/* Skills / Topics */}
                   <div className="flex flex-wrap gap-1.5 mb-6">
                     {cert.skills.map((skill, i) => (
                       <span key={i} className="text-[10px] font-bold bg-thirdary text-text-primary px-2.5 py-1 rounded-md border border-text-secondary/10 uppercase tracking-wider">
@@ -109,7 +101,6 @@ export default function Experience() {
                     ))}
                   </div>
 
-                  {/* Footer Actions */}
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-text-secondary/10">
                     <button 
                       suppressHydrationWarning 
@@ -140,11 +131,9 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* Modal View */}
         <AnimatePresence>
           {isOpen !== null && activeCert && (
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
-              {/* Backdrop */}
               <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
@@ -154,7 +143,6 @@ export default function Experience() {
                 onClick={() => setIsOpen(null)} 
               />
 
-              {/* Modal Container */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95, y: 20 }} 
                 animate={{ opacity: 1, scale: 1, y: 0 }} 
@@ -162,7 +150,6 @@ export default function Experience() {
                 transition={{ type: "spring", damping: 25, stiffness: 300 }} 
                 className="bg-background border border-text-secondary/20 rounded-3xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative z-10"
               >
-                {/* Modal Header */}
                 <div className="flex justify-between items-center p-5 md:p-6 border-b border-text-secondary/10">
                   <div>
                     <h4 className="text-xl md:text-2xl font-black text-text-primary tracking-tight">{activeCert.title}</h4>
@@ -179,9 +166,7 @@ export default function Experience() {
                   </button>
                 </div>
 
-                {/* Modal Content */}
                 <div className="p-5 md:p-8 overflow-y-auto grow custom-scrollbar">
-                  {/* Certificate Image Banner */}
                   <div className="relative aspect-16/11 w-full rounded-2xl overflow-hidden border border-text-secondary/15 mb-6 bg-white dark:bg-zinc-950 flex items-center justify-center shadow-lg">
                     <Image src={activeCert.imagePath} alt={activeCert.title} fill className="object-contain p-2" />
                   </div>
@@ -221,7 +206,6 @@ export default function Experience() {
                   </div>
                 </div>
 
-                {/* Modal Footer */}
                 <div className="p-5 md:p-6 border-t border-text-secondary/10 flex gap-4 bg-background relative z-30">
                   {activeCert.credentialUrl ? (
                     <a 
