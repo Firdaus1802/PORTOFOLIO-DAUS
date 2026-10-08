@@ -98,28 +98,43 @@ export default function Hero() {
 
         <FadeRight>
           <div className="flex flex-col items-center justify-center relative mt-12 md:mt-0 w-full">
-            <div className="absolute inset-0 bg-linear-to-tr from-thirdary to-background rounded-full scale-110 opacity-50 blur-2xl"></div>
+            <div className="relative w-70 h-70 sm:w-85 sm:h-85 md:w-95 md:h-95 flex items-center justify-center mx-auto">
+              <div className="absolute inset-0 bg-linear-to-tr from-thirdary to-background rounded-full scale-110 opacity-50 blur-2xl"></div>
 
-            <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-full shadow-2xl overflow-hidden w-70 h-70 sm:w-85 sm:h-85 md:w-95 md:h-95 flex items-center justify-center mx-auto">
-              <div className="relative w-full h-full rounded-full overflow-hidden">
-                <Image 
-                  src="/images/profile-firdaus.png" 
-                  alt="Firdaus Dhuha Prabowo" 
-                  fill 
-                  className="object-cover object-[50%_15%] transition-all duration-700 bg-thirdary/40" 
-                  priority 
-                  unoptimized 
-                />
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-wrap justify-center gap-3 z-20 w-full max-w-md mx-auto">
-              {quickStatsList.map((stat, index) => (
-                <div className="flex items-center gap-3 bg-background/95 backdrop-blur-md border border-text-secondary/10 px-4 py-2.5 rounded-2xl shadow-md hover:-translate-y-0.5 transition-all duration-300" key={index}>
-                  <div className="bg-text-primary text-background p-1.5 rounded-lg">{stat.icon}</div>
-                  <span className="text-xs md:text-sm font-semibold text-text-primary whitespace-nowrap">{stat.message}</span>
+              <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-full shadow-2xl overflow-hidden w-full h-full flex items-center justify-center">
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image 
+                    src="/images/profile-firdaus.png" 
+                    alt="Firdaus Dhuha Prabowo" 
+                    fill 
+                    className="object-cover object-[50%_15%] transition-all duration-700 bg-thirdary/40" 
+                    priority 
+                    unoptimized 
+                  />
                 </div>
-              ))}
+              </div>
+
+              {/* Floating badges in front of profile photo */}
+              <div className="absolute -top-2 sm:top-2 -left-4 sm:-left-8 z-30 floating">
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                  <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[0].icon}</div>
+                  <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[0].message}</span>
+                </div>
+              </div>
+
+              <div className="absolute top-1/2 -right-4 sm:-right-8 -translate-y-1/2 z-30 floating" style={{ animationDelay: "1s" }}>
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                  <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[1].icon}</div>
+                  <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[1].message}</span>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-2 sm:bottom-2 -left-2 sm:-left-6 z-30 floating" style={{ animationDelay: "2s" }}>
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-background/90 backdrop-blur-xl border border-text-secondary/20 p-2 sm:p-2.5 pr-3.5 sm:pr-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                  <div className="bg-text-primary text-background p-1.5 rounded-xl">{quickStatsList[2].icon}</div>
+                  <span className="text-[11px] sm:text-xs md:text-sm font-bold text-text-primary whitespace-nowrap">{quickStatsList[2].message}</span>
+                </div>
+              </div>
             </div>
           </div>
         </FadeRight>
