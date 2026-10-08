@@ -30,37 +30,10 @@ export default function Contact() {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  useEffect(() => {
-    const savedName = localStorage.getItem("firdaus_chat_name")
-    if (!savedName) {
-      const newName = `Guest-${Math.floor(Math.random() * 10000)}`
-      localStorage.setItem("firdaus_chat_name", newName)
-    }
-
-    const savedMessages = localStorage.getItem("firdaus_chat_messages")
-    if (savedMessages) {
-      try {
-        const parsed = JSON.parse(savedMessages)
-        const formattedMessages = parsed.map((msg: ChatMessage) => ({
-          ...msg,
-          timestamp: new Date(msg.timestamp)
-        }))
-        setChatMessages(formattedMessages)
-      } catch (e) {
-        console.error("Failed to parse saved messages", e)
-        setInitialWelcomeMessage()
-      }
-    } else {
-      setInitialWelcomeMessage()
-    }
-  }, [])
-  
-  const setInitialWelcomeMessage = () => {
-    setChatMessages([
-      {
-        id: "welcome-msg",
-        sender: "bot",
-        text: `Selamat datang. Saya adalah Firdaus Assistant, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif S1 Sistem Informasi, IPK 3.88).
+  const createWelcomeMessage = (): ChatMessage => ({
+    id: "welcome-msg",
+    sender: "bot",
+    text: `Selamat datang. Saya adalah Firdaus Assistant, asisten AI pribadi yang bertugas mewakili dan menyajikan informasi resmi seputar Firdaus Dhuha Prabowo (Junior Frontend Developer & mahasiswa aktif S1 Sistem Informasi, IPK 3.88).
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik**
@@ -69,16 +42,31 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Lisensi & Sertifikasi Industri Resmi**
 • **Curriculum Vitae (CV) Resmi**
 • **Saluran Kontak & Jaringan Profesional**`,
-        timestamp: new Date()
-      }
-    ])
+    timestamp: new Date()
+  })
+
+  const resetChat = useCallback(() => {
+    setChatMessages([createWelcomeMessage()])
+    setChatInput("")
+    setIsChatLoading(false)
+  }, [])
+
+  const handleOpenChat = () => {
+    resetChat()
+    setIsOpenChat(true)
+  }
+
+  const handleCloseChat = () => {
+    setIsOpenChat(false)
+    resetChat()
   }
 
   useEffect(() => {
-    if (chatMessages.length > 0) {
-      localStorage.setItem("firdaus_chat_messages", JSON.stringify(chatMessages))
-    }
-  }, [chatMessages])
+    try {
+      localStorage.removeItem("firdaus_chat_messages")
+    } catch {}
+    resetChat()
+  }, [resetChat])
 
   useEffect(() => {
     if (isOpenChat) {
@@ -336,7 +324,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
       </div>
 
       <div className="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-40">
-        <button suppressHydrationWarning onClick={() => setIsOpenChat(true)} className="group bg-text-primary text-background p-4 md:p-5 rounded-full shadow-2xl hover:-translate-y-2 transition-all duration-300 flex items-center justify-center relative border-4 border-background hover:shadow-text-primary/20">
+        <button suppressHydrationWarning onClick={handleOpenChat} className="group bg-text-primary text-background p-4 md:p-5 rounded-full shadow-2xl hover:-translate-y-2 transition-all duration-300 flex items-center justify-center relative border-4 border-background hover:shadow-text-primary/20">
           <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
           </svg>
@@ -348,7 +336,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
       </div>
 
       <div className={`fixed inset-0 z-50 flex items-center justify-center p-0 transition-all duration-500 ${isOpenChat ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-        <div className={`absolute inset-0 bg-background/90 backdrop-blur-xl transition-opacity duration-500 ${isOpenChat ? "opacity-100" : "opacity-0"}`} onClick={() => setIsOpenChat(false)}></div>
+        <div className={`absolute inset-0 bg-background/90 backdrop-blur-xl transition-opacity duration-500 ${isOpenChat ? "opacity-100" : "opacity-0"}`} onClick={handleCloseChat}></div>
 
         <div className={`bg-background w-full h-dvh shadow-2xl z-10 flex flex-col transition-all duration-500 transform ${isOpenChat ? "translate-y-0 scale-100 opacity-100" : "translate-y-12 scale-95 opacity-0"}`}>
           <div className="flex justify-between items-center p-4 md:p-6 border-b border-text-secondary/10 bg-background relative z-20">
@@ -362,17 +350,7 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <button 
-                suppressHydrationWarning
-                onClick={setInitialWelcomeMessage} 
-                className="text-text-secondary hover:text-red-500 transition-colors p-2 bg-text-secondary/5 rounded-full"
-                title="Hapus / Mulai Baru"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                </svg>
-              </button>
-              <button suppressHydrationWarning onClick={() => setIsOpenChat(false)} className="text-text-secondary hover:text-text-primary transition-colors p-2 bg-text-secondary/5 rounded-full" title="Tutup">
+              <button suppressHydrationWarning onClick={handleCloseChat} className="text-text-secondary hover:text-text-primary transition-colors p-2 bg-text-secondary/5 rounded-full" title="Tutup">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
