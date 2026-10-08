@@ -78,7 +78,7 @@ export default function About() {
                 <FadeLeft delay={0.3}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Phone</span>
-                    <span className="text-base font-semibold text-text-primary">+62 813-****-****</span>
+                    <span className="text-base font-semibold text-text-primary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-8822-5269</span>
                   </div>
                 </FadeLeft>
 
@@ -92,8 +92,8 @@ export default function About() {
                 <FadeLeft delay={0.5}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Email</span>
-                    <span className="text-base font-semibold text-text-primary">
-                      fird*********@gmail.com
+                    <span className="text-base font-semibold text-text-primary filter blur-[4px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">
+                      daus52694@gmail.com
                     </span>
                   </div>
                 </FadeLeft>

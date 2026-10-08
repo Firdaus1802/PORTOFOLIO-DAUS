@@ -67,12 +67,12 @@ export default function CVPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs font-medium text-[#1a1a1a] mb-1.5 text-left">
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">📞</span>
-                <span>+62 813-****-****</span>
+                <span className="filter blur-[3.5px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">+62 813-8822-5269</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#64748b] w-3 text-center">✉</span>
-                <span className="text-[#1a1a1a]">
-                  fird*********@gmail.com
+                <span className="text-[#1a1a1a] filter blur-[3.5px] hover:blur-none transition-all duration-300 select-none cursor-pointer" title="Arahkan kursor untuk memperjelas">
+                  daus52694@gmail.com
                 </span>
               </div>
               <div className="flex items-center gap-2">
