@@ -29,7 +29,7 @@ export default function PageLoader() {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center overflow-hidden"
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-text-primary/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-text-primary/10 rounded-full blur-3xl" />
 
           <div className="relative overflow-hidden h-16 flex items-center justify-center">
             <motion.div

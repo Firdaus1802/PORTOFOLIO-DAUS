@@ -100,7 +100,7 @@ export default function Hero() {
           <div className="flex flex-col items-center justify-center relative mt-12 md:mt-0 w-full">
             <div className="absolute inset-0 bg-linear-to-tr from-thirdary to-background rounded-full scale-110 opacity-50 blur-2xl"></div>
 
-            <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-full shadow-2xl overflow-hidden w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[380px] md:h-[380px] flex items-center justify-center mx-auto">
+            <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-full shadow-2xl overflow-hidden w-70 h-70 sm:w-85 sm:h-85 md:w-95 md:h-95 flex items-center justify-center mx-auto">
               <div className="relative w-full h-full rounded-full overflow-hidden">
                 <Image 
                   src="/images/profile-firdaus.png" 
