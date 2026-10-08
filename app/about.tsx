@@ -43,14 +43,14 @@ export default function About() {
               <div className="flex flex-col">
                 <Fade>
                   <h4 className="text-lg md:text-xl font-bold text-text-primary mb-4 flex items-center border-b border-text-secondary/20 pb-4">Who Am I</h4>
-                  <p className="text-base text-text-secondary leading-relaxed font-medium">Saya seorang Junior Frontend Developer dan mahasiswa Universitas Gunadarma yang bersemangat mendalami dunia web development. Saya fokus mempelajari pembuatan antarmuka web yang bersih, responsif, dan interaktif menggunakan HTML, CSS, JavaScript, React, dan Next.js.</p>
+                  <p className="text-base text-text-secondary leading-relaxed font-medium text-justify">Saya seorang Junior Frontend Developer dan mahasiswa Universitas Gunadarma yang bersemangat mendalami dunia web development. Saya fokus mempelajari pembuatan antarmuka web yang bersih, responsif, dan interaktif menggunakan HTML, CSS, JavaScript, React, dan Next.js.</p>
                 </Fade>
               </div>
               
               <div className="flex flex-col">
                 <Fade>
                   <h4 className="text-lg md:text-xl font-bold text-text-primary mb-4 flex items-center border-b border-text-secondary/20 pb-4">My Approach</h4>
-                  <p className="text-base text-text-secondary leading-relaxed font-medium">Bagi saya, setiap proyek adalah proses belajar untuk terus mengasah kemampuan. Saya selalu antusias mengeksplorasi teknologi baru, menulis kode yang rapi, serta terbuka terhadap masukan demi menciptakan pengalaman pengguna (UI/UX) yang lebih baik.</p>
+                  <p className="text-base text-text-secondary leading-relaxed font-medium text-justify">Bagi saya, setiap proyek adalah proses belajar untuk terus mengasah kemampuan. Saya selalu antusias mengeksplorasi teknologi baru, menulis kode yang rapi, serta terbuka terhadap masukan demi menciptakan pengalaman pengguna (UI/UX) yang lebih baik.</p>
                 </Fade>
               </div>
             </div>

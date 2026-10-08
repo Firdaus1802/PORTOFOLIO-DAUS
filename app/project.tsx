@@ -186,7 +186,7 @@ export default function Project() {
 
                   <div className="mb-6">
                     <span className="text-xs font-bold tracking-widest text-text-secondary uppercase block mb-2">Deskripsi Proyek</span>
-                    <p className="text-sm md:text-base text-text-secondary font-medium leading-relaxed">
+                    <p className="text-sm md:text-base text-text-secondary font-medium leading-relaxed text-justify">
                       {project.fullDescription}
                     </p>
                   </div>
