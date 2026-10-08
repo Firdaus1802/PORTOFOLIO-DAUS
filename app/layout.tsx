@@ -9,15 +9,21 @@ const poppins = Poppins({
   variable: "--font-poppins",
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://firdausportfolio.vercel.app"
+const siteUrl = process.env.NEXT_PUBLIC_BASE_URL
+  ? (process.env.NEXT_PUBLIC_BASE_URL.startsWith("http") ? process.env.NEXT_PUBLIC_BASE_URL : `https://${process.env.NEXT_PUBLIC_BASE_URL}`)
+  : process.env.RAILWAY_PUBLIC_DOMAIN
+  ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : undefined
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
     default: "Firdaus Dhuha Prabowo | Junior Frontend Developer Portfolio",
     template: "%s | Firdaus Dhuha Prabowo",
   },
-  description: "Portofolio resmi Firdaus Dhuha Prabowo, Junior Frontend Developer dan mahasiswa Universitas Gunadarma (S1 Sistem Informasi, IPK 3.88). Menampilkan proyek web modern, keahlian Next.js, React, Tailwind CSS, serta sertifikasi kompetensi industri.",
+  description: "Portofolio Firdaus Dhuha Prabowo, Junior Frontend Developer & mahasiswa Universitas Gunadarma. Fokus pada pengembangan web modern Next.js dan React.",
   keywords: [
     "Firdaus Dhuha Prabowo",
     "Firdaus",
@@ -49,22 +55,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "/",
-    title: "Firdaus Dhuha Prabowo | Junior Frontend Developer Portfolio",
-    description: "Portofolio resmi Firdaus Dhuha Prabowo — Junior Frontend Developer & mahasiswa Universitas Gunadarma. Eksplorasi karya web modern, tech stack, dan sertifikasi resmi.",
+    title: "Firdaus Dhuha Prabowo | Junior Frontend Developer",
+    description: "Junior Frontend Developer & mahasiswa Universitas Gunadarma. Spesialisasi web modern dengan Next.js, React, & Tailwind.",
     siteName: "Firdaus Dhuha Prabowo Portfolio",
     images: [
       {
         url: "/images/profile-firdaus.png",
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 800,
         alt: "Firdaus Dhuha Prabowo - Junior Frontend Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Firdaus Dhuha Prabowo | Junior Frontend Developer Portfolio",
-    description: "Portofolio resmi Firdaus Dhuha Prabowo — Junior Frontend Developer & mahasiswa Universitas Gunadarma.",
+    title: "Firdaus Dhuha Prabowo | Junior Frontend Developer",
+    description: "Junior Frontend Developer & mahasiswa Universitas Gunadarma. Spesialisasi web modern dengan Next.js, React, & Tailwind.",
     images: ["/images/profile-firdaus.png"],
     creator: "@Firdaus1802",
   },
