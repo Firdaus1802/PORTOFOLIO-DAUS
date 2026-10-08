@@ -219,11 +219,12 @@ export default function Project() {
                   <button 
                     type="button"
                     aria-disabled="true"
+                    onMouseDown={(e) => e.preventDefault()}
                     onClick={(e) => e.preventDefault()}
-                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-not-allowed select-none"
+                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-not-allowed select-none outline-none focus:outline-none"
                   >
-                    <span>Source Code</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="select-none pointer-events-none">Source Code</span>
+                    <svg className="w-4 h-4 pointer-events-none select-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                   </button>
