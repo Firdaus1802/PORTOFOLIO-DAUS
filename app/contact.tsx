@@ -112,7 +112,7 @@ Gunakan panduan informasi berikut tentang Firdaus untuk menjawab pertanyaan:
    - Tanggal Lahir: 18 Februari 2006 (Usia 20 tahun per tahun 2026)
    - Peran: Junior Frontend Developer / Web Developer
    - Pendidikan: Universitas Gunadarma (IPK: 3.88 / 4.00)
-   - Lokasi / Domisili: Wonosari, Yogyakarta, Indonesia
+   - Lokasi / Domisili: Canada
    - Email: firdausdhuhaprabowo@gmail.com
    - WhatsApp/Telepon: +62 813-1535-4397
    - LinkedIn: linkedin.com/in/firdaus-dhuha-prabowo-091949386/
@@ -245,11 +245,11 @@ Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan m
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-background border border-text-secondary/20 rounded-3xl overflow-hidden h-100 lg:h-auto min-h-100 shadow-xl hover:border-text-primary transition-colors duration-500 relative group">
               <div className="absolute top-4 left-4 z-10 bg-background/90 backdrop-blur-md px-4 py-2 rounded-xl border border-text-secondary/20 shadow-lg pointer-events-none">
-                <p className="text-sm font-bold text-text-primary">📍 Wonosari, Yogyakarta</p>
-                <p className="text-xs font-medium text-text-secondary">Indonesia</p>
+                <p className="text-sm font-bold text-text-primary">📍 Canada</p>
+                <p className="text-xs font-medium text-text-secondary">North America</p>
               </div>
               <iframe
-                src="https://maps.google.com/maps?q=Wonosari,%20Yogyakarta,%20Indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Canada&t=&z=5&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
                 allowFullScreen
                 loading="lazy"
