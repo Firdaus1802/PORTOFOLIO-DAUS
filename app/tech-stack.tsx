@@ -56,6 +56,8 @@ const techCategories = [
     technologies: [
       { name: "React.js", svg: "./icons/react.svg" },
       { name: "Next.js", svg: "./icons/nextjs.svg" },
+      { name: "Flutter", svg: "./icons/flutter.svg" },
+      { name: "Dart", svg: "./icons/dart.svg" },
       { name: "JavaScript", svg: "./icons/javascript.svg" },
       { name: "Tailwind CSS", svg: "./icons/tailwindcss.svg" },
       { name: "HTML5", svg: "./icons/html.svg" },

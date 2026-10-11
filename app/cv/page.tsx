@@ -136,6 +136,28 @@ export default function CVPage() {
           <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
             <div>
               <span className="block text-xs font-extrabold text-[#0f172a]">2026</span>
+              <span className="block text-[10px] text-[#64748b]">Netlify Deployment</span>
+            </div>
+            <div>
+              <div className="mb-0.5">
+                <h3 className="text-xs font-extrabold text-[#0f172a] inline">
+                  Flutter Web Developer & Analyst
+                </h3>
+                <span className="text-xs font-semibold text-[#555555] inline ml-1.5 before:content-['—_'] before:text-[#94a3b8]">
+                  Data Mining Kelompok 4 (Market Basket Analysis UG)
+                </span>
+              </div>
+              <ul className="list-disc pl-4 text-xs text-[#333333] space-y-0.5 leading-normal">
+                <li>Mengembangkan aplikasi web Market Basket Analysis berbasis Flutter Web dan Dart untuk menganalisis transaksi konsumen.</li>
+                <li>Mengimplementasikan Algoritma Apriori dengan kalkulasi otomatis Support, Confidence, dan Lift Ratio.</li>
+                <li>Deployment platform di Netlify Cloud (Live: <a href="https://data-mining-kelompok-4.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">data-mining-kelompok-4.netlify.app</a>).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
+            <div>
+              <span className="block text-xs font-extrabold text-[#0f172a]">2026</span>
               <span className="block text-[10px] text-[#64748b]">Open Source Project</span>
             </div>
             <div>
@@ -226,8 +248,8 @@ export default function CVPage() {
           
           <div className="flex flex-col gap-1 text-xs leading-normal">
             <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
-              <span className="font-extrabold text-[#0f172a]">Frontend Web:</span>
-              <span className="text-[#262626]">React.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, HTML5, CSS3, Responsive UI</span>
+              <span className="font-extrabold text-[#0f172a]">Frontend & Mobile:</span>
+              <span className="text-[#262626]">React.js, Next.js, Flutter, Dart, JavaScript (ES6+), TypeScript, Tailwind CSS, HTML5, CSS3, Responsive UI</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
               <span className="font-extrabold text-[#0f172a]">Backend & Database:</span>
@@ -235,7 +257,7 @@ export default function CVPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
               <span className="font-extrabold text-[#0f172a]">Cloud & AI Tools:</span>
-              <span className="text-[#262626]">Microsoft Azure AI, AWS Cloud Computing Essentials, LLM API Integration, Vercel</span>
+              <span className="text-[#262626]">Microsoft Azure AI, AWS Cloud Computing Essentials, LLM API Integration, Vercel, Netlify</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
               <span className="font-extrabold text-[#0f172a]">Tools & Office:</span>

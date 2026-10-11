@@ -132,6 +132,7 @@ Gunakan panduan informasi berikut tentang Firdaus untuk menjawab pertanyaan:
 
 5. **Proyek Utama**:
    - Finzie Joki Service: Platform website layanan joki dan servis game Roblox (CDID, DDS, Eagle Nation) yang dibangun menggunakan Next.js, React, dan Tailwind CSS, serta di-deploy secara publik di Vercel (https://finziejokiservice.vercel.app/).
+   - Data Mining Kelompok 4 (UG): Aplikasi web analitika Market Basket Analysis berbasis Flutter dan Dart menggunakan Algoritma Apriori untuk transaksi konsumen Universitas Gunadarma, di-deploy di Netlify (https://data-mining-kelompok-4.netlify.app/).
 
 Aturan Tambahan: Jawab langsung ke intinya, akurat sesuai data di atas, jangan mengarang data palsu, dan pertahankan nada bicara profesional tanpa emoticon.`
       },

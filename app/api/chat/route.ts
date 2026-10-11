@@ -18,6 +18,11 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("finzie") || 
     q.includes("joki") || 
     q.includes("roblox") || 
+    q.includes("flutter") || 
+    q.includes("dart") || 
+    q.includes("mining") || 
+    q.includes("apriori") || 
+    q.includes("market basket") || 
     q.includes("portofolio proyek") || 
     q.includes("arsitektur kode") || 
     q.includes("unggulan") || 
@@ -32,7 +37,12 @@ function getSmartFallbackResponse(query: string): string {
 • **Arsitektur & Tech Stack:** Next.js, React.js, Tailwind CSS, Vercel Cloud Deployment.
 • **Fitur & Solusi:** Platform layanan game service Roblox 100% manual dengan UI modern responsif, katalog layanan terstruktur, flow pemesanan interaktif 4 langkah, dan integrasi WhatsApp admin.
 
-2. **Interactive Portfolio Website & AI Assistant**
+2. **Data Mining Kelompok 4 - Market Basket Analysis (Algoritma Apriori)**
+• **Tautan Demo:** [data-mining-kelompok-4.netlify.app](https://data-mining-kelompok-4.netlify.app/)
+• **Arsitektur & Tech Stack:** Flutter Web, Dart, Data Mining (Apriori Algorithm), Netlify Cloud Deployment.
+• **Fitur & Solusi:** Aplikasi analitika transaksi konsumen Universitas Gunadarma untuk mendeteksi pola asosiasi pembelian (Market Basket Analysis) dengan komputasi support, confidence, dan lift ratio secara otomatis.
+
+3. **Interactive Portfolio Website & AI Assistant**
 • **Tautan Kode:** [github.com/Firdaus1802/PORTOFOLIO-DAUS](https://github.com/Firdaus1802/PORTOFOLIO-DAUS)
 • **Arsitektur & Tech Stack:** Next.js, TypeScript, Tailwind CSS, Framer Motion, Edge AI.
 • **Fitur & Solusi:** Web portofolio interaktif dengan animasi halus, credential viewer terverifikasi, dan Chatbot AI Assistant cerdas.`
@@ -237,8 +247,8 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik** (S1 Sistem Informasi di Gunadarma IPK 3.88)
-• **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Platform)
-• **Spesialisasi Tech Stack & Database** (React, Next.js, Supabase, Node.js)
+• **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Service, Data Mining Kelompok 4 UG)
+• **Spesialisasi Tech Stack & Database** (React, Next.js, Flutter, Supabase, Node.js)
 • **Lisensi & Sertifikasi Industri Resmi** (10 Lisensi Terverifikasi)
 • **Curriculum Vitae (CV) Resmi** (Tersedia Format Cetak A4)
 • **Saluran Kontak & Jaringan Profesional** (WhatsApp, LinkedIn, Email)`

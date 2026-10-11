@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     default: "Firdaus Dhuha Prabowo | Junior Frontend Developer Portfolio",
     template: "%s | Firdaus Dhuha Prabowo",
   },
-  description: "Portofolio Firdaus Dhuha Prabowo, Junior Frontend Developer & mahasiswa Universitas Gunadarma. Fokus pada pengembangan web modern Next.js dan React.",
+  description: "Portofolio Firdaus Dhuha Prabowo, Junior Frontend Developer & mahasiswa Universitas Gunadarma. Fokus pada pengembangan web modern Next.js, React, dan Flutter.",
   keywords: [
     "Firdaus Dhuha Prabowo",
     "Firdaus",
@@ -33,9 +33,13 @@ export const metadata: Metadata = {
     "Sistem Informasi Gunadarma",
     "Next.js Developer",
     "React Developer",
+    "Flutter Developer",
+    "Dart Developer",
     "Tailwind CSS",
     "Web Portfolio",
-    "Finzie Joki Service"
+    "Finzie Joki Service",
+    "Data Mining UG",
+    "Market Basket Analysis"
   ],
   authors: [{ name: "Firdaus Dhuha Prabowo", url: "https://github.com/Firdaus1802" }],
   creator: "Firdaus Dhuha Prabowo",
