@@ -110,17 +110,18 @@ export default function Project() {
 
         <FadeUp>
           <div className="mt-16 flex justify-center w-full px-6">
-            <a 
-              href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center gap-3 px-8 py-4 bg-background border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 rounded-xl font-bold tracking-widest text-sm uppercase transition-all duration-300 ease-out group hover:-translate-y-1 shadow-sm hover:shadow-md cursor-pointer"
+            <button 
+              type="button"
+              aria-disabled="true"
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={(e) => e.preventDefault()}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-background border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 rounded-xl font-bold tracking-widest text-sm uppercase transition-all duration-300 ease-out cursor-not-allowed select-none outline-none focus:outline-none shadow-sm"
             >
-              <span>View My Project</span>
-              <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span className="select-none pointer-events-none">View My Project</span>
+              <svg className="w-5 h-5 pointer-events-none select-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-            </a>
+            </button>
           </div>
         </FadeUp>
 
