@@ -21,6 +21,7 @@ Website portofolio personal interaktif dan modern yang dibangun untuk menampilka
 ### 3. Interactive Portfolio Website & AI Assistant
 * **Kategori**: Personal Portfolio & Generative AI Assistant
 * **Tech Stack**: Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, Edge AI
+* **Live Demo**: [portofolio-daus-virid.vercel.app](https://portofolio-daus-virid.vercel.app/)
 * **Deskripsi**: Web portofolio interaktif dengan animasi halus, credential viewer terverifikasi, CV viewer siap cetak (A4), dan AI Chatbot Assistant cerdas.
 
 ---
@@ -77,4 +78,5 @@ Website portofolio personal interaktif dan modern yang dibangun untuk menampilka
 
 Dibuat dengan dedikasi oleh **Firdaus Dhuha Prabowo**  
 - **GitHub**: [@Firdaus1802](https://github.com/Firdaus1802)  
-- **Portofolio**: [PORTOFOLIO-DAUS](https://github.com/Firdaus1802/PORTOFOLIO-DAUS)
+- **Live Portfolio**: [portofolio-daus-virid.vercel.app](https://portofolio-daus-virid.vercel.app/)  
+- **Repositori**: [PORTOFOLIO-DAUS](https://github.com/Firdaus1802/PORTOFOLIO-DAUS)
