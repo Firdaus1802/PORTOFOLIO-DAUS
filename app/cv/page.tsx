@@ -172,7 +172,7 @@ export default function CVPage() {
               <ul className="list-disc pl-4 text-xs text-[#333333] space-y-0.5 leading-normal">
                 <li>Mengembangkan website portofolio interaktif dengan animasi halus, sistem dark/light mode, dan credential viewer terverifikasi.</li>
                 <li>Mengintegrasikan Chatbot AI Assistant cerdas untuk merespons pertanyaan pengunjung secara real-time.</li>
-                <li>Live Web: <a href="https://portofolio-daus-virid.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">portofolio-daus-virid.vercel.app</a> • Repositori: <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>.</li>
+                <li>Repositori kode terbuka: <a href="https://github.com/Firdaus1802/PORTOFOLIO-DAUS" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">github.com/Firdaus1802/PORTOFOLIO-DAUS</a>.</li>
               </ul>
             </div>
           </div>
