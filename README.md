@@ -12,11 +12,13 @@ Website portofolio personal interaktif dan modern yang dibangun untuk menampilka
 * **Live Demo**: [finziejokiservice.vercel.app](https://finziejokiservice.vercel.app/)
 * **Deskripsi**: Platform penyedia layanan game service Roblox terpercaya dengan antarmuka modern responsif, katalog layanan terstruktur, dan direct order WhatsApp admin.
 
-### 2. Data Mining - Market Basket Analysis (Kelompok 4 UG)
-* **Kategori**: Flutter Web App & Data Analytics
-* **Tech Stack**: Flutter, Dart, Algoritma Apriori, Netlify Cloud
-* **Live Demo**: [data-mining-kelompok-4.netlify.app](https://data-mining-kelompok-4.netlify.app/)
-* **Deskripsi**: Aplikasi analitika transaksi konsumen Universitas Gunadarma untuk menganalisis Market Basket Analysis menggunakan Algoritma Apriori dengan kalkulasi otomatis nilai Support, Confidence, dan Lift Ratio.
+### 2. AprioriMart – E-Commerce Market Basket Analysis & Recommendation System
+* **Kategori**: Mobile & Web App (Market Basket Analysis & Recommendation)
+* **Tech Stack**: Flutter, Dart, Google R8 ProGuard, Algoritma Apriori, Vercel, GitHub
+* **Live Demo**: [data-mining-universitas-gunadarma.vercel.app](https://data-mining-universitas-gunadarma.vercel.app)
+* **Download APK (Android)**: [AprioriMart v1.0.0 APK](https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk)
+* **GitHub Repository**: [github.com/Firdaus1802/data-mining-universitas-gunadarma](https://github.com/Firdaus1802/data-mining-universitas-gunadarma)
+* **Deskripsi**: Aplikasi Market Basket Analysis berbasis mobile dan web yang menerapkan Algoritma Apriori untuk menemukan pola asosiasi pembelian pada dataset transaksi retail. Dilengkapi simulasi kasir cross-selling real-time, partisi dataset dinamis (100%, 80:20, 70:30, 60:40), analisis aturan asosiasi client-side, dan proteksi keamanan Google R8 (0/68 Clean di VirusTotal).
 
 ### 3. Interactive Portfolio Website & AI Assistant
 * **Kategori**: Personal Portfolio & Generative AI Assistant

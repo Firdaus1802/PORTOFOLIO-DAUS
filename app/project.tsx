@@ -205,30 +205,59 @@ export default function Project() {
                   </div>
                 </div>
 
-                <div className="p-5 md:p-6 border-t border-text-secondary/10 flex flex-col sm:flex-row gap-4 bg-background relative z-30">
+                <div className="p-5 md:p-6 border-t border-text-secondary/10 flex flex-col sm:flex-row flex-wrap gap-3 bg-background relative z-30">
                   <a 
                     href={selectedProject.liveDemoUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
+                    className="flex-1 min-w-[160px] text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 px-4 rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
                   >
                     <span>Open Live Demo</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </a>
-                  <button 
-                    type="button"
-                    aria-disabled="true"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={(e) => e.preventDefault()}
-                    className="flex-1 flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 rounded-xl cursor-not-allowed select-none outline-none focus:outline-none"
-                  >
-                    <span className="select-none pointer-events-none">Source Code</span>
-                    <svg className="w-4 h-4 pointer-events-none select-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                  </button>
+
+                  {selectedProject.githubUrl ? (
+                    <a 
+                      href={selectedProject.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-pointer shadow-sm"
+                    >
+                      <span>Source Code</span>
+                      <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <button 
+                      type="button"
+                      aria-disabled="true"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={(e) => e.preventDefault()}
+                      className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-not-allowed select-none outline-none focus:outline-none"
+                    >
+                      <span className="select-none pointer-events-none">Source Code</span>
+                      <svg className="w-4 h-4 pointer-events-none select-none shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </button>
+                  )}
+
+                  {selectedProject.apkUrl && (
+                    <a 
+                      href={selectedProject.apkUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase bg-emerald-600 hover:bg-emerald-700 text-white hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-pointer shadow-md"
+                    >
+                      <span>Download APK</span>
+                      <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </motion.div>
             </div>
@@ -254,6 +283,7 @@ interface ProjectItem {
   tech: string[]
   githubUrl?: string
   liveDemoUrl: string
+  apkUrl?: string
 }
 
 const projects: ProjectItem[] = [
@@ -275,29 +305,31 @@ const projects: ProjectItem[] = [
       "Vercel Cloud Deployment",
     ],
     tech: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/Firdaus1802/PORTOFOLIO-DAUS",
+    githubUrl: "",
     liveDemoUrl: "https://finziejokiservice.vercel.app/",
   },
   {
-    id: "data-mining",
+    id: "apriorimart",
     number: "02",
-    title: "Data Mining - Market Basket Analysis",
-    badge: "NETLIFY DEPLOYMENT • FLUTTER WEB APP",
+    title: "AprioriMart",
+    badge: "VERCEL DEPLOYMENT • FLUTTER MOBILE & WEB",
     badgeColor: "text-emerald-500",
-    shortDescription: "Aplikasi web analitika data mining berbasis Flutter & Dart untuk Market Basket Analysis menggunakan Algoritma Apriori pada transaksi konsumen Universitas Gunadarma.",
-    fullDescription: "Aplikasi Analisis Data Mining Algoritma Apriori Kelompok 4 (Universitas Gunadarma) adalah aplikasi web interaktif yang dikembangkan menggunakan Flutter & Dart dan di-deploy di Netlify. Sistem ini dirancang untuk mendeteksi pola transaksi belanja konsumen dengan menghitung support, confidence, dan lift ratio guna menghasilkan aturan asosiasi produk yang akurat.",
+    shortDescription: "Aplikasi Market Basket Analysis berbasis mobile dan web dengan Algoritma Apriori, simulasi kasir real-time, pengujian data latih/uji, dan proteksi Google R8.",
+    fullDescription: "AprioriMart adalah aplikasi Market Basket Analysis & Recommendation System berbasis mobile dan web yang menerapkan Algoritma Apriori untuk menemukan pola asosiasi pembelian konsumen (association rules) pada dataset transaksi retail (Groceries Dataset). Aplikasi ini dilengkapi dengan simulasi kasir interaktif untuk mendemonstrasikan strategi cross-selling dan product bundling secara real-time, partisi dataset dinamis (100%, 80:20, 70:30, 60:40), analisis aturan asosiasi otomatis (Support, Confidence, Lift Ratio) secara client-side, manajemen dataset CSV/JSON, serta proteksi keamanan Google R8 ProGuard (0/68 Clean Bebas Malware di VirusTotal).",
     createdAt: "2026",
-    liveDomain: "data-mining-kelompok-4.netlify.app",
+    liveDomain: "data-mining-universitas-gunadarma.vercel.app",
     imagePath: "/images/project-data-mining.png",
     features: [
-      "Market Basket Analysis (Apriori Algorithm)",
-      "Kalkulasi Otomatis Support, Confidence & Lift",
-      "Analisis Pola Transaksi Konsumen Gunadarma",
-      "Interaktif & Responsif Berbasis Flutter Web",
-      "Netlify High-Performance Cloud Deployment",
+      "Analisis Aturan Asosiasi (Algoritma Apriori)",
+      "Kalkulasi Client-Side Support, Confidence & Lift",
+      "Simulasi Kasir & Rekomendasi Cross-Selling Real-Time",
+      "Pengujian Partisi Data Latih & Uji (100%, 80:20, 70:30, 60:40)",
+      "Manajemen Dataset Fleksibel (Import CSV/JSON & Manual)",
+      "Proteksi Google R8 Obfuscation (0/68 Clean VirusTotal)",
     ],
-    tech: ["Flutter", "Dart", "Data Mining", "Apriori", "Netlify"],
-    githubUrl: "",
-    liveDemoUrl: "https://data-mining-kelompok-4.netlify.app/",
+    tech: ["Flutter", "Dart", "Google R8", "Algoritma Apriori", "Vercel", "GitHub"],
+    githubUrl: "https://github.com/Firdaus1802/data-mining-universitas-gunadarma",
+    liveDemoUrl: "https://data-mining-universitas-gunadarma.vercel.app",
+    apkUrl: "https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk",
   },
 ]

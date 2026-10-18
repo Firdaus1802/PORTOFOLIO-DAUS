@@ -22,6 +22,10 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("dart") || 
     q.includes("mining") || 
     q.includes("apriori") || 
+    q.includes("apriorimart") || 
+    q.includes("groceries") || 
+    q.includes("rekomendasi") || 
+    q.includes("apk") || 
     q.includes("market basket") || 
     q.includes("portofolio proyek") || 
     q.includes("arsitektur kode") || 
@@ -37,10 +41,12 @@ function getSmartFallbackResponse(query: string): string {
 • **Arsitektur & Tech Stack:** Next.js, React.js, Tailwind CSS, Vercel Cloud Deployment.
 • **Fitur & Solusi:** Platform layanan game service Roblox 100% manual dengan UI modern responsif, katalog layanan terstruktur, flow pemesanan interaktif 4 langkah, dan integrasi WhatsApp admin.
 
-2. **Data Mining Kelompok 4 - Market Basket Analysis (Algoritma Apriori)**
-• **Tautan Demo:** [data-mining-kelompok-4.netlify.app](https://data-mining-kelompok-4.netlify.app/)
-• **Arsitektur & Tech Stack:** Flutter Web, Dart, Data Mining (Apriori Algorithm), Netlify Cloud Deployment.
-• **Fitur & Solusi:** Aplikasi analitika transaksi konsumen Universitas Gunadarma untuk mendeteksi pola asosiasi pembelian (Market Basket Analysis) dengan komputasi support, confidence, dan lift ratio secara otomatis.
+2. **AprioriMart – E-Commerce Market Basket Analysis & Recommendation System**
+• **Live Web Demo:** [data-mining-universitas-gunadarma.vercel.app](https://data-mining-universitas-gunadarma.vercel.app)
+• **Download APK (Android):** [AprioriMart v1.0.0 APK](https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk)
+• **Repositori GitHub:** [github.com/Firdaus1802/data-mining-universitas-gunadarma](https://github.com/Firdaus1802/data-mining-universitas-gunadarma)
+• **Arsitektur & Tech Stack:** Flutter, Dart, Google R8 ProGuard, Algoritma Apriori, Vercel, GitHub.
+• **Fitur & Solusi:** Aplikasi Market Basket Analysis mobile dan web dengan Algoritma Apriori pada Groceries Dataset. Menghitung Support, Confidence, dan Lift Ratio secara client-side, simulasi kasir cross-selling real-time, partisi dataset dinamis (100%, 80:20, 70:30, 60:40), dan proteksi Google R8 (0/68 Clean VirusTotal).
 
 3. **Interactive Portfolio Website & AI Assistant**
 • **Tautan Kode:** [github.com/Firdaus1802/PORTOFOLIO-DAUS](https://github.com/Firdaus1802/PORTOFOLIO-DAUS)
@@ -247,7 +253,7 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik** (S1 Sistem Informasi di Gunadarma IPK 3.88)
-• **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Service, Data Mining Kelompok 4 UG)
+• **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Service, AprioriMart Market Basket Analysis)
 • **Spesialisasi Tech Stack & Database** (React, Next.js, Flutter, Supabase, Node.js)
 • **Lisensi & Sertifikasi Industri Resmi** (10 Lisensi Terverifikasi)
 • **Curriculum Vitae (CV) Resmi** (Tersedia Format Cetak A4)

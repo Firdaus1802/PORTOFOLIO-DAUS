@@ -133,24 +133,24 @@ export default function CVPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4 mb-3">
             <div>
               <span className="block text-xs font-extrabold text-[#0f172a]">2026</span>
-              <span className="block text-[10px] text-[#64748b]">Netlify Deployment</span>
+              <span className="block text-[10px] text-[#64748b]">Vercel & APK Release</span>
             </div>
             <div>
               <div className="mb-0.5">
                 <h3 className="text-xs font-extrabold text-[#0f172a] inline">
-                  Flutter Web Developer & Analyst
+                  Full-Stack Mobile & Web Developer | Data Mining Researcher
                 </h3>
                 <span className="text-xs font-semibold text-[#555555] inline ml-1.5 before:content-['—_'] before:text-[#94a3b8]">
-                  Data Mining Kelompok 4 (Market Basket Analysis UG)
+                  AprioriMart (E-Commerce Market Basket Analysis & Recommendation System)
                 </span>
               </div>
               <ul className="list-disc pl-4 text-xs text-[#333333] space-y-0.5 leading-normal">
-                <li>Mengembangkan aplikasi web Market Basket Analysis berbasis Flutter Web dan Dart untuk menganalisis transaksi konsumen.</li>
-                <li>Mengimplementasikan Algoritma Apriori dengan kalkulasi otomatis Support, Confidence, dan Lift Ratio.</li>
-                <li>Deployment platform di Netlify Cloud (Live: <a href="https://data-mining-kelompok-4.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">data-mining-kelompok-4.netlify.app</a>).</li>
+                <li>Membangun aplikasi Market Basket Analysis mobile & web berbasis Flutter & Dart dengan Algoritma Apriori pada Groceries Dataset.</li>
+                <li>Mengimplementasikan kalkulasi client-side (Support, Confidence, Lift Ratio), partisi dataset dinamis (100%, 80:20, 70:30, 60:40), dan simulasi kasir real-time untuk rekomendasi cross-selling.</li>
+                <li>Mengoptimalkan performa & keamanan dengan Google R8 Obfuscation (0/68 Clean VirusTotal), rilis APK Android, dan Vercel Web Deployment (Live: <a href="https://data-mining-universitas-gunadarma.vercel.app" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">data-mining-universitas-gunadarma.vercel.app</a> | APK: <a href="https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">AprioriMart v1.0.0 APK</a>).</li>
               </ul>
             </div>
           </div>
