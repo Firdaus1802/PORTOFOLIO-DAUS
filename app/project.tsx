@@ -218,42 +218,28 @@ export default function Project() {
                     </svg>
                   </a>
 
-                  {selectedProject.githubUrl ? (
-                    <a 
-                      href={selectedProject.githubUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-pointer shadow-sm"
-                    >
-                      <span>Source Code</span>
-                      <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    </a>
-                  ) : (
-                    <button 
-                      type="button"
-                      aria-disabled="true"
-                      onMouseDown={(e) => e.preventDefault()}
-                      onClick={(e) => e.preventDefault()}
-                      className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-not-allowed select-none outline-none focus:outline-none"
-                    >
-                      <span className="select-none pointer-events-none">Source Code</span>
-                      <svg className="w-4 h-4 pointer-events-none select-none shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    </button>
-                  )}
+                  <button 
+                    type="button"
+                    aria-disabled="true"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
+                    className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 text-text-primary hover:border-text-primary hover:bg-text-secondary/10 hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-not-allowed select-none outline-none focus:outline-none"
+                  >
+                    <span className="select-none pointer-events-none">Source Code</span>
+                    <svg className="w-4 h-4 pointer-events-none select-none shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </button>
 
                   {selectedProject.apkUrl && (
                     <a 
                       href={selectedProject.apkUrl} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase bg-emerald-600 hover:bg-emerald-700 text-white hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-pointer shadow-md"
+                      className="flex-1 min-w-[160px] flex justify-center items-center gap-2 text-center font-bold text-sm tracking-widest uppercase border border-text-secondary/20 hover:border-text-primary bg-thirdary/60 hover:bg-thirdary text-text-primary hover:-translate-y-0.5 transition-all duration-300 py-3.5 px-4 rounded-xl cursor-pointer shadow-sm group"
                     >
                       <span>Download APK</span>
-                      <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg>
                     </a>
@@ -313,7 +299,7 @@ const projects: ProjectItem[] = [
     number: "02",
     title: "AprioriMart",
     badge: "VERCEL DEPLOYMENT • FLUTTER MOBILE & WEB",
-    badgeColor: "text-emerald-500",
+    badgeColor: "text-blue-500",
     shortDescription: "Aplikasi Market Basket Analysis berbasis mobile dan web dengan Algoritma Apriori, simulasi kasir real-time, pengujian data latih/uji, dan proteksi Google R8.",
     fullDescription: "AprioriMart adalah aplikasi Market Basket Analysis & Recommendation System berbasis mobile dan web yang menerapkan Algoritma Apriori untuk menemukan pola asosiasi pembelian konsumen (association rules) pada dataset transaksi retail (Groceries Dataset). Aplikasi ini dilengkapi dengan simulasi kasir interaktif untuk mendemonstrasikan strategi cross-selling dan product bundling secara real-time, partisi dataset dinamis (100%, 80:20, 70:30, 60:40), analisis aturan asosiasi otomatis (Support, Confidence, Lift Ratio) secara client-side, manajemen dataset CSV/JSON, serta proteksi keamanan Google R8 ProGuard (0/68 Clean Bebas Malware di VirusTotal).",
     createdAt: "2026",
@@ -328,7 +314,7 @@ const projects: ProjectItem[] = [
       "Proteksi Google R8 Obfuscation (0/68 Clean VirusTotal)",
     ],
     tech: ["Flutter", "Dart", "Google R8", "Algoritma Apriori", "Vercel", "GitHub"],
-    githubUrl: "https://github.com/Firdaus1802/data-mining-universitas-gunadarma",
+    githubUrl: "",
     liveDemoUrl: "https://data-mining-universitas-gunadarma.vercel.app",
     apkUrl: "https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk",
   },
