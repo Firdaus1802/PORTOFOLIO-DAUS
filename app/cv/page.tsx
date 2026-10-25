@@ -235,7 +235,7 @@ export default function CVPage() {
               <span className="text-[10px] font-extrabold text-[#0f172a] w-12 shrink-0">2024-2026</span>
               <div className="flex flex-col">
                 <strong className="font-bold text-[#0f172a]">Dicoding Indonesia</strong>
-                <span className="text-[#555555] text-[10px]">7x Sertifikasi (JavaScript, Node.js REST API, Python, Cloud AI)</span>
+                <span className="text-[#555555] text-[10px]">8x Sertifikasi (JavaScript, Node.js REST API, Python, Cloud AI, SDD Kiro)</span>
               </div>
             </div>
           </div>
@@ -257,11 +257,11 @@ export default function CVPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
               <span className="font-extrabold text-[#0f172a]">Cloud & AI Tools:</span>
-              <span className="text-[#262626]">Microsoft Azure AI, AWS Cloud Computing Essentials, LLM API Integration, Vercel, Netlify</span>
+              <span className="text-[#262626]">Microsoft Azure AI, AWS Cloud Computing Essentials, LLM API Integration, Kiro Agentic IDE (Spec-Driven Development), Vercel, Netlify</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
               <span className="font-extrabold text-[#0f172a]">Tools & Office:</span>
-              <span className="text-[#262626]">Git, GitHub, Visual Studio Code, Postman, Microsoft Office Suite (BNSP Certified)</span>
+              <span className="text-[#262626]">Git, GitHub, Visual Studio Code, Kiro IDE, Postman, Microsoft Office Suite (BNSP Certified)</span>
             </div>
           </div>
         </section>

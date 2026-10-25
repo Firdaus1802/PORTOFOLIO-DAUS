@@ -116,8 +116,8 @@ function getSmartFallbackResponse(query: string): string {
     return `**Spesialisasi Tech Stack & Database Firdaus:**
 • **Frontend Engineering:** React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5, CSS3, Framer Motion.
 • **Backend & Database:** Supabase (PostgreSQL BaaS, Auth, Storage), Node.js RESTful API, Postman API Testing, Python.
-• **Cloud & Artificial Intelligence:** Microsoft Azure AI, AWS Cloud Infrastructure, Generative AI Integration.
-• **Development Tools:** Git, GitHub, VS Code, Vercel, Microsoft Office (Sertifikasi BNSP).`
+• **Cloud & Artificial Intelligence:** Microsoft Azure AI, AWS Cloud Infrastructure, Generative AI Integration, Spec-Driven Development (Kiro Agentic IDE).
+• **Development Tools:** Git, GitHub, VS Code, Kiro IDE, Vercel, Microsoft Office (Sertifikasi BNSP).`
   }
 
   if (
@@ -130,9 +130,13 @@ function getSmartFallbackResponse(query: string): string {
     q.includes("raharja") || 
     q.includes("dicoding") || 
     q.includes("kredensial") || 
+    q.includes("kiro") || 
+    q.includes("spec-driven") || 
+    q.includes("sdd") || 
     q.includes("industri")
   ) {
-    return `Firdaus memiliki **10 lisensi dan sertifikasi kompetensi resmi terverifikasi**:
+    return `Firdaus memiliki **11 lisensi dan sertifikasi kompetensi resmi terverifikasi**:
+• **Dicoding Indonesia:** Spec-Driven Development dengan Kiro (ID: \`ERZR7YK3NZYV\`)
 • **Cisco Networking Academy:** Introduction to Cybersecurity (2026)
 • **BNSP Indonesia:** Junior Office Operator (ID: 10458184)
 • **Universitas Raharja:** Uji Kompetensi Ms. Office (ID: 450/UKOM/RHJ/II/2024)
@@ -255,7 +259,7 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik** (S1 Sistem Informasi di Gunadarma IPK 3.88)
 • **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Service, AprioriMart Market Basket Analysis)
 • **Spesialisasi Tech Stack & Database** (React, Next.js, Flutter, Supabase, Node.js)
-• **Lisensi & Sertifikasi Industri Resmi** (10 Lisensi Terverifikasi)
+• **Lisensi & Sertifikasi Industri Resmi** (11 Lisensi Terverifikasi)
 • **Curriculum Vitae (CV) Resmi** (Tersedia Format Cetak A4)
 • **Saluran Kontak & Jaringan Profesional** (WhatsApp, LinkedIn, Email)`
   }

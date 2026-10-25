@@ -235,6 +235,19 @@ export default function Experience() {
 const certificateList = [
   {
     index: 0,
+    category: "Cloud & AI",
+    issuer: "Dicoding Indonesia",
+    title: "Spec-Driven Development dengan Kiro",
+    date: "Okt 2026",
+    credentialId: "ERZR7YK3NZYV",
+    imagePath: "/images/certificates/cert-dicoding-kiro.jpg",
+    shortDescription: "Sertifikasi alur kerja pengembangan software berbasis spesifikasi (Spec-Driven Development) menggunakan Kiro Agentic IDE.",
+    description: "Menerapkan paradigma Spec-Driven Development (SDD) untuk alur kerja AI-assisted development profesional, perancangan dokumen spesifikasi terstruktur, prompt engineering untuk SDD, serta implementasi fitur aplikasi web dari nol menggunakan Kiro Agentic IDE.",
+    skills: ["Spec-Driven Development", "Kiro IDE", "Agentic AI", "Prompt Engineering", "Software Engineering"],
+    credentialUrl: "https://www.dicoding.com/certificates/ERZR7YK3NZYV",
+  },
+  {
+    index: 1,
     category: "Web & Code",
     issuer: "Cisco Networking Academy",
     title: "Introduction to Cybersecurity",
@@ -246,7 +259,7 @@ const certificateList = [
     credentialUrl: "https://www.linkedin.com/posts/firdaus-dhuha-prabowo-091949386_introduction-to-cybersecurity-was-issued-activity-7428472074052124672-ghec",
   },
   {
-    index: 1,
+    index: 2,
     category: "Web & Code",
     issuer: "Dicoding Indonesia",
     title: "Belajar Dasar Pemrograman JavaScript",
@@ -259,7 +272,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/07Z6JO4DJXQR",
   },
   {
-    index: 2,
+    index: 3,
     category: "Web & Code",
     issuer: "Dicoding Indonesia",
     title: "Belajar Back-End Pemula dengan JavaScript",
@@ -272,7 +285,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/53XEK21YVXRN",
   },
   {
-    index: 3,
+    index: 4,
     category: "Web & Code",
     issuer: "Dicoding Indonesia",
     title: "Memulai Pemrograman dengan Python",
@@ -285,7 +298,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/MRZM621JKPYQ",
   },
   {
-    index: 4,
+    index: 5,
     category: "Cloud & AI",
     issuer: "Dicoding & Microsoft",
     title: "Membangun Aplikasi Gen AI dengan Azure",
@@ -298,7 +311,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/GRX5J7YRKX0M",
   },
   {
-    index: 5,
+    index: 6,
     category: "Cloud & AI",
     issuer: "Dicoding & AWS",
     title: "Belajar Dasar Cloud dan Gen AI di AWS",
@@ -311,7 +324,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/MRZM6R97RPYQ",
   },
   {
-    index: 6,
+    index: 7,
     category: "Cloud & AI",
     issuer: "Dicoding & Microsoft",
     title: "Penerapan Data Science Microsoft Fabric",
@@ -324,7 +337,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/JLX15O22NZ72",
   },
   {
-    index: 7,
+    index: 8,
     category: "Professional & Office",
     issuer: "BNSP Indonesia",
     title: "Junior Office Operator",
@@ -336,7 +349,7 @@ const certificateList = [
     skills: ["Microsoft Office", "Administrasi Dokumen", "Manajemen Data", "BNSP"],
   },
   {
-    index: 8,
+    index: 9,
     category: "Professional & Office",
     issuer: "Universitas Raharja",
     title: "Uji Kompetensi Ms. Office",
@@ -348,7 +361,7 @@ const certificateList = [
     skills: ["Microsoft Excel", "Microsoft Word", "Microsoft PowerPoint", "Spreadsheet"],
   },
   {
-    index: 9,
+    index: 10,
     category: "Professional & Office",
     issuer: "Dicoding & DBS Foundation",
     title: "Introduction to Financial Literacy",
