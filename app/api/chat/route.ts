@@ -48,7 +48,12 @@ function getSmartFallbackResponse(query: string): string {
 • **Arsitektur & Tech Stack:** Flutter, Dart, Google R8 ProGuard, Algoritma Apriori, Vercel, GitHub.
 • **Fitur & Solusi:** Aplikasi Market Basket Analysis mobile dan web dengan Algoritma Apriori pada Groceries Dataset. Menghitung Support, Confidence, dan Lift Ratio secara client-side, simulasi kasir cross-selling real-time, partisi dataset dinamis (100%, 80:20, 70:30, 60:40), dan proteksi Google R8 (0/68 Clean VirusTotal).
 
-3. **Interactive Portfolio Website & AI Assistant**
+3. **Bank Customer Segmentation & Machine Learning Pipeline**
+• **Repositori GitHub:** [github.com/Firdaus1802/DICODING-MACHINE-LEARNING](https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING)
+• **Arsitektur & Tech Stack:** Python, Scikit-Learn, K-Means Clustering, PCA, Decision Tree, Random Forest, GridSearchCV, Pandas, NumPy.
+• **Fitur & Solusi:** End-to-end Machine Learning pipeline untuk segmentasi nasabah bank (K-Means, Elbow Method, PCA 2D) dan klasifikasi prediktif (Decision Tree & Random Forest dengan 5-Fold GridSearchCV) yang mencapai akurasi 100% pada data uji.
+
+4. **Interactive Portfolio Website & AI Assistant**
 • **Tautan Kode:** [github.com/Firdaus1802/PORTOFOLIO-DAUS](https://github.com/Firdaus1802/PORTOFOLIO-DAUS)
 • **Arsitektur & Tech Stack:** Next.js, TypeScript, Tailwind CSS, Framer Motion, Edge AI.
 • **Fitur & Solusi:** Web portofolio interaktif dengan animasi halus, credential viewer terverifikasi, dan Chatbot AI Assistant cerdas.`
@@ -264,7 +269,7 @@ Silakan pilih direktori informasi yang ingin Anda akses:
 
 Silakan pilih direktori informasi yang ingin Anda akses:
 • **Profil & Latar Belakang Akademik** (S1 Sistem Informasi di Gunadarma IPK 3.88)
-• **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Service, AprioriMart Market Basket Analysis)
+• **Portofolio Proyek & Arsitektur Kode** (Finzie Joki Service, AprioriMart, Machine Learning Pipeline)
 • **Spesialisasi Tech Stack & Database** (React, Next.js, Flutter, Supabase, Node.js)
 • **Lisensi & Sertifikasi Industri Resmi** (12 Lisensi Terverifikasi)
 • **Curriculum Vitae (CV) Resmi** (Tersedia Format Cetak A4)

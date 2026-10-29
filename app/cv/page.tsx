@@ -155,6 +155,28 @@ export default function CVPage() {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4 mb-3">
+            <div>
+              <span className="block text-xs font-extrabold text-[#0f172a]">2026</span>
+              <span className="block text-[10px] text-[#64748b]">Machine Learning Pipeline</span>
+            </div>
+            <div>
+              <div className="mb-0.5">
+                <h3 className="text-xs font-extrabold text-[#0f172a] inline">
+                  Machine Learning Engineer | Data Scientist
+                </h3>
+                <span className="text-xs font-semibold text-[#555555] inline ml-1.5 before:content-['—_'] before:text-[#94a3b8]">
+                  Bank Customer Segmentation & Predictive Modeling
+                </span>
+              </div>
+              <ul className="list-disc pl-4 text-xs text-[#333333] space-y-0.5 leading-normal">
+                <li>Membangun pipeline Machine Learning end-to-end berbasis Python dan Scikit-Learn untuk analisis transaksi nasabah perbankan.</li>
+                <li>Menerapkan Unsupervised Learning dengan K-Means Clustering, penentuan cluster optimal (Elbow Method & Silhouette Score), dan reduksi dimensi 2D PCA.</li>
+                <li>Melatih model Supervised Learning (Decision Tree vs Random Forest) yang dioptimasi via GridSearchCV (5-Fold CV) dengan akurasi 100% pada data uji (Repo: <a href="https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING" target="_blank" rel="noopener noreferrer" className="text-[#1d4ed8] hover:underline">github.com/Firdaus1802/DICODING-MACHINE-LEARNING</a>).</li>
+              </ul>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-[145px_1fr] print:grid-cols-[145px_1fr] gap-1 sm:gap-4">
             <div>
               <span className="block text-xs font-extrabold text-[#0f172a]">2026</span>

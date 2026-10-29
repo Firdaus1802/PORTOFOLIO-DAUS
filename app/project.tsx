@@ -32,7 +32,7 @@ export default function Project() {
           </div>
         </FadeDown>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {projects.map((project, idx) => (
             <FadeUp key={project.id} delay={idx * 0.15}>
               <GlareHover className="group flex flex-col h-full bg-background border border-text-secondary/20 hover:border-text-primary/50 rounded-2xl overflow-hidden transition-all duration-500 shadow-sm hover:shadow-2xl">
@@ -95,7 +95,7 @@ export default function Project() {
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="p-2 border border-text-secondary/20 rounded-full text-text-secondary hover:text-background hover:bg-text-primary hover:border-text-primary transition-all duration-300 cursor-pointer"
-                      title="Open Live Website"
+                      title={project.liveDemoUrl.includes("github.com") ? "View Repository on GitHub" : "Open Live Website"}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -212,7 +212,7 @@ export default function Project() {
                     rel="noopener noreferrer" 
                     className="flex-1 min-w-[160px] text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 px-4 rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <span>Open Live Demo</span>
+                    <span>{selectedProject.liveDemoUrl.includes("github.com") ? "View on GitHub" : "Open Live Demo"}</span>
                     <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
@@ -317,5 +317,28 @@ const projects: ProjectItem[] = [
     githubUrl: "",
     liveDemoUrl: "https://data-mining-universitas-gunadarma.vercel.app",
     apkUrl: "https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk",
+  },
+  {
+    id: "bank-customer-ml",
+    number: "03",
+    title: "Bank Customer Segmentation & Machine Learning Pipeline",
+    badge: "GITHUB REPOSITORY • MACHINE LEARNING PIPELINE",
+    badgeColor: "text-blue-500",
+    shortDescription: "Pipeline Machine Learning end-to-end untuk segmentasi nasabah bank (K-Means & PCA) dan prediksi cluster klasifikasi (Random Forest & Decision Tree) dengan akurasi 100%.",
+    fullDescription: "Proyek Machine Learning end-to-end yang mengintegrasikan analisis segmentasi nasabah perbankan (Unsupervised Learning) dan pemodelan klasifikasi prediktif (Supervised Learning). Menjalankan pipeline komprehensif mulai dari Exploratory Data Analysis (EDA), pembersihan data & outlier handling (IQR), feature scaling (StandardScaler), penentuan cluster optimal (Elbow Method & Silhouette Score), reduksi dimensi 2D dengan PCA, hingga evaluasi model klasifikasi (Decision Tree vs Random Forest) yang dioptimasi dengan 5-Fold Cross Validation GridSearchCV, menghasilkan akurasi 100% pada data uji.",
+    createdAt: "2026",
+    liveDomain: "github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
+    imagePath: "/images/project-machine-learning.png",
+    features: [
+      "Segmentasi Nasabah (K-Means Clustering & KElbowVisualizer)",
+      "Reduksi Dimensi 2D dengan Principal Component Analysis (PCA)",
+      "Pembersihan Data, IQR Outlier Handling & StandardScaler",
+      "Model Klasifikasi Decision Tree & Random Forest",
+      "Hyperparameter Tuning dengan GridSearchCV (5-Fold CV)",
+      "Evaluasi Metrik Akurasi 100%, Precision, Recall & F1-Score",
+    ],
+    tech: ["Python", "Scikit-Learn", "K-Means", "Random Forest", "PCA", "GridSearchCV", "Pandas", "NumPy"],
+    githubUrl: "https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
+    liveDemoUrl: "https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
   },
 ]

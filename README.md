@@ -20,7 +20,13 @@ Website portofolio personal interaktif dan modern yang dibangun untuk menampilka
 * **GitHub Repository**: [github.com/Firdaus1802/data-mining-universitas-gunadarma](https://github.com/Firdaus1802/data-mining-universitas-gunadarma)
 * **Deskripsi**: Aplikasi Market Basket Analysis berbasis mobile dan web yang menerapkan Algoritma Apriori untuk menemukan pola asosiasi pembelian pada dataset transaksi retail. Dilengkapi simulasi kasir cross-selling real-time, partisi dataset dinamis (100%, 80:20, 70:30, 60:40), analisis aturan asosiasi client-side, dan proteksi keamanan Google R8 (0/68 Clean di VirusTotal).
 
-### 3. Interactive Portfolio Website & AI Assistant
+### 3. Bank Customer Segmentation & Predictive Modeling
+* **Kategori**: Machine Learning Pipeline & Predictive Analytics
+* **Tech Stack**: Python, Scikit-Learn, K-Means Clustering, PCA, Random Forest, Decision Tree, GridSearchCV, Pandas, NumPy
+* **GitHub Repository**: [github.com/Firdaus1802/DICODING-MACHINE-LEARNING](https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING)
+* **Deskripsi**: Pipeline Machine Learning end-to-end untuk segmentasi nasabah perbankan (Unsupervised K-Means, KElbowVisualizer, PCA 2D) dan model prediksi cluster klasifikasi (Supervised Decision Tree & Random Forest dengan 5-Fold GridSearchCV) yang mencapai akurasi 100% pada data uji.
+
+### 4. Interactive Portfolio Website & AI Assistant
 * **Kategori**: Personal Portfolio & Generative AI Assistant
 * **Tech Stack**: Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, Edge AI
 * **Deskripsi**: Web portofolio interaktif dengan animasi halus, credential viewer terverifikasi, CV viewer siap cetak (A4), dan AI Chatbot Assistant cerdas.
