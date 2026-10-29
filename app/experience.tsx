@@ -237,6 +237,19 @@ const certificateList = [
     index: 0,
     category: "Cloud & AI",
     issuer: "Dicoding Indonesia",
+    title: "Belajar Machine Learning untuk Pemula",
+    date: "Okt 2026",
+    credentialId: "5076404",
+    imagePath: "/images/certificates/cert-dicoding-machine-learning.jpg",
+    shortDescription: "Sertifikasi kompetensi dasar Machine Learning, supervised & unsupervised learning, dan evaluasi performa model.",
+    description: "Mempelajari konsep dasar machine learning, algoritma klasifikasi (Decision Tree, Random Forest) dan clustering (K-Means, PCA), data preprocessing, feature engineering, serta hyperparameter tuning menggunakan Scikit-Learn dan Python.",
+    skills: ["Machine Learning", "Supervised Learning", "Unsupervised Learning", "Scikit-Learn", "Python"],
+    credentialUrl: "https://www.dicoding.com/academies/184/certificates/5076404",
+  },
+  {
+    index: 1,
+    category: "Cloud & AI",
+    issuer: "Dicoding Indonesia",
     title: "Spec-Driven Development dengan Kiro",
     date: "Okt 2026",
     credentialId: "ERZR7YK3NZYV",
@@ -247,7 +260,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/ERZR7YK3NZYV",
   },
   {
-    index: 1,
+    index: 2,
     category: "Web & Code",
     issuer: "Cisco Networking Academy",
     title: "Introduction to Cybersecurity",
@@ -259,7 +272,7 @@ const certificateList = [
     credentialUrl: "https://www.linkedin.com/posts/firdaus-dhuha-prabowo-091949386_introduction-to-cybersecurity-was-issued-activity-7428472074052124672-ghec",
   },
   {
-    index: 2,
+    index: 3,
     category: "Web & Code",
     issuer: "Dicoding Indonesia",
     title: "Belajar Dasar Pemrograman JavaScript",
@@ -272,7 +285,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/07Z6JO4DJXQR",
   },
   {
-    index: 3,
+    index: 4,
     category: "Web & Code",
     issuer: "Dicoding Indonesia",
     title: "Belajar Back-End Pemula dengan JavaScript",
@@ -285,7 +298,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/53XEK21YVXRN",
   },
   {
-    index: 4,
+    index: 5,
     category: "Web & Code",
     issuer: "Dicoding Indonesia",
     title: "Memulai Pemrograman dengan Python",
@@ -298,7 +311,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/MRZM621JKPYQ",
   },
   {
-    index: 5,
+    index: 6,
     category: "Cloud & AI",
     issuer: "Dicoding & Microsoft",
     title: "Membangun Aplikasi Gen AI dengan Azure",
@@ -311,7 +324,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/GRX5J7YRKX0M",
   },
   {
-    index: 6,
+    index: 7,
     category: "Cloud & AI",
     issuer: "Dicoding & AWS",
     title: "Belajar Dasar Cloud dan Gen AI di AWS",
@@ -324,7 +337,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/MRZM6R97RPYQ",
   },
   {
-    index: 7,
+    index: 8,
     category: "Cloud & AI",
     issuer: "Dicoding & Microsoft",
     title: "Penerapan Data Science Microsoft Fabric",
@@ -337,7 +350,7 @@ const certificateList = [
     credentialUrl: "https://www.dicoding.com/certificates/JLX15O22NZ72",
   },
   {
-    index: 8,
+    index: 9,
     category: "Professional & Office",
     issuer: "BNSP Indonesia",
     title: "Junior Office Operator",
@@ -349,7 +362,7 @@ const certificateList = [
     skills: ["Microsoft Office", "Administrasi Dokumen", "Manajemen Data", "BNSP"],
   },
   {
-    index: 9,
+    index: 10,
     category: "Professional & Office",
     issuer: "Universitas Raharja",
     title: "Uji Kompetensi Ms. Office",
@@ -361,7 +374,7 @@ const certificateList = [
     skills: ["Microsoft Excel", "Microsoft Word", "Microsoft PowerPoint", "Spreadsheet"],
   },
   {
-    index: 10,
+    index: 11,
     category: "Professional & Office",
     issuer: "Dicoding & DBS Foundation",
     title: "Introduction to Financial Literacy",

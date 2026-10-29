@@ -42,7 +42,7 @@ Website portofolio personal interaktif dan modern yang dibangun untuk menampilka
 
 - **Frontend Web & Mobile**: Next.js 16 (App Router), React, Flutter Web, Dart, TypeScript, Tailwind CSS, Framer Motion
 - **Backend & Database**: Node.js, Supabase BaaS, RESTful API, Python
-- **Cloud & Deployment**: Vercel, Netlify, Microsoft Azure AI, AWS Cloud, Kiro Agentic IDE
+- **Cloud & Machine Learning**: Vercel, Netlify, Microsoft Azure AI, AWS Cloud, Scikit-Learn, Kiro Agentic IDE
 - **Tools**: Git, GitHub, Visual Studio Code, Kiro IDE, Postman, Microsoft Office (BNSP Certified)
 
 ---

@@ -83,6 +83,7 @@ const techCategories = [
       { name: "Microsoft Azure", svg: "./icons/azure.svg" },
       { name: "AWS Cloud", svg: "./icons/aws.svg" },
       { name: "Kiro (Agentic IDE)", svg: "./icons/kiro.svg" },
+      { name: "Scikit-Learn", svg: "./icons/scikit-learn.svg" },
     ],
   },
   {

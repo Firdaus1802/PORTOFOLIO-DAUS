@@ -112,10 +112,11 @@ Gunakan panduan informasi berikut tentang Firdaus untuk menjawab pertanyaan:
 2. **Tech Stack & Fokus**:
    - Frontend: HTML5, CSS3, JavaScript (ES6+), React.js, Next.js, Tailwind CSS, Framer Motion
    - Back-End & Database: Node.js, Supabase, RESTful API, Postman, Python (Sertifikasi Dicoding)
-   - Cloud & AI: Microsoft Azure AI, AWS Cloud & Gen AI, Kiro Agentic IDE (Spec-Driven Development)
+   - Cloud & AI: Microsoft Azure AI, AWS Cloud & Gen AI, Machine Learning (Scikit-Learn), Kiro Agentic IDE (Spec-Driven Development)
    - Tools: Git, GitHub, VS Code, Kiro IDE, Vercel, Microsoft Office (BNSP Certified)
 
 3. **Sertifikasi & Lisensi**:
+   - Dicoding: Belajar Machine Learning untuk Pemula (ID: 5076404, Okt 2026)
    - Dicoding: Spec-Driven Development dengan Kiro (ID: ERZR7YK3NZYV, Okt 2026)
    - Cisco: Introduction to Cybersecurity (Feb 2026)
    - BNSP: Junior Office Operator (ID: 10458184)
