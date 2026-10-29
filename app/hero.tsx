@@ -10,7 +10,7 @@ export default function Hero() {
   const [subIndex, setSubIndex] = useState(0)
   const [deleting, setDeleting] = useState(false)
 
-  const texts = useMemo(() => ["Junior Frontend Developer", "Frontend Enthusiast", "Web Developer"], [])
+  const texts = useMemo(() => ["Junior Frontend Developer", "Vibe Coder", "Web Developer"], [])
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id)
@@ -183,10 +183,10 @@ const quickStatsList = [
     ),
   },
   {
-    message: "Frontend Enthusiast",
+    message: "Vibe Coder",
     icon: (
       <svg className="w-5 md:w-6 text-text-background" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5M5 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2M5 12h14m-7 4v3m-4 0h8" />
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7Z" />
       </svg>
     ),
   },
