@@ -31,14 +31,14 @@ export default function Experience() {
 
   return (
     <>
-      <section id="certifications" className="w-full max-w-7xl mx-auto py-24 md:py-32 bg-background relative border-t border-text-secondary/10">
+      <section id="certifications" className="w-full max-w-7xl mx-auto py-24 md:py-32 bg-background relative border-t border-text-secondary/10 scroll-mt-28 md:scroll-mt-36">
         <FadeDown>
           <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-16 w-full text-left">
             <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Credentials & Achievements</h2>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Certifications & Licenses</h3>
               
-              <div className="relative p-1.5 bg-text-secondary/10 dark:bg-white/[0.05] rounded-full border border-text-secondary/10 dark:border-white/5 backdrop-blur-md inline-flex flex-wrap items-center gap-1">
+              <div className="relative p-1.5 bg-[#161618] dark:bg-[#161618] rounded-full border border-white/10 backdrop-blur-xl inline-flex flex-wrap items-center gap-1 shadow-inner">
                 {categories.map((cat) => {
                   const isSelected = filter === cat
                   return (
@@ -51,7 +51,7 @@ export default function Experience() {
                       {isSelected && (
                         <motion.div
                           layoutId="activeFilterPill"
-                          className="absolute inset-0 bg-text-primary rounded-full shadow-md z-0"
+                          className="absolute inset-0 bg-white dark:bg-white rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.25)] z-0"
                           transition={{
                             type: "spring",
                             stiffness: 450,
@@ -62,8 +62,8 @@ export default function Experience() {
                       <span
                         className={`relative z-10 transition-colors duration-200 ${
                           isSelected
-                            ? "text-background font-black"
-                            : "text-text-secondary hover:text-text-primary"
+                            ? "text-black dark:text-black font-extrabold"
+                            : "text-[#8e8e93] hover:text-white font-medium"
                         }`}
                       >
                         {cat}
@@ -76,23 +76,21 @@ export default function Experience() {
           </div>
         </FadeDown>
 
-        <motion.div 
-          layout 
-          className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={filter}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{
+              duration: 0.28,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {filteredCerts.map((cert) => (
-              <motion.div
-                layout
+              <div
                 key={`cert-${cert.index}`}
-                initial={{ opacity: 0, scale: 0.92, y: 15 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.92, y: -15 }}
-                transition={{
-                  duration: 0.25,
-                  ease: "easeInOut",
-                  layout: { type: "spring", stiffness: 350, damping: 30 },
-                }}
                 className="w-full h-full"
               >
                 <GlareHover className="group flex flex-col h-full bg-background/80 dark:bg-[#121216]/80 backdrop-blur-2xl border border-text-secondary/15 dark:border-white/10 hover:border-text-primary/40 rounded-[28px] overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl">
@@ -164,10 +162,10 @@ export default function Experience() {
                     </div>
                   </div>
                 </GlareHover>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </motion.div>
+        </AnimatePresence>
 
         <AnimatePresence>
           {isOpen !== null && activeCert && (

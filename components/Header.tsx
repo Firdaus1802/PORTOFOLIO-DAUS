@@ -11,15 +11,16 @@ export default function Header() {
 
   const handleScroll = (id: string) => {
     setActiveSection(id.toLowerCase())
-    requestAnimationFrame(() => {
-      const section = document.getElementById(id)
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        })
-      }
-    })
+    const section = document.getElementById(id)
+    if (section) {
+      const headerOffset = 96
+      const elementPosition = section.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+    }
   }
 
   useEffect(() => {

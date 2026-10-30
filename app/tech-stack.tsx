@@ -5,7 +5,7 @@ import FadeUp from "@/components/animations/FadeUp"
 
 export default function TechStack() {
   return (
-    <section id="techstack" className="w-full max-w-7xl mx-auto py-24 md:py-32 cursor-default bg-background relative border-t border-text-secondary/10 overflow-hidden">
+    <section id="techstack" className="w-full max-w-7xl mx-auto py-24 md:py-32 cursor-default bg-background relative border-t border-text-secondary/10 overflow-hidden scroll-mt-28 md:scroll-mt-36">
       <FadeDown>
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24 w-full text-left">
           <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Skills & Competencies</h2>
