@@ -8,24 +8,16 @@ import FadeUp from "@/components/animations/FadeUp"
 export default function Project() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(1)
 
   const currentProject = projects[currentIndex]
 
   const nextSlide = useCallback(() => {
-    setDirection(1)
     setCurrentIndex((prev) => (prev + 1) % projects.length)
   }, [])
 
   const prevSlide = useCallback(() => {
-    setDirection(-1)
     setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length)
   }, [])
-
-  const goToSlide = useCallback((idx: number) => {
-    setDirection(idx > currentIndex ? 1 : -1)
-    setCurrentIndex(idx)
-  }, [currentIndex])
 
   useEffect(() => {
     if (selectedProject) {
@@ -48,144 +40,148 @@ export default function Project() {
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [nextSlide, prevSlide, selectedProject])
 
+  const getCardProps = (idx: number) => {
+    const diff = (idx - currentIndex + projects.length) % projects.length
+    if (diff === 0) {
+      return {
+        x: "0%",
+        scale: 1,
+        opacity: 1,
+        zIndex: 20,
+        filter: "brightness(1) blur(0px)",
+        role: "active",
+      }
+    } else if (diff === 1) {
+      return {
+        x: "52%",
+        scale: 0.82,
+        opacity: 0.4,
+        zIndex: 10,
+        filter: "brightness(0.6) blur(1px)",
+        role: "next",
+      }
+    } else {
+      return {
+        x: "-52%",
+        scale: 0.82,
+        opacity: 0.4,
+        zIndex: 10,
+        filter: "brightness(0.6) blur(1px)",
+        role: "prev",
+      }
+    }
+  }
+
   return (
     <>
       <section id="projects" className="w-full max-w-7xl mx-auto py-24 md:py-32 bg-background relative border-t border-text-secondary/10">
         <FadeDown>
-          <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-14 w-full">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-text-secondary/10">
-              <div>
-                <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-3">Archive & Works</h2>
-                <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Featured Projects</h3>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <span className="text-sm font-extrabold text-text-secondary font-mono tracking-widest">
-                  <span className="text-text-primary text-lg">0{currentIndex + 1}</span> / 0{projects.length}
-                </span>
-
-                <div className="flex items-center gap-2">
-                  <button 
-                    onClick={prevSlide}
-                    aria-label="Previous Project"
-                    className="p-3 rounded-xl border border-text-secondary/20 hover:border-text-primary bg-background hover:bg-text-secondary/10 text-text-primary transition-all duration-300 cursor-pointer shadow-sm hover:scale-105 active:scale-95"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-
-                  <button 
-                    onClick={nextSlide}
-                    aria-label="Next Project"
-                    className="p-3 rounded-xl border border-text-secondary/20 hover:border-text-primary bg-background hover:bg-text-secondary/10 text-text-primary transition-all duration-300 cursor-pointer shadow-sm hover:scale-105 active:scale-95"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-14 w-full text-left">
+            <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-3">Archive & Works</h2>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Featured Projects</h3>
           </div>
         </FadeDown>
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          <div className="lg:col-span-7 flex flex-col gap-4">
+          <div className="lg:col-span-7 flex flex-col items-center justify-between">
             <FadeUp delay={0.1}>
-              <div className="relative aspect-16/10 w-full rounded-3xl overflow-hidden border border-text-secondary/20 bg-text-secondary/5 shadow-2xl group">
-                <AnimatePresence mode="wait" custom={direction}>
-                  <motion.div
-                    key={currentProject.id}
-                    custom={direction}
-                    initial={{ opacity: 0, x: direction * 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -direction * 40 }}
-                    transition={{ duration: 0.35, ease: "easeInOut" }}
-                    className="relative w-full h-full cursor-pointer"
-                    onClick={() => setSelectedProject(currentProject)}
-                  >
-                    <Image 
-                      src={currentProject.imagePath} 
-                      alt={currentProject.title} 
-                      fill 
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" 
-                      priority
-                    />
-                  </motion.div>
-                </AnimatePresence>
-
-                <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest text-text-secondary shadow-md flex items-center gap-1.5 pointer-events-none">
-                  <svg className={`w-3.5 h-3.5 ${currentProject.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span>{currentProject.badge}</span>
-                </div>
-
-                <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-text-primary shadow-md pointer-events-none">
-                  {currentProject.number}
-                </div>
-
-                <div className="absolute inset-y-0 left-3 flex items-center">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      prevSlide()
-                    }}
-                    aria-label="Previous Slide"
-                    className="p-2.5 rounded-full bg-background/80 backdrop-blur-md border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-background transition-all duration-300 shadow-lg hover:scale-110 cursor-pointer"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div className="absolute inset-y-0 right-3 flex items-center">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      nextSlide()
-                    }}
-                    aria-label="Next Slide"
-                    className="p-2.5 rounded-full bg-background/80 backdrop-blur-md border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-background transition-all duration-300 shadow-lg hover:scale-110 cursor-pointer"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2.5 pt-1">
+              <div className="relative w-full h-[360px] sm:h-[420px] md:h-[470px] flex items-center justify-center overflow-hidden py-4">
                 {projects.map((item, idx) => {
-                  const isActive = idx === currentIndex
+                  const card = getCardProps(idx)
+                  const isActive = card.role === "active"
+
                   return (
-                    <button
+                    <motion.div
                       key={item.id}
-                      onClick={() => goToSlide(idx)}
-                      className={`p-3 rounded-2xl border text-left transition-all duration-300 cursor-pointer flex flex-col gap-1 ${
-                        isActive
-                          ? "bg-text-primary text-background border-text-primary shadow-md scale-[1.02]"
-                          : "bg-background border-text-secondary/20 text-text-secondary hover:border-text-primary/50 hover:text-text-primary"
-                      }`}
+                      animate={{
+                        x: card.x,
+                        scale: card.scale,
+                        opacity: card.opacity,
+                        zIndex: card.zIndex,
+                        filter: card.filter,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 24,
+                      }}
+                      onClick={() => {
+                        if (card.role === "next") nextSlide()
+                        else if (card.role === "prev") prevSlide()
+                        else setSelectedProject(item)
+                      }}
+                      drag={isActive ? "x" : false}
+                      dragConstraints={{ left: 0, right: 0 }}
+                      onDragEnd={(_, info) => {
+                        if (info.offset.x < -30) nextSlide()
+                        else if (info.offset.x > 30) prevSlide()
+                      }}
+                      className="absolute w-[260px] sm:w-[320px] md:w-[360px] aspect-square rounded-3xl overflow-hidden border border-text-secondary/25 bg-background shadow-2xl cursor-pointer select-none"
                     >
-                      <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${isActive ? "text-background/80" : "text-text-secondary"}`}>
-                        {item.number} • {item.createdAt}
-                      </span>
-                      <span className="text-xs font-bold truncate">
-                        {item.title}
-                      </span>
-                    </button>
+                      <div className="relative w-full h-full bg-text-secondary/5">
+                        <Image 
+                          src={item.imagePath} 
+                          alt={item.title} 
+                          fill 
+                          className="object-cover object-top" 
+                          priority={idx === 0}
+                        />
+
+                        <div className="absolute inset-0 bg-linear-to-t from-background/90 via-transparent to-black/30 pointer-events-none" />
+
+                        <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider text-text-secondary shadow-md flex items-center gap-1.5 pointer-events-none">
+                          <svg className={`w-3.5 h-3.5 ${item.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                          </svg>
+                          <span className="truncate max-w-[130px]">{item.badge.split("•")[0].trim()}</span>
+                        </div>
+
+                        <div className="absolute top-3 right-3 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-xs font-mono font-bold text-text-primary shadow-md pointer-events-none">
+                          {item.number}
+                        </div>
+
+                        <div className="absolute bottom-3 inset-x-3 text-center pointer-events-none">
+                          <span className="text-xs font-bold text-text-primary drop-shadow-md truncate block">
+                            {item.title}
+                          </span>
+                        </div>
+                      </div>
+                    </motion.div>
                   )
                 })}
+              </div>
+
+              <div className="flex items-center justify-center gap-3 mt-4 w-full">
+                <button 
+                  onClick={prevSlide}
+                  aria-label="Previous Slide"
+                  className="p-3 rounded-full bg-background border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-text-secondary/10 transition-all duration-300 shadow-md cursor-pointer hover:scale-105 active:scale-95"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                <div className="bg-background/90 backdrop-blur-md border border-text-secondary/20 px-6 py-2.5 rounded-full shadow-sm text-xs font-mono font-extrabold tracking-widest text-text-secondary">
+                  <span className="text-text-primary text-sm font-black">0{currentIndex + 1}</span> / 0{projects.length}
+                </div>
+
+                <button 
+                  onClick={nextSlide}
+                  aria-label="Next Slide"
+                  className="p-3 rounded-full bg-background border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-text-secondary/10 transition-all duration-300 shadow-md cursor-pointer hover:scale-105 active:scale-95"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </FadeUp>
           </div>
 
           <div className="lg:col-span-5 flex flex-col h-full">
             <FadeUp delay={0.2}>
-              <div className="h-full bg-background border border-text-secondary/20 hover:border-text-primary/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 relative overflow-hidden">
+              <div className="h-full bg-background border border-text-secondary/20 hover:border-text-primary/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl transition-all duration-300 relative overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentProject.id}
@@ -341,7 +337,7 @@ export default function Project() {
                   <button 
                     suppressHydrationWarning 
                     className="text-text-secondary hover:text-text-primary transition-colors p-2 bg-text-secondary/5 rounded-full cursor-pointer" 
-                    onClick={() => setSelectedProject(null)}
+                    onClick={() => setSelectedProject(null)} 
                   >
                     <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
