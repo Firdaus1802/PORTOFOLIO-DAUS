@@ -1,13 +1,31 @@
 "use client"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import FadeDown from "@/components/animations/FadeDown"
 import FadeUp from "@/components/animations/FadeUp"
-import GlareHover from "@/components/GlareHover"
 
 export default function Project() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState(1)
+
+  const currentProject = projects[currentIndex]
+
+  const nextSlide = useCallback(() => {
+    setDirection(1)
+    setCurrentIndex((prev) => (prev + 1) % projects.length)
+  }, [])
+
+  const prevSlide = useCallback(() => {
+    setDirection(-1)
+    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length)
+  }, [])
+
+  const goToSlide = useCallback((idx: number) => {
+    setDirection(idx > currentIndex ? 1 : -1)
+    setCurrentIndex(idx)
+  }, [currentIndex])
 
   useEffect(() => {
     if (selectedProject) {
@@ -20,96 +38,267 @@ export default function Project() {
     }
   }, [selectedProject])
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedProject) return
+      if (e.key === "ArrowRight") nextSlide()
+      if (e.key === "ArrowLeft") prevSlide()
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [nextSlide, prevSlide, selectedProject])
+
   return (
     <>
       <section id="projects" className="w-full max-w-7xl mx-auto py-24 md:py-32 bg-background relative border-t border-text-secondary/10">
         <FadeDown>
-          <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-16 w-full text-left">
-            <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Archive & Works</h2>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Selected Projects</h3>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-14 w-full">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-text-secondary/10">
+              <div>
+                <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-3">Archive & Works</h2>
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Featured Projects</h3>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <span className="text-sm font-extrabold text-text-secondary font-mono tracking-widest">
+                  <span className="text-text-primary text-lg">0{currentIndex + 1}</span> / 0{projects.length}
+                </span>
+
+                <div className="flex items-center gap-2">
+                  <button 
+                    onClick={prevSlide}
+                    aria-label="Previous Project"
+                    className="p-3 rounded-xl border border-text-secondary/20 hover:border-text-primary bg-background hover:bg-text-secondary/10 text-text-primary transition-all duration-300 cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+
+                  <button 
+                    onClick={nextSlide}
+                    aria-label="Next Project"
+                    className="p-3 rounded-xl border border-text-secondary/20 hover:border-text-primary bg-background hover:bg-text-secondary/10 text-text-primary transition-all duration-300 cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </FadeDown>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {projects.map((project, idx) => (
-            <FadeUp key={project.id} delay={idx * 0.15}>
-              <GlareHover className="group flex flex-col h-full bg-background border border-text-secondary/20 hover:border-text-primary/50 rounded-2xl overflow-hidden transition-all duration-500 shadow-sm hover:shadow-2xl">
-                
-                <div className="relative aspect-16/10 bg-text-secondary/5 border-b border-text-secondary/10 p-3 flex items-center justify-center overflow-hidden">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden shadow-sm border border-text-secondary/15 bg-background">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+          <div className="lg:col-span-7 flex flex-col gap-4">
+            <FadeUp delay={0.1}>
+              <div className="relative aspect-16/10 w-full rounded-3xl overflow-hidden border border-text-secondary/20 bg-text-secondary/5 shadow-2xl group">
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.div
+                    key={currentProject.id}
+                    custom={direction}
+                    initial={{ opacity: 0, x: direction * 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -direction * 40 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className="relative w-full h-full cursor-pointer"
+                    onClick={() => setSelectedProject(currentProject)}
+                  >
                     <Image 
-                      src={project.imagePath} 
-                      alt={project.title} 
+                      src={currentProject.imagePath} 
+                      alt={currentProject.title} 
                       fill 
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" 
-                      priority={idx === 0}
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" 
+                      priority
                     />
-                  </div>
-                  
-                  <div className="absolute top-5 right-5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest text-text-secondary shadow-sm">
-                    {project.number}
-                  </div>
+                  </motion.div>
+                </AnimatePresence>
+
+                <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest text-text-secondary shadow-md flex items-center gap-1.5 pointer-events-none">
+                  <svg className={`w-3.5 h-3.5 ${currentProject.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                  </svg>
+                  <span>{currentProject.badge}</span>
                 </div>
 
-                <div className="p-6 md:p-7 flex flex-col grow relative">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-bold tracking-wider uppercase text-text-secondary flex items-center gap-1.5">
-                      <svg className={`w-3.5 h-3.5 ${project.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                      </svg>
-                      {project.badge}
-                    </span>
-                    <span className="text-[11px] font-bold text-text-secondary/80">{project.createdAt}</span>
-                  </div>
+                <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-text-primary shadow-md pointer-events-none">
+                  {currentProject.number}
+                </div>
 
-                  <h4 className="text-xl md:text-2xl font-bold text-text-primary tracking-tight leading-snug mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-text-primary group-hover:to-text-secondary transition-all duration-300">
-                    {project.title}
-                  </h4>
+                <div className="absolute inset-y-0 left-3 flex items-center">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      prevSlide()
+                    }}
+                    aria-label="Previous Slide"
+                    className="p-2.5 rounded-full bg-background/80 backdrop-blur-md border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-background transition-all duration-300 shadow-lg hover:scale-110 cursor-pointer"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                </div>
 
-                  <p className="text-sm text-text-secondary font-medium leading-relaxed mb-5 line-clamp-3">
-                    {project.shortDescription}
-                  </p>
+                <div className="absolute inset-y-0 right-3 flex items-center">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      nextSlide()
+                    }}
+                    aria-label="Next Slide"
+                    className="p-2.5 rounded-full bg-background/80 backdrop-blur-md border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-background transition-all duration-300 shadow-lg hover:scale-110 cursor-pointer"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
 
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {project.tech.map((skill, i) => (
-                      <span key={i} className="text-[10px] font-bold bg-thirdary text-text-primary px-2.5 py-1 rounded-md border border-text-secondary/10 uppercase tracking-wider">
-                        {skill}
+              <div className="grid grid-cols-3 gap-2.5 pt-1">
+                {projects.map((item, idx) => {
+                  const isActive = idx === currentIndex
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => goToSlide(idx)}
+                      className={`p-3 rounded-2xl border text-left transition-all duration-300 cursor-pointer flex flex-col gap-1 ${
+                        isActive
+                          ? "bg-text-primary text-background border-text-primary shadow-md scale-[1.02]"
+                          : "bg-background border-text-secondary/20 text-text-secondary hover:border-text-primary/50 hover:text-text-primary"
+                      }`}
+                    >
+                      <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${isActive ? "text-background/80" : "text-text-secondary"}`}>
+                        {item.number} • {item.createdAt}
                       </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-text-secondary/10">
-                    <button 
-                      suppressHydrationWarning 
-                      className="text-xs font-bold tracking-[0.15em] uppercase text-text-primary flex items-center gap-2 group/btn cursor-pointer" 
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      View Details
-                      <span className="w-6 h-0.5 bg-text-primary group-hover/btn:w-10 transition-all duration-300"></span>
+                      <span className="text-xs font-bold truncate">
+                        {item.title}
+                      </span>
                     </button>
-
-                    <a 
-                      href={project.liveDemoUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="p-2 border border-text-secondary/20 rounded-full text-text-secondary hover:text-background hover:bg-text-primary hover:border-text-primary transition-all duration-300 cursor-pointer"
-                      title={project.liveDemoUrl.includes("github.com") ? "View Repository on GitHub" : "Open Live Website"}
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </GlareHover>
+                  )
+                })}
+              </div>
             </FadeUp>
-          ))}
+          </div>
+
+          <div className="lg:col-span-5 flex flex-col h-full">
+            <FadeUp delay={0.2}>
+              <div className="h-full bg-background border border-text-secondary/20 hover:border-text-primary/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 relative overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentProject.id}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex flex-col h-full justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-4 pb-3 border-b border-text-secondary/10">
+                        <span className="text-[11px] font-bold tracking-wider uppercase text-text-secondary flex items-center gap-1.5">
+                          <svg className={`w-3.5 h-3.5 ${currentProject.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                          </svg>
+                          {currentProject.badge}
+                        </span>
+                        <span className="text-xs font-mono font-bold bg-thirdary text-text-primary px-3 py-1 rounded-full border border-text-secondary/10">
+                          {currentProject.createdAt}
+                        </span>
+                      </div>
+
+                      <h4 className="text-2xl sm:text-3xl font-black text-text-primary tracking-tight leading-snug mb-2">
+                        {currentProject.title}
+                      </h4>
+
+                      <span className="text-xs font-mono font-bold text-text-secondary/80 block mb-4">
+                        {currentProject.liveDomain}
+                      </span>
+
+                      <p className="text-sm text-text-secondary font-medium leading-relaxed mb-6">
+                        {currentProject.fullDescription}
+                      </p>
+
+                      <div className="mb-6">
+                        <span className="text-[11px] font-bold tracking-widest text-text-secondary uppercase block mb-3">Fitur Utama</span>
+                        <ul className="space-y-2.5">
+                          {currentProject.features.slice(0, 4).map((feature, i) => (
+                            <li key={i} className="flex items-start gap-2.5 text-xs font-bold text-text-primary">
+                              <span className="text-blue-500 font-black mt-0.5">&rarr;</span>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="mb-6">
+                        <span className="text-[11px] font-bold tracking-widest text-text-secondary uppercase block mb-2">Technologies</span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {currentProject.tech.map((skill, i) => (
+                            <span key={i} className="text-[10px] font-bold bg-thirdary text-text-primary px-2.5 py-1 rounded-md border border-text-secondary/10 uppercase tracking-wider">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-5 border-t border-text-secondary/10 flex flex-wrap gap-3">
+                      <a 
+                        href={currentProject.liveDemoUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex-1 min-w-[150px] text-center font-bold text-xs sm:text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 px-4 rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
+                      >
+                        <span>{currentProject.liveDemoUrl.includes("github.com") ? "View on GitHub" : "Open Live Demo"}</span>
+                        <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+
+                      <button 
+                        onClick={() => setSelectedProject(currentProject)}
+                        className="px-4 py-3.5 border border-text-secondary/20 hover:border-text-primary text-text-primary rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:bg-text-secondary/10 cursor-pointer flex items-center justify-center gap-1.5"
+                      >
+                        <span>Details</span>
+                      </button>
+
+                      {currentProject.apkUrl && (
+                        <a 
+                          href={currentProject.apkUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="px-4 py-3.5 border border-text-secondary/20 hover:border-text-primary text-text-primary bg-thirdary/60 hover:bg-thirdary rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center justify-center gap-1.5"
+                          title="Download APK"
+                        >
+                          <span>APK</span>
+                          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                          </svg>
+                        </a>
+                      )}
+
+                      <button 
+                        type="button"
+                        aria-disabled="true"
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={(e) => e.preventDefault()}
+                        className="px-4 py-3.5 border border-text-secondary/20 text-text-primary/50 rounded-xl font-bold text-xs uppercase tracking-wider cursor-not-allowed select-none outline-none opacity-60"
+                        title="Private Source Code"
+                      >
+                        <span>Source</span>
+                      </button>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </FadeUp>
+          </div>
         </div>
 
         <FadeUp>
-          <div className="mt-16 flex justify-center w-full px-6">
+          <div className="mt-14 flex justify-center w-full px-6">
             <button 
               type="button"
               aria-disabled="true"
@@ -274,25 +463,27 @@ interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
-    id: "finzie",
+    id: "bank-customer-ml",
     number: "01",
-    title: "Finzie Joki Service",
-    badge: "VERCEL DEPLOYMENT • WEB APP",
+    title: "Bank Customer Segmentation & Machine Learning Pipeline",
+    badge: "GITHUB REPOSITORY • MACHINE LEARNING PIPELINE",
     badgeColor: "text-blue-500",
-    shortDescription: "Platform website penyedia layanan jasa joki & game service dengan antarmuka modern dan responsif, dibangun dengan Next.js, React, dan di-deploy di Vercel.",
-    fullDescription: "Finzie Joki Service adalah platform web application yang dirancang untuk menyediakan layanan game service Roblox terpercaya. Dibangun dengan Next.js, React, dan Tailwind CSS, menghadirkan antarmuka responsif modern, alur pemesanan jelas, serta integrasi pemesanan dan deployment di Vercel.",
-    createdAt: "2025",
-    liveDomain: "finziejokiservice.vercel.app",
-    imagePath: "/images/project-finzie-live.jpg",
+    shortDescription: "Pipeline Machine Learning end-to-end untuk segmentasi nasabah bank (K-Means & PCA) dan prediksi cluster klasifikasi (Random Forest & Decision Tree) dengan akurasi 100%.",
+    fullDescription: "Proyek Machine Learning end-to-end yang mengintegrasikan analisis segmentasi nasabah perbankan (Unsupervised Learning) dan pemodelan klasifikasi prediktif (Supervised Learning). Menjalankan pipeline komprehensif mulai dari Exploratory Data Analysis (EDA), pembersihan data & outlier handling (IQR), feature scaling (StandardScaler), penentuan cluster optimal (Elbow Method & Silhouette Score), reduksi dimensi 2D dengan PCA, hingga evaluasi model klasifikasi (Decision Tree vs Random Forest) yang dioptimasi dengan 5-Fold Cross Validation GridSearchCV, menghasilkan akurasi 100% pada data uji.",
+    createdAt: "2026",
+    liveDomain: "github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
+    imagePath: "/images/project-machine-learning.png",
     features: [
-      "Modern Responsive User Interface",
-      "Game Service Catalog & Information",
-      "Fast Performance with Next.js",
-      "Vercel Cloud Deployment",
+      "Segmentasi Nasabah (K-Means Clustering & KElbowVisualizer)",
+      "Reduksi Dimensi 2D dengan Principal Component Analysis (PCA)",
+      "Pembersihan Data, IQR Outlier Handling & StandardScaler",
+      "Model Klasifikasi Decision Tree & Random Forest",
+      "Hyperparameter Tuning dengan GridSearchCV (5-Fold CV)",
+      "Evaluasi Metrik Akurasi 100%, Precision, Recall & F1-Score",
     ],
-    tech: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Vercel"],
-    githubUrl: "",
-    liveDemoUrl: "https://finziejokiservice.vercel.app/",
+    tech: ["Python", "Scikit-Learn", "K-Means", "Random Forest", "PCA", "GridSearchCV", "Pandas", "NumPy"],
+    githubUrl: "https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
+    liveDemoUrl: "https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
   },
   {
     id: "apriorimart",
@@ -319,26 +510,24 @@ const projects: ProjectItem[] = [
     apkUrl: "https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk",
   },
   {
-    id: "bank-customer-ml",
+    id: "finzie",
     number: "03",
-    title: "Bank Customer Segmentation & Machine Learning Pipeline",
-    badge: "GITHUB REPOSITORY • MACHINE LEARNING PIPELINE",
+    title: "Finzie Joki Service",
+    badge: "VERCEL DEPLOYMENT • WEB APP",
     badgeColor: "text-blue-500",
-    shortDescription: "Pipeline Machine Learning end-to-end untuk segmentasi nasabah bank (K-Means & PCA) dan prediksi cluster klasifikasi (Random Forest & Decision Tree) dengan akurasi 100%.",
-    fullDescription: "Proyek Machine Learning end-to-end yang mengintegrasikan analisis segmentasi nasabah perbankan (Unsupervised Learning) dan pemodelan klasifikasi prediktif (Supervised Learning). Menjalankan pipeline komprehensif mulai dari Exploratory Data Analysis (EDA), pembersihan data & outlier handling (IQR), feature scaling (StandardScaler), penentuan cluster optimal (Elbow Method & Silhouette Score), reduksi dimensi 2D dengan PCA, hingga evaluasi model klasifikasi (Decision Tree vs Random Forest) yang dioptimasi dengan 5-Fold Cross Validation GridSearchCV, menghasilkan akurasi 100% pada data uji.",
-    createdAt: "2026",
-    liveDomain: "github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
-    imagePath: "/images/project-machine-learning.png",
+    shortDescription: "Platform website penyedia layanan jasa joki & game service dengan antarmuka modern dan responsif, dibangun dengan Next.js, React, dan di-deploy di Vercel.",
+    fullDescription: "Finzie Joki Service adalah platform web application yang dirancang untuk menyediakan layanan game service Roblox terpercaya. Dibangun dengan Next.js, React, dan Tailwind CSS, menghadirkan antarmuka responsif modern, alur pemesanan jelas, serta integrasi pemesanan dan deployment di Vercel.",
+    createdAt: "2025",
+    liveDomain: "finziejokiservice.vercel.app",
+    imagePath: "/images/project-finzie-live.jpg",
     features: [
-      "Segmentasi Nasabah (K-Means Clustering & KElbowVisualizer)",
-      "Reduksi Dimensi 2D dengan Principal Component Analysis (PCA)",
-      "Pembersihan Data, IQR Outlier Handling & StandardScaler",
-      "Model Klasifikasi Decision Tree & Random Forest",
-      "Hyperparameter Tuning dengan GridSearchCV (5-Fold CV)",
-      "Evaluasi Metrik Akurasi 100%, Precision, Recall & F1-Score",
+      "Modern Responsive User Interface",
+      "Game Service Catalog & Information",
+      "Fast Performance with Next.js",
+      "Vercel Cloud Deployment",
     ],
-    tech: ["Python", "Scikit-Learn", "K-Means", "Random Forest", "PCA", "GridSearchCV", "Pandas", "NumPy"],
-    githubUrl: "https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
-    liveDemoUrl: "https://github.com/Firdaus1802/DICODING-MACHINE-LEARNING",
+    tech: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Vercel"],
+    githubUrl: "",
+    liveDemoUrl: "https://finziejokiservice.vercel.app/",
   },
 ]
