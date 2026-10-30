@@ -39,16 +39,16 @@ export default function Experience() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Certifications & Licenses</h3>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="p-1.5 bg-text-secondary/10 dark:bg-white/[0.05] rounded-full border border-text-secondary/10 dark:border-white/5 backdrop-blur-md inline-flex flex-wrap items-center gap-1">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     suppressHydrationWarning
                     onClick={() => setFilter(cat)}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
                       filter === cat
-                        ? "bg-text-primary text-background shadow-md"
-                        : "bg-thirdary text-text-secondary hover:text-text-primary hover:bg-text-secondary/10"
+                        ? "bg-text-primary text-background shadow-md scale-[1.02]"
+                        : "text-text-secondary hover:text-text-primary hover:bg-text-secondary/10"
                     }`}
                   >
                     {cat}
@@ -61,41 +61,43 @@ export default function Experience() {
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCerts.map((cert) => (
-            <FadeUp key={`cert-${cert.index}`}>
-              <GlareHover className="group flex flex-col h-full bg-background border border-text-secondary/20 hover:border-text-primary/50 rounded-2xl overflow-hidden transition-all duration-500 shadow-sm hover:shadow-2xl">
-                <div className="relative aspect-16/11 bg-text-secondary/5 border-b border-text-secondary/10 p-3 flex items-center justify-center overflow-hidden">
-                  <div className="relative w-full h-full rounded-lg overflow-hidden shadow-sm border border-text-secondary/15 bg-white dark:bg-zinc-950">
+            <FadeUp key={`cert-${cert.index}`} className="w-full h-full">
+              <GlareHover className="group flex flex-col h-full bg-background/80 dark:bg-[#121216]/80 backdrop-blur-2xl border border-text-secondary/15 dark:border-white/10 hover:border-text-primary/40 rounded-[28px] overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <div className="relative aspect-16/11 bg-text-secondary/5 dark:bg-white/[0.02] border-b border-text-secondary/10 p-3.5 flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-inner border border-text-secondary/10 bg-white dark:bg-zinc-950 flex items-center justify-center">
                     <Image 
                       src={cert.imagePath} 
                       alt={cert.title} 
                       fill 
-                      className="object-contain p-1 transition-transform duration-500 group-hover:scale-[1.03]" 
+                      className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.04]" 
                     />
                   </div>
                   
-                  <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest text-text-secondary shadow-sm">
+                  <div className="absolute top-5 right-5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold text-text-secondary shadow-sm">
                     {String(cert.index + 1).padStart(2, "0")}
                   </div>
                 </div>
 
                 <div className="p-6 md:p-7 flex flex-col grow relative">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-bold tracking-wider uppercase text-text-secondary flex items-center gap-1.5">
+                    <span className="text-[11px] font-semibold tracking-wide uppercase text-text-secondary flex items-center gap-1.5">
                       <svg className="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                       </svg>
                       {cert.issuer}
                     </span>
-                    <span className="text-[11px] font-bold text-text-secondary/80">{cert.date}</span>
+                    <span className="text-[11px] font-mono font-medium text-text-secondary/80 bg-text-secondary/10 dark:bg-white/5 px-2.5 py-0.5 rounded-full border border-text-secondary/10">
+                      {cert.date}
+                    </span>
                   </div>
 
-                  <h4 className="text-lg md:text-xl font-bold text-text-primary tracking-tight leading-snug mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-text-primary group-hover:to-text-secondary transition-all duration-300">
+                  <h4 className="text-lg md:text-xl font-bold text-text-primary tracking-tight leading-snug mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-text-primary group-hover:to-text-secondary transition-all duration-300 line-clamp-2">
                     {cert.title}
                   </h4>
 
                   <div className="flex flex-wrap gap-1.5 mb-6">
                     {cert.skills.map((skill, i) => (
-                      <span key={i} className="text-[10px] font-bold bg-thirdary text-text-primary px-2.5 py-1 rounded-md border border-text-secondary/10 uppercase tracking-wider">
+                      <span key={i} className="text-[10px] font-medium bg-text-secondary/10 dark:bg-white/[0.06] text-text-primary px-3 py-1 rounded-full border border-text-secondary/10 dark:border-white/5 tracking-wide">
                         {skill}
                       </span>
                     ))}
@@ -104,11 +106,13 @@ export default function Experience() {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-text-secondary/10">
                     <button 
                       suppressHydrationWarning 
-                      className="text-xs font-bold tracking-[0.15em] uppercase text-text-primary flex items-center gap-2 group/btn" 
+                      className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-text-primary hover:text-blue-500 transition-colors cursor-pointer group/btn" 
                       onClick={() => setIsOpen(cert.index)}
                     >
-                      View Certificate
-                      <span className="w-6 h-0.5 bg-text-primary group-hover/btn:w-10 transition-all duration-300"></span>
+                      <span>View Certificate</span>
+                      <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                      </svg>
                     </button>
 
                     {cert.credentialUrl && (
@@ -116,10 +120,10 @@ export default function Experience() {
                         href={cert.credentialUrl} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="p-2 border border-text-secondary/20 rounded-full text-text-secondary hover:text-background hover:bg-text-primary hover:border-text-primary transition-all duration-300"
+                        className="w-8 h-8 rounded-full border border-text-secondary/20 hover:border-text-primary flex items-center justify-center text-text-secondary hover:text-background hover:bg-text-primary transition-all duration-200"
                         title="Open Credential Link"
                       >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </a>
@@ -148,7 +152,7 @@ export default function Experience() {
                 animate={{ opacity: 1, scale: 1, y: 0 }} 
                 exit={{ opacity: 0, scale: 0.95, y: 20 }} 
                 transition={{ type: "spring", damping: 25, stiffness: 300 }} 
-                className="bg-background border border-text-secondary/20 rounded-3xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative z-10"
+                className="bg-background/95 dark:bg-[#121216]/95 backdrop-blur-2xl border border-text-secondary/20 dark:border-white/10 rounded-[32px] w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative z-10"
               >
                 <div className="flex justify-between items-center p-5 md:p-6 border-b border-text-secondary/10">
                   <div>
@@ -157,7 +161,7 @@ export default function Experience() {
                   </div>
                   <button 
                     suppressHydrationWarning 
-                    className="text-text-secondary hover:text-text-primary transition-colors p-2 bg-text-secondary/5 rounded-full" 
+                    className="w-8 h-8 rounded-full bg-text-secondary/10 hover:bg-text-secondary/20 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors cursor-pointer" 
                     onClick={() => setIsOpen(null)}
                   >
                     <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -174,13 +178,13 @@ export default function Experience() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 pb-6 border-b border-text-secondary/10">
                     <div>
                       <span className="text-xs font-bold tracking-widest text-text-secondary uppercase block mb-2">Issued By & Date</span>
-                      <span className="text-sm font-bold bg-thirdary text-text-primary px-3 py-1.5 rounded-lg border border-text-secondary/10">
+                      <span className="text-xs font-semibold bg-text-secondary/10 text-text-primary px-3 py-1.5 rounded-full border border-text-secondary/10">
                         {activeCert.issuer} ({activeCert.date})
                       </span>
                       {activeCert.credentialId && (
                         <div className="mt-3">
                           <span className="text-xs font-bold tracking-widest text-text-secondary uppercase block mb-1">ID Kredensial</span>
-                          <span className="text-xs font-mono font-bold text-text-primary bg-text-secondary/10 px-2.5 py-1 rounded">
+                          <span className="text-xs font-mono font-bold text-text-primary bg-text-secondary/10 px-3 py-1 rounded-full border border-text-secondary/10">
                             {activeCert.credentialId}
                           </span>
                         </div>
@@ -190,7 +194,7 @@ export default function Experience() {
                       <span className="text-xs font-bold tracking-widest text-text-secondary uppercase block mb-2">Skills & Competencies</span>
                       <div className="flex flex-wrap gap-2">
                         {activeCert.skills.map((skill, i) => (
-                          <span key={i} className="text-xs font-bold bg-thirdary text-text-primary px-3 py-1.5 rounded-lg border border-text-secondary/10 uppercase tracking-wider">
+                          <span key={i} className="text-xs font-medium bg-text-secondary/10 dark:bg-white/[0.06] text-text-primary px-3 py-1 rounded-full border border-text-secondary/10 dark:border-white/5 uppercase tracking-wider">
                             {skill}
                           </span>
                         ))}
@@ -213,12 +217,12 @@ export default function Experience() {
                       target="_blank" 
                       rel="noopener noreferrer" 
                       style={{ cursor: "pointer" }}
-                      className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-xl hover:-translate-y-0.5 transition-transform duration-300 cursor-pointer pointer-events-auto"
+                      className="flex-1 text-center font-bold text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md cursor-pointer pointer-events-auto"
                     >
                       Verify Live Credential
                     </a>
                   ) : (
-                    <div className="flex-1 text-center font-bold text-xs tracking-wider uppercase text-text-secondary py-3 bg-thirdary rounded-xl border border-text-secondary/10">
+                    <div className="flex-1 text-center font-bold text-xs tracking-wider uppercase text-text-secondary py-3.5 bg-text-secondary/10 rounded-2xl border border-text-secondary/10">
                       ID Terverifikasi: {activeCert.credentialId}
                     </div>
                   )}
