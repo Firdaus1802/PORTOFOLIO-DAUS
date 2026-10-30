@@ -3,7 +3,6 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import FadeDown from "@/components/animations/FadeDown"
-import FadeUp from "@/components/animations/FadeUp"
 import GlareHover from "@/components/GlareHover"
 
 export default function Experience() {
@@ -39,101 +38,136 @@ export default function Experience() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-primary tracking-tighter">Certifications & Licenses</h3>
               
-              <div className="p-1.5 bg-text-secondary/10 dark:bg-white/[0.05] rounded-full border border-text-secondary/10 dark:border-white/5 backdrop-blur-md inline-flex flex-wrap items-center gap-1">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    suppressHydrationWarning
-                    onClick={() => setFilter(cat)}
-                    className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
-                      filter === cat
-                        ? "bg-text-primary text-background shadow-md scale-[1.02]"
-                        : "text-text-secondary hover:text-text-primary hover:bg-text-secondary/10"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
+              <div className="relative p-1.5 bg-text-secondary/10 dark:bg-white/[0.05] rounded-full border border-text-secondary/10 dark:border-white/5 backdrop-blur-md inline-flex flex-wrap items-center gap-1">
+                {categories.map((cat) => {
+                  const isSelected = filter === cat
+                  return (
+                    <button
+                      key={cat}
+                      suppressHydrationWarning
+                      onClick={() => setFilter(cat)}
+                      className="relative px-4 py-2 rounded-full text-xs font-bold transition-colors duration-200 cursor-pointer select-none outline-none focus:outline-none"
+                    >
+                      {isSelected && (
+                        <motion.div
+                          layoutId="activeFilterPill"
+                          className="absolute inset-0 bg-text-primary rounded-full shadow-md z-0"
+                          transition={{
+                            type: "spring",
+                            stiffness: 450,
+                            damping: 35,
+                          }}
+                        />
+                      )}
+                      <span
+                        className={`relative z-10 transition-colors duration-200 ${
+                          isSelected
+                            ? "text-background font-black"
+                            : "text-text-secondary hover:text-text-primary"
+                        }`}
+                      >
+                        {cat}
+                      </span>
+                    </button>
+                  )
+                })}
               </div>
             </div>
           </div>
         </FadeDown>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCerts.map((cert) => (
-            <FadeUp key={`cert-${cert.index}`} className="w-full h-full">
-              <GlareHover className="group flex flex-col h-full bg-background/80 dark:bg-[#121216]/80 backdrop-blur-2xl border border-text-secondary/15 dark:border-white/10 hover:border-text-primary/40 rounded-[28px] overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl">
-                <div className="relative aspect-16/11 bg-text-secondary/5 dark:bg-white/[0.02] border-b border-text-secondary/10 p-3.5 flex items-center justify-center overflow-hidden">
-                  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-inner border border-text-secondary/10 bg-white dark:bg-zinc-950 flex items-center justify-center">
-                    <Image 
-                      src={cert.imagePath} 
-                      alt={cert.title} 
-                      fill 
-                      className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.04]" 
-                    />
-                  </div>
-                  
-                  <div className="absolute top-5 right-5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold text-text-secondary shadow-sm">
-                    {String(cert.index + 1).padStart(2, "0")}
-                  </div>
-                </div>
-
-                <div className="p-6 md:p-7 flex flex-col grow relative">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-semibold tracking-wide uppercase text-text-secondary flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                      </svg>
-                      {cert.issuer}
-                    </span>
-                    <span className="text-[11px] font-mono font-medium text-text-secondary/80 bg-text-secondary/10 dark:bg-white/5 px-2.5 py-0.5 rounded-full border border-text-secondary/10">
-                      {cert.date}
-                    </span>
-                  </div>
-
-                  <h4 className="text-lg md:text-xl font-bold text-text-primary tracking-tight leading-snug mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-text-primary group-hover:to-text-secondary transition-all duration-300 line-clamp-2">
-                    {cert.title}
-                  </h4>
-
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {cert.skills.map((skill, i) => (
-                      <span key={i} className="text-[10px] font-medium bg-text-secondary/10 dark:bg-white/[0.06] text-text-primary px-3 py-1 rounded-full border border-text-secondary/10 dark:border-white/5 tracking-wide">
-                        {skill}
-                      </span>
-                    ))}
+        <motion.div 
+          layout 
+          className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredCerts.map((cert) => (
+              <motion.div
+                layout
+                key={`cert-${cert.index}`}
+                initial={{ opacity: 0, scale: 0.92, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.92, y: -15 }}
+                transition={{
+                  duration: 0.25,
+                  ease: "easeInOut",
+                  layout: { type: "spring", stiffness: 350, damping: 30 },
+                }}
+                className="w-full h-full"
+              >
+                <GlareHover className="group flex flex-col h-full bg-background/80 dark:bg-[#121216]/80 backdrop-blur-2xl border border-text-secondary/15 dark:border-white/10 hover:border-text-primary/40 rounded-[28px] overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl">
+                  <div className="relative aspect-16/11 bg-text-secondary/5 dark:bg-white/[0.02] border-b border-text-secondary/10 p-3.5 flex items-center justify-center overflow-hidden">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-inner border border-text-secondary/10 bg-white dark:bg-zinc-950 flex items-center justify-center">
+                      <Image 
+                        src={cert.imagePath} 
+                        alt={cert.title} 
+                        fill 
+                        className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.04]" 
+                      />
+                    </div>
+                    
+                    <div className="absolute top-5 right-5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold text-text-secondary shadow-sm">
+                      {String(cert.index + 1).padStart(2, "0")}
+                    </div>
                   </div>
 
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-text-secondary/10">
-                    <button 
-                      suppressHydrationWarning 
-                      className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-text-primary hover:text-blue-500 transition-colors cursor-pointer group/btn" 
-                      onClick={() => setIsOpen(cert.index)}
-                    >
-                      <span>View Certificate</span>
-                      <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-
-                    {cert.credentialUrl && (
-                      <a 
-                        href={cert.credentialUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="w-8 h-8 rounded-full border border-text-secondary/20 hover:border-text-primary flex items-center justify-center text-text-secondary hover:text-background hover:bg-text-primary transition-all duration-200"
-                        title="Open Credential Link"
-                      >
-                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <div className="p-6 md:p-7 flex flex-col grow relative">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[11px] font-semibold tracking-wide uppercase text-text-secondary flex items-center gap-1.5">
+                        <svg className="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                         </svg>
-                      </a>
-                    )}
+                        {cert.issuer}
+                      </span>
+                      <span className="text-[11px] font-mono font-medium text-text-secondary/80 bg-text-secondary/10 dark:bg-white/5 px-2.5 py-0.5 rounded-full border border-text-secondary/10">
+                        {cert.date}
+                      </span>
+                    </div>
+
+                    <h4 className="text-lg md:text-xl font-bold text-text-primary tracking-tight leading-snug mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-text-primary group-hover:to-text-secondary transition-all duration-300 line-clamp-2">
+                      {cert.title}
+                    </h4>
+
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {cert.skills.map((skill, i) => (
+                        <span key={i} className="text-[10px] font-medium bg-text-secondary/10 dark:bg-white/[0.06] text-text-primary px-3 py-1 rounded-full border border-text-secondary/10 dark:border-white/5 tracking-wide">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-text-secondary/10">
+                      <button 
+                        suppressHydrationWarning 
+                        className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-text-primary hover:text-blue-500 transition-colors cursor-pointer group/btn" 
+                        onClick={() => setIsOpen(cert.index)}
+                      >
+                        <span>View Certificate</span>
+                        <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+
+                      {cert.credentialUrl && (
+                        <a 
+                          href={cert.credentialUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="w-8 h-8 rounded-full border border-text-secondary/20 hover:border-text-primary flex items-center justify-center text-text-secondary hover:text-background hover:bg-text-primary transition-all duration-200"
+                          title="Open Credential Link"
+                        >
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </GlareHover>
-            </FadeUp>
-          ))}
-        </div>
+                </GlareHover>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
         <AnimatePresence>
           {isOpen !== null && activeCert && (
