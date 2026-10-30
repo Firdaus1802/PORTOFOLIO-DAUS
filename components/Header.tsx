@@ -95,22 +95,25 @@ export default function Header() {
               </Link>
             </div>
 
-            <nav className="flex-row md:gap-8 lg:gap-10 hidden lg:flex items-center">
-              {shortCut.map((item, index) => (
-                <button 
-                  onClick={() => handleScroll(item.link)} 
-                  key={index} 
-                  className={`
-                    ${activeSection === item.name.toLowerCase() ? "text-text-primary font-bold" : "text-text-secondary font-medium hover:text-text-primary"} 
-                    cursor-pointer text-sm md:text-base tracking-wide flex flex-row items-center transition-colors duration-200 ease-in-out
-                  `}
-                >
-                  {item.name}
-                </button>
-              ))}
+            <nav className="flex-row md:gap-1.5 lg:gap-2 hidden lg:flex items-center">
+              {shortCut.map((item, index) => {
+                const isActive = activeSection === item.name.toLowerCase()
+                return (
+                  <button 
+                    onClick={() => handleScroll(item.link)} 
+                    key={index} 
+                    className={`
+                      ${isActive ? "text-text-primary bg-text-secondary/15 dark:bg-white/10 font-bold" : "text-text-secondary font-medium hover:text-text-primary hover:bg-text-secondary/5"} 
+                      cursor-pointer text-xs md:text-sm tracking-wide flex flex-row items-center px-3.5 py-1.5 rounded-full transition-all duration-200 ease-in-out
+                    `}
+                  >
+                    {item.name}
+                  </button>
+                )
+              })}
               <Link
                 href="/cv"
-                className="text-xs font-bold uppercase tracking-wider bg-text-primary text-background px-3.5 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+                className="text-xs font-bold uppercase tracking-wider bg-text-primary text-background px-4 py-1.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-sm"
               >
                 CV
               </Link>

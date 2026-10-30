@@ -19,25 +19,25 @@ export default function TechStack() {
             <div className="md:w-1/3">
               <FadeDown delay={idx * 0.1}>
                 <h4 className="text-2xl font-black text-text-primary tracking-tight mb-2">{category.title}</h4>
-                <p className="text-text-secondary font-medium text-sm">{category.description}</p>
+                <p className="text-text-secondary font-medium text-sm leading-relaxed">{category.description}</p>
               </FadeDown>
             </div>
-            <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full">
+            <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 w-full">
               {category.technologies.map((tech, techIdx) => (
-                <FadeUp key={techIdx} delay={idx * 0.1 + techIdx * 0.05}>
-                  <div className="group flex flex-col items-center justify-center p-6 bg-thirdary/20 hover:bg-thirdary/50 border border-text-secondary/10 hover:border-text-primary/50 rounded-2xl transition-all duration-300 hover:-translate-y-2 h-full">
-                    <div className="w-12 h-12 mb-4 transition-colors flex items-center justify-center pointer-events-none">
+                <FadeUp key={techIdx} delay={idx * 0.08 + techIdx * 0.03} className="w-full h-full">
+                  <div className="group flex flex-col items-center justify-center p-5 bg-background/80 dark:bg-[#121216]/80 backdrop-blur-xl border border-text-secondary/15 dark:border-white/10 hover:border-text-primary/40 rounded-[24px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] h-full cursor-default select-none">
+                    <div className="w-12 h-12 mb-3.5 flex items-center justify-center p-2 rounded-2xl bg-text-secondary/5 dark:bg-white/[0.04] border border-text-secondary/10 dark:border-white/5 group-hover:scale-110 transition-transform duration-300 pointer-events-none">
                       {tech.svg ? (
                         tech.svg.startsWith("<") ? (
                           <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: tech.svg }} />
                         ) : (
-                          <Image src={tech.svg} alt={tech.name} width={48} height={48} className="w-full h-full tech-icon-img" unoptimized />
+                          <Image src={tech.svg} alt={tech.name} width={40} height={40} className="w-full h-full object-contain tech-icon-img" unoptimized />
                         )
                       ) : (
                         <div className="w-full h-full flex items-center justify-center font-bold text-xl bg-thirdary/50 rounded-lg">{tech.name.charAt(0)}</div>
                       )}
                     </div>
-                    <span className="text-sm font-bold text-text-primary text-center">{tech.name}</span>
+                    <span className="text-xs font-bold text-text-primary text-center tracking-tight">{tech.name}</span>
                   </div>
                 </FadeUp>
               ))}
