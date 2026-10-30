@@ -10,13 +10,16 @@ export default function Header() {
   const [mounted, setMounted] = useState(false)
 
   const handleScroll = (id: string) => {
-    const section = document.getElementById(id)
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
-    }
+    setActiveSection(id.toLowerCase())
+    requestAnimationFrame(() => {
+      const section = document.getElementById(id)
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
+      }
+    })
   }
 
   useEffect(() => {
@@ -44,21 +47,37 @@ export default function Header() {
   }
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section")
-    const handleScroll = () => {
-      let current: string | null = ""
+    let ticking = false
+
+    const updateActive = () => {
+      const sections = document.querySelectorAll("section[id]")
+      const scrollPos = window.scrollY + 200
+      let current = ""
+
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop
-        const sectionHeight = section.clientHeight
-        if (window.scrollY >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute("id")
+        const el = section as HTMLElement
+        const top = el.offsetTop
+        const height = el.offsetHeight
+        if (scrollPos >= top && scrollPos < top + height) {
+          current = el.id.toLowerCase()
         }
       })
-      setActiveSection(current)
+
+      if (current) {
+        setActiveSection((prev) => (prev !== current ? current : prev))
+      }
+      ticking = false
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateActive)
+        ticking = true
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
   if (!mounted) {

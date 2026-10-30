@@ -13,13 +13,15 @@ export default function Hero() {
   const texts = useMemo(() => ["Junior Frontend Developer", "Vibe Coder", "Web Developer"], [])
 
   const handleScroll = (id: string) => {
-    const section = document.getElementById(id)
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
-    }
+    requestAnimationFrame(() => {
+      const section = document.getElementById(id)
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
+      }
+    })
   }
 
   useEffect(() => {
