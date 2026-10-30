@@ -47,27 +47,36 @@ export default function Project() {
         x: "0%",
         scale: 1,
         opacity: 1,
-        zIndex: 20,
-        filter: "brightness(1) blur(0px)",
+        zIndex: 30,
+        filter: "blur(0px) brightness(1)",
         role: "active",
       }
     } else if (diff === 1) {
       return {
-        x: "52%",
-        scale: 0.82,
-        opacity: 0.4,
+        x: "56%",
+        scale: 0.85,
+        opacity: 0.75,
         zIndex: 10,
-        filter: "brightness(0.6) blur(1px)",
+        filter: "blur(8px) brightness(0.75)",
         role: "next",
+      }
+    } else if (diff === projects.length - 1) {
+      return {
+        x: "-56%",
+        scale: 0.85,
+        opacity: 0.75,
+        zIndex: 10,
+        filter: "blur(8px) brightness(0.75)",
+        role: "prev",
       }
     } else {
       return {
-        x: "-52%",
-        scale: 0.82,
-        opacity: 0.4,
-        zIndex: 10,
-        filter: "brightness(0.6) blur(1px)",
-        role: "prev",
+        x: "0%",
+        scale: 0.7,
+        opacity: 0,
+        zIndex: 0,
+        filter: "blur(16px) brightness(0.4)",
+        role: "hidden",
       }
     }
   }
@@ -84,8 +93,8 @@ export default function Project() {
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           <div className="lg:col-span-7 flex flex-col items-center justify-between">
-            <FadeUp delay={0.1}>
-              <div className="relative w-full h-[360px] sm:h-[420px] md:h-[470px] flex items-center justify-center overflow-hidden py-4">
+            <FadeUp delay={0.1} className="w-full flex flex-col items-center">
+              <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] flex items-center justify-center overflow-visible py-4 select-none">
                 {projects.map((item, idx) => {
                   const card = getCardProps(idx)
                   const isActive = card.role === "active"
@@ -116,34 +125,36 @@ export default function Project() {
                         if (info.offset.x < -30) nextSlide()
                         else if (info.offset.x > 30) prevSlide()
                       }}
-                      className="absolute w-[260px] sm:w-[320px] md:w-[360px] aspect-square rounded-3xl overflow-hidden border border-text-secondary/25 bg-background shadow-2xl cursor-pointer select-none"
+                      className={`absolute w-[240px] sm:w-[280px] md:w-[330px] aspect-square rounded-3xl overflow-hidden cursor-pointer select-none transition-shadow duration-300 ${
+                        isActive 
+                          ? "border-2 border-text-primary/30 dark:border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.7)]" 
+                          : "border border-white/10 shadow-lg hover:opacity-90"
+                      }`}
                     >
                       <div className="relative w-full h-full bg-text-secondary/5">
                         <Image 
                           src={item.imagePath} 
                           alt={item.title} 
                           fill 
-                          className="object-cover object-top" 
+                          className="object-cover object-center" 
                           priority={idx === 0}
                         />
 
-                        <div className="absolute inset-0 bg-linear-to-t from-background/90 via-transparent to-black/30 pointer-events-none" />
+                        <div className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
+                          isActive 
+                            ? "bg-gradient-to-t from-background/80 via-transparent to-black/20 opacity-70" 
+                            : "bg-black/35"
+                        }`} />
 
-                        <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider text-text-secondary shadow-md flex items-center gap-1.5 pointer-events-none">
+                        <div className="absolute top-3.5 left-3.5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider text-text-secondary shadow-md flex items-center gap-1.5 pointer-events-none">
                           <svg className={`w-3.5 h-3.5 ${item.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                           </svg>
-                          <span className="truncate max-w-[130px]">{item.badge.split("•")[0].trim()}</span>
+                          <span className="truncate max-w-[120px]">{item.badge.split("•")[0].trim()}</span>
                         </div>
 
-                        <div className="absolute top-3 right-3 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-xs font-mono font-bold text-text-primary shadow-md pointer-events-none">
+                        <div className="absolute top-3.5 right-3.5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-xs font-mono font-bold text-text-primary shadow-md pointer-events-none">
                           {item.number}
-                        </div>
-
-                        <div className="absolute bottom-3 inset-x-3 text-center pointer-events-none">
-                          <span className="text-xs font-bold text-text-primary drop-shadow-md truncate block">
-                            {item.title}
-                          </span>
                         </div>
                       </div>
                     </motion.div>
