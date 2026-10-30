@@ -53,20 +53,20 @@ export default function Project() {
       }
     } else if (diff === 1) {
       return {
-        x: "56%",
-        scale: 0.85,
+        x: "52%",
+        scale: 0.86,
         opacity: 0.75,
         zIndex: 10,
-        filter: "blur(8px) brightness(0.75)",
+        filter: "blur(10px) brightness(0.75)",
         role: "next",
       }
     } else if (diff === projects.length - 1) {
       return {
-        x: "-56%",
-        scale: 0.85,
+        x: "-52%",
+        scale: 0.86,
         opacity: 0.75,
         zIndex: 10,
-        filter: "blur(8px) brightness(0.75)",
+        filter: "blur(10px) brightness(0.75)",
         role: "prev",
       }
     } else {
@@ -91,10 +91,10 @@ export default function Project() {
           </div>
         </FadeDown>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          <div className="lg:col-span-7 flex flex-col items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-7 flex flex-col items-center justify-center">
             <FadeUp delay={0.1} className="w-full flex flex-col items-center">
-              <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] flex items-center justify-center overflow-visible py-4 select-none">
+              <div className="relative w-full h-[400px] sm:h-[460px] md:h-[500px] flex items-center justify-center overflow-visible py-4 select-none">
                 {projects.map((item, idx) => {
                   const card = getCardProps(idx)
                   const isActive = card.role === "active"
@@ -125,9 +125,9 @@ export default function Project() {
                         if (info.offset.x < -30) nextSlide()
                         else if (info.offset.x > 30) prevSlide()
                       }}
-                      className={`absolute w-[240px] sm:w-[280px] md:w-[330px] aspect-square rounded-3xl overflow-hidden cursor-pointer select-none transition-shadow duration-300 ${
+                      className={`absolute w-[280px] sm:w-[340px] md:w-[380px] lg:w-[400px] aspect-square rounded-[32px] overflow-hidden cursor-pointer select-none transition-shadow duration-300 ${
                         isActive 
-                          ? "border-2 border-text-primary/30 dark:border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.7)]" 
+                          ? "border-2 border-text-primary/30 dark:border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)]" 
                           : "border border-white/10 shadow-lg hover:opacity-90"
                       }`}
                     >
@@ -143,17 +143,17 @@ export default function Project() {
                         <div className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
                           isActive 
                             ? "bg-gradient-to-t from-background/80 via-transparent to-black/20 opacity-70" 
-                            : "bg-black/35"
+                            : "bg-black/40"
                         }`} />
 
-                        <div className="absolute top-3.5 left-3.5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider text-text-secondary shadow-md flex items-center gap-1.5 pointer-events-none">
+                        <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-wide text-text-secondary shadow-md flex items-center gap-1.5 pointer-events-none">
                           <svg className={`w-3.5 h-3.5 ${item.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                           </svg>
-                          <span className="truncate max-w-[120px]">{item.badge.split("•")[0].trim()}</span>
+                          <span className="truncate max-w-[130px]">{item.badge.split("•")[0].trim()}</span>
                         </div>
 
-                        <div className="absolute top-3.5 right-3.5 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-2.5 py-1 rounded-full text-xs font-mono font-bold text-text-primary shadow-md pointer-events-none">
+                        <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-md border border-text-secondary/20 px-3 py-1 rounded-full text-xs font-mono font-bold text-text-primary shadow-md pointer-events-none">
                           {item.number}
                         </div>
                       </div>
@@ -162,11 +162,11 @@ export default function Project() {
                 })}
               </div>
 
-              <div className="flex items-center justify-center gap-3 mt-4 w-full">
+              <div className="flex items-center justify-center gap-3 mt-6 w-full">
                 <button 
                   onClick={prevSlide}
                   aria-label="Previous Slide"
-                  className="p-3 rounded-full bg-background border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-text-secondary/10 transition-all duration-300 shadow-md cursor-pointer hover:scale-105 active:scale-95"
+                  className="p-3 rounded-full bg-background border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-text-secondary/10 transition-all duration-200 shadow-md cursor-pointer hover:scale-105 active:scale-95"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
@@ -180,7 +180,7 @@ export default function Project() {
                 <button 
                   onClick={nextSlide}
                   aria-label="Next Slide"
-                  className="p-3 rounded-full bg-background border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-text-secondary/10 transition-all duration-300 shadow-md cursor-pointer hover:scale-105 active:scale-95"
+                  className="p-3 rounded-full bg-background border border-text-secondary/20 hover:border-text-primary text-text-primary hover:bg-text-secondary/10 transition-all duration-200 shadow-md cursor-pointer hover:scale-105 active:scale-95"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
@@ -190,60 +190,82 @@ export default function Project() {
             </FadeUp>
           </div>
 
-          <div className="lg:col-span-5 flex flex-col h-full">
-            <FadeUp delay={0.2}>
-              <div className="h-full bg-background border border-text-secondary/20 hover:border-text-primary/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl transition-all duration-300 relative overflow-hidden">
+          <div className="lg:col-span-5 flex flex-col justify-center">
+            <FadeUp delay={0.2} className="w-full">
+              <div className="bg-background/80 dark:bg-[#121216]/80 backdrop-blur-2xl border border-text-secondary/15 dark:border-white/10 rounded-[32px] p-6 sm:p-8 flex flex-col justify-between shadow-2xl transition-all duration-300 relative overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentProject.id}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -15 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex flex-col h-full justify-between"
+                    transition={{ duration: 0.25 }}
+                    className="flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4 pb-3 border-b border-text-secondary/10">
-                        <span className="text-[11px] font-bold tracking-wider uppercase text-text-secondary flex items-center gap-1.5">
-                          <svg className={`w-3.5 h-3.5 ${currentProject.badgeColor}`} fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                          </svg>
-                          {currentProject.badge}
-                        </span>
-                        <span className="text-xs font-mono font-bold bg-thirdary text-text-primary px-3 py-1 rounded-full border border-text-secondary/10">
+                        <div className="flex items-center gap-2">
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                          </span>
+                          <span className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider">
+                            {currentProject.badge.split("•")[0].trim()}
+                          </span>
+                        </div>
+
+                        <span className="text-[11px] font-mono font-medium text-text-secondary bg-text-secondary/10 dark:bg-white/5 px-3 py-1 rounded-full border border-text-secondary/10">
                           {currentProject.createdAt}
                         </span>
                       </div>
 
-                      <h4 className="text-2xl sm:text-3xl font-black text-text-primary tracking-tight leading-snug mb-2">
+                      <h4 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight leading-snug mb-2">
                         {currentProject.title}
                       </h4>
 
-                      <span className="text-xs font-mono font-bold text-text-secondary/80 block mb-4">
-                        {currentProject.liveDomain}
-                      </span>
+                      <a 
+                        href={currentProject.liveDemoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-text-secondary/80 hover:text-text-primary transition-colors group mb-4"
+                      >
+                        <span className="truncate max-w-[280px]">{currentProject.liveDomain}</span>
+                        <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
 
-                      <p className="text-sm text-text-secondary font-medium leading-relaxed mb-6">
-                        {currentProject.fullDescription}
+                      <p className="text-sm text-text-secondary font-normal leading-relaxed mb-5">
+                        {currentProject.shortDescription}
                       </p>
 
-                      <div className="mb-6">
-                        <span className="text-[11px] font-bold tracking-widest text-text-secondary uppercase block mb-3">Fitur Utama</span>
-                        <ul className="space-y-2.5">
+                      <div className="mb-5">
+                        <span className="text-[11px] font-bold tracking-wider text-text-secondary uppercase block mb-2.5">Fitur Unggulan</span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {currentProject.features.slice(0, 4).map((feature, i) => (
-                            <li key={i} className="flex items-start gap-2.5 text-xs font-bold text-text-primary">
-                              <span className="text-blue-500 font-black mt-0.5">&rarr;</span>
-                              <span>{feature}</span>
-                            </li>
+                            <div 
+                              key={i} 
+                              className="bg-text-secondary/5 dark:bg-white/[0.03] border border-text-secondary/10 dark:border-white/5 rounded-2xl p-3 flex items-start gap-2.5 transition-colors hover:bg-text-secondary/10"
+                            >
+                              <div className="w-5 h-5 rounded-full bg-text-primary/10 text-text-primary flex items-center justify-center shrink-0 mt-0.5">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span className="text-xs font-medium text-text-primary leading-snug line-clamp-2">{feature}</span>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
 
                       <div className="mb-6">
-                        <span className="text-[11px] font-bold tracking-widest text-text-secondary uppercase block mb-2">Technologies</span>
+                        <span className="text-[11px] font-bold tracking-wider text-text-secondary uppercase block mb-2">Technologies</span>
                         <div className="flex flex-wrap gap-1.5">
                           {currentProject.tech.map((skill, i) => (
-                            <span key={i} className="text-[10px] font-bold bg-thirdary text-text-primary px-2.5 py-1 rounded-md border border-text-secondary/10 uppercase tracking-wider">
+                            <span 
+                              key={i} 
+                              className="text-[11px] font-medium bg-text-secondary/10 dark:bg-white/[0.06] text-text-primary px-3 py-1 rounded-full border border-text-secondary/10 dark:border-white/5 tracking-wide"
+                            >
                               {skill}
                             </span>
                           ))}
@@ -251,22 +273,22 @@ export default function Project() {
                       </div>
                     </div>
 
-                    <div className="pt-5 border-t border-text-secondary/10 flex flex-wrap gap-3">
+                    <div className="pt-5 border-t border-text-secondary/10 flex items-center gap-2.5">
                       <a 
                         href={currentProject.liveDemoUrl} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex-1 min-w-[150px] text-center font-bold text-xs sm:text-sm tracking-widest uppercase bg-text-primary text-background py-3.5 px-4 rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
+                        className="flex-1 text-center font-bold text-xs uppercase tracking-wider bg-text-primary text-background py-3.5 px-5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer"
                       >
-                        <span>{currentProject.liveDemoUrl.includes("github.com") ? "View on GitHub" : "Open Live Demo"}</span>
+                        <span>{currentProject.liveDemoUrl.includes("github.com") ? "View Repository" : "Open Live Demo"}</span>
                         <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                       </a>
 
                       <button 
                         onClick={() => setSelectedProject(currentProject)}
-                        className="px-4 py-3.5 border border-text-secondary/20 hover:border-text-primary text-text-primary rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:bg-text-secondary/10 cursor-pointer flex items-center justify-center gap-1.5"
+                        className="px-5 py-3.5 border border-text-secondary/20 hover:border-text-primary text-text-primary bg-text-secondary/5 hover:bg-text-secondary/10 rounded-2xl font-bold text-xs uppercase tracking-wider transition-all duration-200 active:scale-[0.98] cursor-pointer flex items-center justify-center"
                       >
                         <span>Details</span>
                       </button>
@@ -276,7 +298,7 @@ export default function Project() {
                           href={currentProject.apkUrl} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="px-4 py-3.5 border border-text-secondary/20 hover:border-text-primary text-text-primary bg-thirdary/60 hover:bg-thirdary rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center justify-center gap-1.5"
+                          className="px-4 py-3.5 border border-text-secondary/20 hover:border-text-primary text-text-primary bg-text-secondary/5 hover:bg-text-secondary/10 rounded-2xl font-bold text-xs uppercase tracking-wider transition-all duration-200 active:scale-[0.98] cursor-pointer flex items-center gap-1.5"
                           title="Download APK"
                         >
                           <span>APK</span>
@@ -285,17 +307,6 @@ export default function Project() {
                           </svg>
                         </a>
                       )}
-
-                      <button 
-                        type="button"
-                        aria-disabled="true"
-                        onMouseDown={(e) => e.preventDefault()}
-                        onClick={(e) => e.preventDefault()}
-                        className="px-4 py-3.5 border border-text-secondary/20 text-text-primary/50 rounded-xl font-bold text-xs uppercase tracking-wider cursor-not-allowed select-none outline-none opacity-60"
-                        title="Private Source Code"
-                      >
-                        <span>Source</span>
-                      </button>
                     </div>
                   </motion.div>
                 </AnimatePresence>
