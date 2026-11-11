@@ -43,13 +43,25 @@ Website portofolio personal interaktif dan modern yang dibangun dengan pendekata
 - **Download APK**: [AprioriMart v1.0.0 Release APK](https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk)
 - **Ringkasan**: Aplikasi Market Basket Analysis multiplatform (mobile & web) yang menerapkan Algoritma Apriori untuk menemukan pola asosiasi pembelian konsumen pada dataset transaksi retail. Dilengkapi simulasi kasir interaktif untuk rekomendasi bundling produk secara real-time, partisi dataset dinamis (100%, 80:20, 70:30, 60:40), kalkulasi aturan asosiasi client-side (Support, Confidence, Lift Ratio), dan proteksi keamanan Google R8 ProGuard (0/68 Clean Bebas Malware di VirusTotal).
 
-### 03. Finzie Joki Service
+### 03. Analisis Pendapatan POS (Point of Sale)
+- **Kategori**: Data Science & Business Analytics
+- **Teknologi**: Python, Pandas, Matplotlib, Seaborn, Jupyter Notebook, EDA
+- **Repositori**: [github.com/Firdaus1802/analisis-pendapatan-pos](https://github.com/Firdaus1802/analisis-pendapatan-pos)
+- **Ringkasan**: Proyek analisis data komprehensif pada transaksi Point of Sale (POS) periode 2024–2025 untuk mengevaluasi dinamika omzet kotor dan bersih. Mengimplementasikan data cleaning mendalam (pembersihan anomali string, penanganan retur negatif dengan .abs(), imputasi missing value), feature engineering (Total Kotor, Diskon, PPN 11%, Total Bersih), filtering, serta agregasi window function performa gerai dan dashboard kanvas 2x2.
+
+### 04. Data Preprocessing & Mining Exploration
+- **Kategori**: Data Mining & ETL Pipeline
+- **Teknologi**: Python, Pandas, Scikit-Learn, Seaborn, Matplotlib, Data Mining, IQR
+- **Repositori**: [github.com/Firdaus1802/data-preprocessing](https://github.com/Firdaus1802/data-preprocessing)
+- **Ringkasan**: Pipeline data preprocessing komprehensif untuk mata kuliah Konsep Data Mining pada 6 ragam dataset transaksi belanja dan klinis (BreadBasket 21k baris, Market Basket, Retail Bian, Market Basket Analysis, Market Basket Optimisation 7.5k baris, dan Healthcare Stroke 5.1k baris). Mengimplementasikan pembersihan missing value, imputasi, transformasi biner One-Hot Encoding, penanganan duplikasi, serta deteksi anomali ekstrem berbasis Interquartile Range (IQR) & visualisasi Boxplot.
+
+### 05. Finzie Joki Service
 - **Kategori**: Web Application & Game Service Platform
 - **Teknologi**: Next.js, React, JavaScript, Tailwind CSS, Vercel
 - **Live Demo**: [finziejokiservice.vercel.app](https://finziejokiservice.vercel.app/)
 - **Ringkasan**: Platform website penyedia layanan jasa joki game Roblox terpercaya dengan antarmuka modern responsif, katalog layanan terstruktur, dan direct order WhatsApp admin.
 
-### 04. Personal Portfolio & AI Assistant
+### 06. Personal Portfolio & AI Assistant
 - **Kategori**: Web Application & AI Integration
 - **Teknologi**: Next.js 16 (App Router), TypeScript, Tailwind CSS, Framer Motion
 - **Live Demo**: [portofolio-daus-virid.vercel.app](https://portofolio-daus-virid.vercel.app/)

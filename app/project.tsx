@@ -220,18 +220,18 @@ export default function Project() {
 
           <div className="lg:col-span-5 flex flex-col justify-center">
             <FadeUp delay={0.2} className="w-full">
-              <div className="bg-background/80 dark:bg-[#121216]/80 backdrop-blur-2xl border border-text-secondary/15 dark:border-white/10 rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-2xl transition-all duration-300 relative overflow-hidden min-h-[440px]">
+              <div className="bg-background/80 dark:bg-[#121216]/80 backdrop-blur-2xl border border-text-secondary/15 dark:border-white/10 rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-2xl transition-all duration-300 relative overflow-hidden h-[590px] sm:h-[610px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentProject.id}
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -15 }}
-                    transition={{ duration: 0.25 }}
-                    className="flex flex-col justify-between grow"
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col justify-between h-full"
                   >
-                    <div>
-                      <div className="flex items-center justify-between mb-3.5 pb-3 border-b border-text-secondary/10">
+                    <div className="flex flex-col">
+                      <div className="flex items-center justify-between mb-3 pb-3 border-b border-text-secondary/10">
                         <div className="flex items-center gap-2">
                           <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -247,25 +247,31 @@ export default function Project() {
                         </span>
                       </div>
 
-                      <h4 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight leading-snug mb-1.5">
-                        {currentProject.title}
-                      </h4>
+                      <div className="h-[64px] sm:h-[72px] flex items-center mb-1">
+                        <h4 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight leading-snug line-clamp-2">
+                          {currentProject.title}
+                        </h4>
+                      </div>
 
-                      <a 
-                        href={currentProject.liveDemoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-text-secondary/80 hover:text-text-primary transition-colors group mb-3.5"
-                      >
-                        <span className="truncate max-w-[280px]">{currentProject.liveDomain}</span>
-                        <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
+                      <div className="h-5 mb-3 flex items-center">
+                        <a 
+                          href={currentProject.liveDemoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-text-secondary/80 hover:text-text-primary transition-colors group"
+                        >
+                          <span className="truncate max-w-[280px]">{currentProject.liveDomain}</span>
+                          <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      </div>
 
-                      <p className="text-sm text-text-secondary font-normal leading-relaxed mb-4 line-clamp-3">
-                        {currentProject.shortDescription}
-                      </p>
+                      <div className="h-[54px] sm:h-[60px] flex items-start mb-4 overflow-hidden">
+                        <p className="text-sm text-text-secondary font-normal leading-relaxed line-clamp-3">
+                          {currentProject.shortDescription}
+                        </p>
+                      </div>
 
                       <div className="mb-4">
                         <span className="text-[11px] font-bold tracking-wider text-text-secondary uppercase block mb-2">Fitur Unggulan</span>
@@ -273,9 +279,9 @@ export default function Project() {
                           {currentProject.features.slice(0, 4).map((feature, i) => (
                             <div 
                               key={i} 
-                              className="bg-text-secondary/5 dark:bg-white/[0.03] border border-text-secondary/10 dark:border-white/5 rounded-2xl p-2.5 flex items-start gap-2 transition-colors hover:bg-text-secondary/10"
+                              className="h-[50px] sm:h-[54px] bg-text-secondary/5 dark:bg-white/[0.03] border border-text-secondary/10 dark:border-white/5 rounded-2xl px-3 py-2 flex items-center gap-2.5 transition-colors hover:bg-text-secondary/10"
                             >
-                              <div className="w-4 h-4 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 mt-0.5">
+                              <div className="w-4 h-4 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0">
                                 <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                                 </svg>
@@ -286,9 +292,9 @@ export default function Project() {
                         </div>
                       </div>
 
-                      <div className="mb-5">
+                      <div className="mb-2">
                         <span className="text-[11px] font-bold tracking-wider text-text-secondary uppercase block mb-2">Technologies</span>
-                        <div className="flex flex-wrap gap-1.5">
+                        <div className="h-[58px] sm:h-[62px] overflow-hidden flex flex-wrap gap-1.5 content-start">
                           {currentProject.tech.map((skill, i) => (
                             <span 
                               key={i} 
@@ -301,7 +307,7 @@ export default function Project() {
                       </div>
                     </div>
 
-                    <div className="pt-4 border-t border-text-secondary/10 flex items-center gap-2">
+                    <div className="pt-4 border-t border-text-secondary/10 flex items-center gap-2 mt-auto">
                       <a 
                         href={currentProject.liveDemoUrl} 
                         target="_blank" 
@@ -556,8 +562,54 @@ const projects: ProjectItem[] = [
     apkUrl: "https://github.com/Firdaus1802/data-mining-universitas-gunadarma/releases/download/v1.0.0/AprioriMart-v1.0.0.apk",
   },
   {
-    id: "finzie",
+    id: "pos-analysis",
     number: "03",
+    title: "Analisis Pendapatan POS (Point of Sale)",
+    badge: "GITHUB REPOSITORY • DATA SCIENCE & ANALYTICS",
+    badgeColor: "text-blue-500",
+    shortDescription: "Analisis komparasi performa pendapatan POS 2024–2025, manipulasi data tabular Pandas (cleaning, imputasi, feature engineering), dan visualisasi dashboard grid 2x2.",
+    fullDescription: "Proyek analisis data komprehensif pada transaksi Point of Sale (POS) periode 2024–2025 untuk mengevaluasi dinamika omzet kotor dan bersih. Mengimplementasikan data cleaning mendalam (pembersihan anomali string, penanganan kuantitas negatif retur dengan .abs(), imputasi missing value kode kasir), feature engineering (Total Kotor, Diskon, PPN 11%, Total Bersih), filtering multi-kondisi, pengurutan, hingga agregasi window function performa gerai. Dilengkapi dashboard analitik kanvas grid 2x2 (tren bulanan, produk terlaris, rasio keberhasilan transaksi, dan heatmap korelasi) menggunakan Matplotlib dan Seaborn.",
+    createdAt: "2026",
+    liveDomain: "github.com/Firdaus1802/analisis-pendapatan-pos",
+    imagePath: "/images/project-pos-analysis.png",
+    features: [
+      "Analisis Komparasi Pendapatan POS (2024 vs 2025)",
+      "Data Cleaning, Imputasi & Feature Engineering PPN",
+      "Grouping, Agregasi & Window Function Gerai",
+      "Dashboard Visualisasi Grid 2x2 Matplotlib & Seaborn",
+      "Handling Kuantitas Negatif & Imputasi Missing Values",
+      "Evaluasi Average Order Value & Omzet Gerai",
+    ],
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter", "Data Science", "EDA", "NumPy"],
+    githubUrl: "https://github.com/Firdaus1802/analisis-pendapatan-pos",
+    liveDemoUrl: "https://github.com/Firdaus1802/analisis-pendapatan-pos",
+  },
+  {
+    id: "data-preprocessing",
+    number: "04",
+    title: "Data Preprocessing & Mining Exploration",
+    badge: "GITHUB REPOSITORY • DATA MINING & ETL",
+    badgeColor: "text-blue-500",
+    shortDescription: "Pipeline pra-pemrosesan data untuk 6 dataset transaksi ritel dan klinis (BreadBasket, Retail, Stroke) dengan IQR outlier filtering, imputasi missing values, dan encoding biner.",
+    fullDescription: "Pipeline data preprocessing komprehensif untuk mata kuliah Konsep Data Mining pada 6 ragam dataset transaksi belanja dan klinis (BreadBasket 21k baris, Market Basket, Retail Bian, Market Basket Analysis, Market Basket Optimisation 7.5k baris, dan Healthcare Stroke 5.1k baris). Mengimplementasikan eksplorasi struktur data, pembersihan missing value dengan imputasi dan transformasi biner One-Hot Encoding (df.notna().astype(int)), penanganan duplikat transaksi, deteksi anomali ekstrem berbasis Interquartile Range (IQR) & visualisasi Boxplot, serta pemetaan korelasi dan distribusi dengan Heatmap.",
+    createdAt: "2026",
+    liveDomain: "github.com/Firdaus1802/data-preprocessing",
+    imagePath: "/images/project-data-preprocessing.png",
+    features: [
+      "Pra-pemrosesan 6 Ragam Dataset Ritel & Klinis",
+      "Deteksi Outlier Ekstrem Berbasis IQR & Boxplot",
+      "Transformasi Biner & One-Hot Encoding Otomatis",
+      "Analisis Missing Value & Heatmap Visualisasi",
+      "Handling Duplikasi & Integritas Transaksi Retail",
+      "Pembersihan Data Skala Besar (BreadBasket & Supermarket)",
+    ],
+    tech: ["Python", "Pandas", "Scikit-Learn", "Seaborn", "Matplotlib", "Data Mining", "IQR", "ETL"],
+    githubUrl: "https://github.com/Firdaus1802/data-preprocessing",
+    liveDemoUrl: "https://github.com/Firdaus1802/data-preprocessing",
+  },
+  {
+    id: "finzie",
+    number: "05",
     title: "Finzie Joki Service",
     badge: "VERCEL DEPLOYMENT • WEB APP",
     badgeColor: "text-blue-500",
@@ -567,10 +619,12 @@ const projects: ProjectItem[] = [
     liveDomain: "finziejokiservice.vercel.app",
     imagePath: "/images/project-finzie-live.jpg",
     features: [
-      "Modern Responsive User Interface",
+      "Modern Responsive Web User Interface",
       "Game Service Catalog & Information",
       "Fast Performance with Next.js",
       "Vercel Cloud Deployment",
+      "Secure Transaction & Booking Flow",
+      "Mobile First Responsive Layout",
     ],
     tech: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Vercel"],
     githubUrl: "",
